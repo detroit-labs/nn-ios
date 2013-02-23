@@ -1,15 +1,14 @@
 //
-//  NNCityViewController.h
-//  Nerd Nite
-//
-//  Created by Amber Conville on 2/15/13.
-//  Copyright (c) 2013 Detroit Labs. All rights reserved.
+// Created by amber on 2/22/13.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface NNCityViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import <Foundation/Foundation.h>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@class NNCity;
 
+
+@interface NNCityViewController : UIViewController
+
+- (id)initWithCity:(NNCity *)city;
 @end

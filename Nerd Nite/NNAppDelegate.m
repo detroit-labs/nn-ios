@@ -7,7 +7,7 @@
 //
 
 #import "NNAppDelegate.h"
-#import "NNCityViewController.h"
+#import "NNCitiesListViewController.h"
 
 @implementation NNAppDelegate
 
@@ -17,7 +17,7 @@
     // Override point for customization after application launch.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     [navigationController setNavigationBarHidden:YES];
-    [navigationController addChildViewController:[[NNCityViewController alloc] initWithNibName:@"NNCityViewController" bundle:nil]];
+    [navigationController addChildViewController:[[NNCitiesListViewController alloc] initWithNibName:@"NNCitiesListViewController" bundle:nil]];
 
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

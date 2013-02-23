@@ -1,91 +1,46 @@
 //
-//  NNCityViewController.m
-//  Nerd Nite
+// Created by amber on 2/22/13.
 //
-//  Created by Amber Conville on 2/15/13.
-//  Copyright (c) 2013 Detroit Labs. All rights reserved.
-//
+
 
 #import "NNCityViewController.h"
-#import "NNCityTableViewCell.h"
 #import "NNCity.h"
-#import "NNService.h"
 
 @interface NNCityViewController ()
-
-@property (strong, nonatomic) NSArray *cities;
-@property (strong, nonatomic) NNService *service;
+@property(nonatomic, strong) NNCity *city;
 
 @end
 
 @implementation NNCityViewController
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.service = [[NNService alloc] init];
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
+    UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:18.0f];
+    NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
+
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
+    [self.navigationItem setHidesBackButton:YES];
+    UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
+    [self.navigationItem setRightBarButtonItem:changeLocationButton];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (id)initWithCity:(NNCity *)city {
+    self = [super initWithNibName:@"NNCityViewController" bundle:nil];
+    if (self){
+        self.city = city;
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self setupView];
-}
-
-- (void)setupView {
-    UINib *cityCell = [UINib nibWithNibName:@"NNCityTableViewCell" bundle:nil];
-    [self.tableView registerNib:cityCell forCellReuseIdentifier:NNCityCellId];
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self loadData];
-}
-
--(void)loadData {
-    [self.service getCitiesWithSuccess:^(NSArray *cities){
-        self.cities = cities;
-        [self.tableView reloadData];
-    } andFailure:^{
-        [[[UIAlertView alloc] initWithTitle:@"yikes"
-                                   message:@"we couldn't find the cities... maybe check your network connection?"
-                                  delegate:nil
-                         cancelButtonTitle:@"ok"
-                         otherButtonTitles:nil] show];
-    }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.cities count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NNCityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NNCityCellId];
-    NNCity *city = [self.cities objectAtIndex:indexPath.row];
-    [cell displayCity:city];
-    return cell;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)changeLocation {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

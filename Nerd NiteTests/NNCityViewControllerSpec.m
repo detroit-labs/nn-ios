@@ -4,12 +4,12 @@
 
 
 #import "Kiwi.h"
-#import "NNCityViewController.h"
+#import "NNCitiesListViewController.h"
 #import "NNCityTableViewCell.h"
 #import "NNCity.h"
 #import "NNService.h"
 
-@interface NNCityViewController ()
+@interface NNCitiesListViewController ()
 
 @property (strong, nonatomic) NSArray *cities;
 @property (strong, nonatomic) NNService *service;
@@ -21,13 +21,13 @@
 
 SPEC_BEGIN(NNCityViewControllerSpec)
 
-describe(@"NNCityViewController", ^{
+describe(@"NNCitiesListViewController+", ^{
 
-    __block NNCityViewController *controller;
+    __block NNCitiesListViewController *controller;
     __block UITableView *tableView;
 
     beforeEach(^{
-        controller = [[NNCityViewController alloc] init];
+        controller = [[NNCitiesListViewController alloc] init];
         tableView = [UITableView nullMock];
         [controller stub:@selector(tableView) andReturn:tableView];
     });
