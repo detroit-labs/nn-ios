@@ -568,12 +568,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.detroitlabs.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "Nerd Nite/Nerd Nite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = TestFlight;
@@ -630,12 +633,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.nerdnite.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "Nerd Nite/Nerd Nite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AppStore;
