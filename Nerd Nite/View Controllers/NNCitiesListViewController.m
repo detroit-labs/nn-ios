@@ -49,7 +49,9 @@
     [self.service getCitiesWithSuccess:^(NSArray *cities){
         self.cities = cities;
         [self.tableView reloadData];
+        [self.loadingIndicator stopAnimating];
     } andFailure:^{
+        [self.loadingIndicator stopAnimating];
         [[[UIAlertView alloc] initWithTitle:@"yikes"
                                    message:@"we couldn't find the cities... maybe check your network connection?"
                                   delegate:nil
@@ -101,4 +103,8 @@
     [self.navigationController pushViewController:controller animated:YES]  ;
 }
 
+- (void)viewDidUnload {
+    [self setLoadingIndicator:nil];
+    [super viewDidUnload];
+}
 @end

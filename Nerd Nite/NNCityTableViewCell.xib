@@ -62,13 +62,13 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="110606822">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="421351979">
 									<string key="name">Avenir-Black</string>
 									<string key="family">Avenir</string>
 									<int key="traits">2</int>
 									<double key="pointSize">24</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="217485603">
+								<object class="NSFont" key="IBUIFont" id="928197987">
 									<string key="NSName">Avenir-Heavy</string>
 									<double key="NSSize">24</double>
 									<int key="NSfFlags">16</int>
@@ -78,7 +78,7 @@
 							<object class="IBUILabel" id="54252133">
 								<reference key="NSNextResponder" ref="1061791348"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{201, 28}, {37, 21}}</string>
+								<string key="NSFrame">{{195, 28}, {43, 21}}</string>
 								<reference key="NSSuperview" ref="1061791348"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -97,8 +97,9 @@
 								</object>
 								<reference key="IBUIHighlightedColor" ref="271386528"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="110606822"/>
-								<reference key="IBUIFont" ref="217485603"/>
+								<int key="IBUITextAlignment">2</int>
+								<reference key="IBUIFontDescription" ref="421351979"/>
+								<reference key="IBUIFont" ref="928197987"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>

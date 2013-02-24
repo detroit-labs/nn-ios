@@ -10,6 +10,7 @@
 
 @interface NNCitiesListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
