@@ -80,6 +80,12 @@
     NNCityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NNCityCellId];
     NNCity *city = [self.cities objectAtIndex:indexPath.row];
     [cell displayCity:city];
+    if(indexPath.row < [self.cities count] - 1){
+        UIView *line = [[UIView alloc] init];
+        [line setBackgroundColor:[UIColor darkGrayColor]];
+        [line setFrame:(CGRect){{0, cell.frame.size.height-1},{cell.frame.size.width, 1}}];
+        [cell addSubview:line];
+    }
     return cell;
 }
 
