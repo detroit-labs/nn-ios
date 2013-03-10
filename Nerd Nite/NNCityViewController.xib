@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1536</int>
+		<int key="IBDocument.SystemTarget">1552</int>
 		<string key="IBDocument.SystemVersion">12C3012</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1930</string>
+			<string key="NS.object.0">2083</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -50,10 +50,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">ann-arbor.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIView" id="530100425">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -464,10 +460,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">presenter1.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="131980177">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -480,10 +472,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">presenter2.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="5801525">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -496,10 +484,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">presenter3.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="1065513689">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -513,10 +497,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">theLastWord.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="662077604">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -530,10 +510,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">presenting.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="318743178">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -547,10 +523,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">buttons.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="1033123298">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -564,10 +536,6 @@
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bosses.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIView" id="1018989687">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -754,10 +722,6 @@ bWUgb3IgcHJlc2VudC4</bytes>
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">hadley.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="56059596">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -770,10 +734,6 @@ bWUgb3IgcHJlc2VudC4</bytes>
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">liz.jpg</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="487484389">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -786,10 +746,6 @@ bWUgb3IgcHJlc2VudC4</bytes>
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">amber.jpg</string>
-						</object>
 					</object>
 					<object class="IBUILabel" id="140709006">
 						<reference key="NSNextResponder" ref="14031659"/>
@@ -1591,24 +1547,13 @@ bWUgb3IgcHJlc2VudC4</bytes>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="amber.jpg">{150, 150}</string>
-			<string key="ann-arbor.jpg">{1152, 864}</string>
-			<string key="bosses.jpg">{960, 638}</string>
-			<string key="buttons.jpg">{282, 500}</string>
 			<string key="facebook@2x.png">{80, 80}</string>
-			<string key="hadley.jpg">{103, 103}</string>
 			<string key="learnMore@2x.png">{306, 68}</string>
 			<string key="littleGlasses@2x.png">{46, 23}</string>
-			<string key="liz.jpg">{275, 275}</string>
-			<string key="presenter1.jpg">{300, 200}</string>
-			<string key="presenter2.jpg">{360, 541}</string>
-			<string key="presenter3.jpg">{530, 412}</string>
-			<string key="presenting.jpg">{960, 638}</string>
 			<string key="previousEvents@2x.png">{321, 225}</string>
-			<string key="theLastWord.jpg">{960, 638}</string>
 			<string key="twitter@2x.png">{80, 80}</string>
 			<string key="upcomingEvents@2x.png">{321, 225}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1930</string>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

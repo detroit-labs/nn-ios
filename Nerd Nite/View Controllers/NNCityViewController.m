@@ -6,6 +6,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NNCityViewController.h"
 #import "NNCity.h"
+#import "AFImageRequestOperation.h"
+#import "NNBoss.h"
+#import "AFJSONRequestOperation.h"
+#import "NNEvent.h"
 
 @interface NNCityViewController ()
 @property(nonatomic, strong) NNCity *city;
@@ -13,6 +17,14 @@
 @end
 
 @implementation NNCityViewController
+
+- (id)initWithCity:(NNCity *)city {
+    self = [super initWithNibName:@"NNCityViewController" bundle:nil];
+    if (self){
+        self.city = city;
+    }
+    return self;
+}
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -41,7 +53,41 @@
     [self makeCircle:self.boss2Image];
     [self makeCircle:self.boss3Image];
 
+    AFJSONRequestOperation *cityOp = [AFJSONRequestOperation
+            JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/cities/%@", self.city.id]]]
+                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                        self.city = [[NNCity alloc] initWithDetail:JSON];
+                                        [self loadImage:self.boss1Image forPath:[[self.city.bosses objectAtIndex:0] pic]];
+                                        [self loadImage:self.boss2Image forPath:[[self.city.bosses objectAtIndex:1] pic]];
+                                        [self loadImage:self.boss3Image forPath:[[self.city.bosses objectAtIndex:2] pic]];
+                                        [self loadImage:self.mainPicture forPath:self.city.bannerImage];
+                                        [self loadImage:self.presenter1Image forPath:[[self.city.nextEvent.presenters objectAtIndex:0] pic]];
+                                        [self loadImage:self.presenter2Image forPath:[[self.city.nextEvent.presenters objectAtIndex:1] pic]];
+                                        [self loadImage:self.presenter3Image forPath:[[self.city.nextEvent.presenters objectAtIndex:2] pic]];
+                                        [self loadImage:self.cityPhoto1 forPath:[self.city.previewImages objectAtIndex:0]];
+                                        [self loadImage:self.cityPhoto2 forPath:[self.city.previewImages objectAtIndex:1]];
+                                        [self loadImage:self.cityPhoto3 forPath:[self.city.previewImages objectAtIndex:2]];
+                                        [self loadImage:self.cityPhoto4 forPath:[self.city.previewImages objectAtIndex:3]];
+                                    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                [[[UIAlertView alloc] initWithTitle:@"NOES"
+                                           message:@"Couldn't get city info!!"
+                                          delegate:nil
+                                 cancelButtonTitle:@"ok"
+                                 otherButtonTitles:nil] show];
+            }];
+
+    [cityOp start];
+
     [(UIScrollView *)self.view setContentSize:CGSizeMake(self.view.frame.size.width, self.boss3Label.frame.origin.y + self.boss3Label.frame.size.height + 20)];
+}
+
+- (void)loadImage:(UIImageView *)imageView forPath:(NSString *)path {
+    AFImageRequestOperation *imageRequestOperation = [AFImageRequestOperation
+            imageRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
+                                     success:^(UIImage *image) {
+                                         [imageView setImage:image];
+                                     }];
+    [imageRequestOperation start];
 }
 
 - (void)makeCircle:(UIImageView *)imageView {
@@ -67,14 +113,6 @@
 }
 
 - (IBAction)upcomingEventsTapped:(id)sender {
-}
-
-- (id)initWithCity:(NNCity *)city {
-    self = [super initWithNibName:@"NNCityViewController" bundle:nil];
-    if (self){
-        self.city = city;
-    }
-    return self;
 }
 
 -(void)changeLocation {
