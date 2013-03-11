@@ -18,6 +18,8 @@
 		589F09EC0946DB73DF99CC13 /* NNPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresenter.m */; };
 		589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
 		589F0B9BB0623D087CDFB754 /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
+		589F0BDD4BE4B808FF211A24 /* NSDictionary+NNUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */; };
+		589F0BF7E0C7D7A5206B71ED /* NSDictionary+NNUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */; };
 		589F0DFCB7252CA8FCCA8F5B /* NNCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */; };
 		589F0E6C956FFA125F339BD6 /* NNCityViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0976585135A720ACD676 /* NNCityViewControllerSpec.m */; };
 		589F0EC3847BE09E3F5A9F57 /* NNService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06A007C01A2D5E37D104 /* NNService.m */; };
@@ -81,11 +83,13 @@
 		589F04172AAEF9F05C937309 /* NNCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCityTableViewCell.h; sourceTree = "<group>"; };
 		589F05F69384FD8847286256 /* NNService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNService.h; sourceTree = "<group>"; };
 		589F06A007C01A2D5E37D104 /* NNService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNService.m; sourceTree = "<group>"; };
+		589F06A45BD4BE89E11DF38E /* NSDictionary+NNUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NNUtilities.h"; sourceTree = "<group>"; };
 		589F06D6F0324A5ADDBB2958 /* NNCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCityTableViewCell.m; sourceTree = "<group>"; };
 		589F073E7A5D502E73493C7C /* NNCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCity.m; sourceTree = "<group>"; };
 		589F0976585135A720ACD676 /* NNCityViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCityViewControllerSpec.m; sourceTree = "<group>"; };
 		589F0AD8EACCB98FEEC06094 /* NNBoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBoss.m; sourceTree = "<group>"; };
 		589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNCityViewController.m; path = "View Controllers/NNCityViewController.m"; sourceTree = "<group>"; };
+		589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NNUtilities.m"; sourceTree = "<group>"; };
 		589F0F177941788F0D8914BF /* NNPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresenter.m; sourceTree = "<group>"; };
 		589F0F193C630A7E5C104FC4 /* NNPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresenter.h; sourceTree = "<group>"; };
 		964E18DB16D7DCD500AB85B1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -157,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		589F0134ABD60D542F335B38 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */,
+				589F06A45BD4BE89E11DF38E /* NSDictionary+NNUtilities.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		96B4AAB316D829540071B430 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +263,7 @@
 				96C1B12916CEB40100D95991 /* Supporting Files */,
 				96F6F13916CEB8BF0029BA26 /* View Controllers */,
 				96B4AAB316D829540071B430 /* Views */,
+				589F0134ABD60D542F335B38 /* Categories */,
 			);
 			path = "Nerd Nite";
 			sourceTree = "<group>";
@@ -476,6 +490,7 @@
 				589F0738ABC0702B97A2121B /* NNBoss.m in Sources */,
 				589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */,
 				589F09EC0946DB73DF99CC13 /* NNPresenter.m in Sources */,
+				589F0BF7E0C7D7A5206B71ED /* NSDictionary+NNUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +508,7 @@
 				589F05B9C3C969152EDAC71E /* NNBoss.m in Sources */,
 				589F0B9BB0623D087CDFB754 /* NNEvent.m in Sources */,
 				589F06C194A5744E04D2F55E /* NNPresenter.m in Sources */,
+				589F0BDD4BE4B808FF211A24 /* NSDictionary+NNUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

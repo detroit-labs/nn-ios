@@ -17,7 +17,7 @@
 - (void)displayCity:(NNCity *)city {
     self.city = city;
 
-    [self.cityLabel setText:[city.city uppercaseString]];
+    [self.cityLabel setText:[city.name uppercaseString]];
     [self.stateLabel setText:[city.state uppercaseString]];
 }
 

@@ -4,6 +4,7 @@
 
 
 #import "NNBoss.h"
+#import "NSDictionary+NNUtilities.h"
 
 
 @implementation NNBoss
@@ -11,10 +12,10 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.id = [dictionary valueForKey:@"id"];
-        self.name = [dictionary valueForKey:@"name"];
-        self.pic = [dictionary valueForKey:@"pic"];
-        self.link = [dictionary valueForKey:@"link"];
+        self.id = [dictionary nonNullStringForKey:@"id"];
+        self.name = [dictionary nonNullStringForKey:@"name"];
+        self.pic = [dictionary nonNullStringForKey:@"pic"];
+        self.link = [dictionary nonNullStringForKey:@"link"];
     }
     return self;
 }

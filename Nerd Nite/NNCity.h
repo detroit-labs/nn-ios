@@ -11,7 +11,7 @@
 @interface NNCity : NSObject
 
 @property(nonatomic, strong) NSString *id;
-@property(nonatomic, strong) NSString *city;
+@property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSString *state;
 @property(nonatomic, strong) NSArray *bosses;
 @property(nonatomic, strong) NSString *about;

@@ -4,6 +4,7 @@
 
 
 #import "NNPresenter.h"
+#import "NSDictionary+NNUtilities.h"
 
 
 @implementation NNPresenter
@@ -11,13 +12,13 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.id = [dictionary valueForKey:@"id"];
-        self.name = [dictionary valueForKey:@"name"];
-        self.bio = [dictionary valueForKey:@"bio"];
-        self.blurb = [dictionary valueForKey:@"blurb"];
-        self.topic = [dictionary valueForKey:@"topic"];
-        self.pic = [dictionary valueForKey:@"pic"];
-        self.link = [dictionary valueForKey:@"link"];
+        self.id = [dictionary nonNullStringForKey:@"id"];
+        self.name = [dictionary nonNullStringForKey:@"name"];
+        self.bio = [dictionary nonNullStringForKey:@"bio"];
+        self.blurb = [dictionary nonNullStringForKey:@"blurb"];
+        self.topic = [dictionary nonNullStringForKey:@"topic"];
+        self.pic = [dictionary nonNullStringForKey:@"pic"];
+        self.link = [dictionary nonNullStringForKey:@"link"];
     }
     return self;
 }
