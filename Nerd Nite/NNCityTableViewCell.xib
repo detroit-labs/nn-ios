@@ -42,16 +42,17 @@
 							<object class="IBUILabel" id="819860000">
 								<reference key="NSNextResponder" ref="1061791348"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 11}, {87, 21}}</string>
+								<string key="NSFrame">{{0, 24}, {179, 30}}</string>
 								<reference key="NSSuperview" ref="1061791348"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="54252133"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Label</string>
+								<string key="IBUIText">LABEL</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC45OTIxNTY4NjI3IDAuNzMzMzMzMzMzMyAwLjE4ODIzNTI5NDEAA</bytes>
@@ -61,13 +62,15 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="693088351">
-									<int key="type">2</int>
-									<double key="pointSize">17</double>
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="421351979">
+									<string key="name">Avenir-Black</string>
+									<string key="family">Avenir</string>
+									<int key="traits">2</int>
+									<double key="pointSize">24</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="440297204">
-									<string key="NSName">Helvetica-Bold</string>
-									<double key="NSSize">17</double>
+								<object class="NSFont" key="IBUIFont" id="928197987">
+									<string key="NSName">Avenir-Heavy</string>
+									<double key="NSSize">24</double>
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -75,7 +78,7 @@
 							<object class="IBUILabel" id="54252133">
 								<reference key="NSNextResponder" ref="1061791348"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{174, 11}, {87, 21}}</string>
+								<string key="NSFrame">{{195, 28}, {43, 21}}</string>
 								<reference key="NSSuperview" ref="1061791348"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -84,7 +87,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Label</string>
+								<string key="IBUIText">MI</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -94,15 +97,16 @@
 								</object>
 								<reference key="IBUIHighlightedColor" ref="271386528"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="693088351"/>
-								<reference key="IBUIFont" ref="440297204"/>
+								<int key="IBUITextAlignment">2</int>
+								<reference key="IBUIFontDescription" ref="421351979"/>
+								<reference key="IBUIFont" ref="928197987"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 43}</string>
+						<string key="NSFrameSize">{240, 77}</string>
 						<reference key="NSSuperview" ref="766915092"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="819860000"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="69230820">
 							<int key="NSColorSpace">3</int>
@@ -115,7 +119,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 44}</string>
+				<string key="NSFrameSize">{240, 78}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1061791348"/>

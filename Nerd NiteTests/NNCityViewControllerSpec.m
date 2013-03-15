@@ -4,12 +4,12 @@
 
 
 #import "Kiwi.h"
-#import "NNCityViewController.h"
+#import "NNCitiesListViewController.h"
 #import "NNCityTableViewCell.h"
 #import "NNCity.h"
 #import "NNService.h"
 
-@interface NNCityViewController ()
+@interface NNCitiesListViewController ()
 
 @property (strong, nonatomic) NSArray *cities;
 @property (strong, nonatomic) NNService *service;
@@ -21,13 +21,13 @@
 
 SPEC_BEGIN(NNCityViewControllerSpec)
 
-describe(@"NNCityViewController", ^{
+describe(@"NNCitiesListViewController+", ^{
 
-    __block NNCityViewController *controller;
+    __block NNCitiesListViewController *controller;
     __block UITableView *tableView;
 
     beforeEach(^{
-        controller = [[NNCityViewController alloc] init];
+        controller = [[NNCitiesListViewController alloc] init];
         tableView = [UITableView nullMock];
         [controller stub:@selector(tableView) andReturn:tableView];
     });
@@ -42,7 +42,7 @@ describe(@"NNCityViewController", ^{
 
     describe(@"#tableView:cellForRowAtIndexPath:", ^{
 
-        context(@"makes a row for every city it has", ^{
+        context(@"makes a row for every name it has", ^{
 
             __block NNCityTableViewCell *expectedCell;
             __block NNCity *annArbor;
@@ -63,13 +63,13 @@ describe(@"NNCityViewController", ^{
                 [[cell should] equal:expectedCell];
             });
 
-            it(@"sets the city on the first cell", ^{
+            it(@"sets the name on the first cell", ^{
                 [[expectedCell should] receive:@selector(displayCity:) withArguments:annArbor];
 
                 [controller tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             });
 
-            it(@"sets the city on the second cell", ^{
+            it(@"sets the name on the second cell", ^{
                 [[expectedCell should] receive:@selector(displayCity:) withArguments:detroit];
 
                 [controller tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
@@ -100,7 +100,7 @@ describe(@"NNCityViewController", ^{
             [UINib stub:@selector(nibWithNibName:bundle:) andReturn:nib withArguments:@"NNCityTableViewCell", nil];
         });
 
-        it(@"registers the city nib with the table view", ^{
+        it(@"registers the name nib with the table view", ^{
             [[tableView should] receive:@selector(registerNib:forCellReuseIdentifier:) withArguments:nib, NNCityCellId];
 
             [controller setupView];
@@ -132,7 +132,7 @@ describe(@"NNCityViewController", ^{
                 KWCaptureSpy *spy = [service captureArgument:@selector(getCitiesWithSuccess:andFailure:) atIndex:0];
                 [controller loadData];
                 successBlock = spy.argument;
-                cities = @[[[NNCity alloc] initWithDictionary:@{@"name" : @"city", @"id" : @"3"}]];
+                cities = @[[[NNCity alloc] initWithDictionary:@{@"name" : @"name", @"id" : @"3"}]];
             });
 
             it(@"saves the cities", ^{
