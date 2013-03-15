@@ -10,6 +10,7 @@
 #import "NNBoss.h"
 #import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
+#import "NNPresenter.h"
 
 @interface NNCityViewController ()
 @property(nonatomic, strong) NNCity *city;
@@ -46,29 +47,29 @@
     [self.aboutBorderView.layer setBorderColor:[UIColor blackColor].CGColor];
     [self.aboutBorderView.layer setBorderWidth:3];
 
-    [self makeCircle:self.presenter1Image];
-    [self makeCircle:self.presenter2Image];
-    [self makeCircle:self.presenter3Image];
-    [self makeCircle:self.boss1Image];
-    [self makeCircle:self.boss2Image];
-    [self makeCircle:self.boss3Image];
-
     NSString *path = [NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/cities/%@", self.city.id];
     AFJSONRequestOperation *cityOp = [AFJSONRequestOperation
             JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                         self.city = [[NNCity alloc] initWithDetail:JSON];
-//                                        [self loadImage:self.boss1Image forPath:[[self.city.bosses objectAtIndex:0] pic]];
-//                                        [self loadImage:self.boss2Image forPath:[[self.city.bosses objectAtIndex:1] pic]];
-//                                        [self loadImage:self.boss3Image forPath:[[self.city.bosses objectAtIndex:2] pic]];
+                                        [self.city.bosses enumerateObjectsUsingBlock:^(NNBoss *boss, NSUInteger idx, BOOL *stop) {
+                                            if(idx < 3){
+                                                UIImageView *image = [self.bossImages objectAtIndex:idx];
+                                                [self makeCircle:image];
+                                                [self loadImage:image forPath:[boss pic]];
+                                            }
+                                        }];
                                         [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-//                                        [self loadImage:self.presenter1Image forPath:[[self.city.nextEvent.presenters objectAtIndex:0] pic]];
-//                                        [self loadImage:self.presenter2Image forPath:[[self.city.nextEvent.presenters objectAtIndex:1] pic]];
-//                                        [self loadImage:self.presenter3Image forPath:[[self.city.nextEvent.presenters objectAtIndex:2] pic]];
-//                                        [self loadImage:self.cityPhoto1 forPath:[self.city.previewImages objectAtIndex:0]];
-//                                        [self loadImage:self.cityPhoto2 forPath:[self.city.previewImages objectAtIndex:1]];
-//                                        [self loadImage:self.cityPhoto3 forPath:[self.city.previewImages objectAtIndex:2]];
-//                                        [self loadImage:self.cityPhoto4 forPath:[self.city.previewImages objectAtIndex:3]];
+                                        [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
+                                            UIImageView *image = [self.presenterImages objectAtIndex:idx];
+                                            [self makeCircle:image];
+                                            [self loadImage:image forPath:[presenter pic]];
+                                        }];
+
+                                        [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
+                                            UIImageView *image = [self.cityPhotos objectAtIndex:idx];
+                                            [self loadImage:image forPath:imagePath];
+                                        }];
                                         self.cityLabel.text = self.city.name;
                                         self.eventTitle.text = self.city.nextEvent.title;
                                         self.eventVenueLabel.text = self.city.nextEvent.venueName;
@@ -151,28 +152,21 @@
 - (void)viewDidUnload {
     [self setMainPicture:nil];
     [self setCityBorderView:nil];
-    [self setPresenter1Image:nil];
-    [self setPresenter2Image:nil];
-    [self setPresenter3Image:nil];
     [self setCityLabel:nil];
     [self setEventTitle:nil];
     [self setEventDateLabel:nil];
     [self setEventDateSuffixLabel:nil];
     [self setEventVenueLabel:nil];
-    [self setCityPhoto1:nil];
-    [self setCityPhoto2:nil];
-    [self setCityPhoto3:nil];
-    [self setCityPhoto4:nil];
     [self setAboutBorderView:nil];
     [self setYearEstablishedLabel:nil];
     [self setAboutLabel:nil];
     [self setLittleGlasses:nil];
-    [self setBoss1Image:nil];
-    [self setBoss2Image:nil];
-    [self setBoss3Image:nil];
     [self setBoss1Label:nil];
     [self setBoss2Label:nil];
     [self setBoss3Label:nil];
+    [self setPresenterImages:nil];
+    [self setCityPhotos:nil];
+    [self setBossImages:nil];
     [super viewDidUnload];
 }
 @end

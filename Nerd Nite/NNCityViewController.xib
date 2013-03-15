@@ -797,6 +797,7 @@ bWUgb3IgcHJlc2VudC4</bytes>
 						<string key="NSFrame">{{220, 1039.5}, {90, 21}}</string>
 						<reference key="NSSuperview" ref="14031659"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -896,62 +897,6 @@ bWUgb3IgcHJlc2VudC4</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">presenter1Image</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="827090747"/>
-					</object>
-					<int key="connectionID">29</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">presenter2Image</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="131980177"/>
-					</object>
-					<int key="connectionID">30</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">presenter3Image</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="5801525"/>
-					</object>
-					<int key="connectionID">31</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">cityPhoto1</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1065513689"/>
-					</object>
-					<int key="connectionID">46</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">cityPhoto2</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="662077604"/>
-					</object>
-					<int key="connectionID">48</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">cityPhoto3</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="318743178"/>
-					</object>
-					<int key="connectionID">49</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">cityPhoto4</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1033123298"/>
-					</object>
-					<int key="connectionID">50</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">view</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="14031659"/>
@@ -992,30 +937,6 @@ bWUgb3IgcHJlc2VudC4</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">boss1Image</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="820835043"/>
-					</object>
-					<int key="connectionID">66</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">boss2Image</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="56059596"/>
-					</object>
-					<int key="connectionID">67</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">boss3Image</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="487484389"/>
-					</object>
-					<int key="connectionID">68</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">boss1Label</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="140709006"/>
@@ -1037,6 +958,106 @@ bWUgb3IgcHJlc2VudC4</bytes>
 						<reference key="destination" ref="511439664"/>
 					</object>
 					<int key="connectionID">74</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">presenterImages</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="827090747"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">75</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">presenterImages</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="131980177"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">76</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">presenterImages</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="5801525"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">77</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">cityPhotos</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1065513689"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">78</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">cityPhotos</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="662077604"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">79</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">cityPhotos</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="318743178"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">80</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">cityPhotos</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1033123298"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">81</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">bossImages</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="820835043"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">82</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">bossImages</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="56059596"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">83</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">bossImages</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="487484389"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">84</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1375,7 +1396,7 @@ bWUgb3IgcHJlc2VudC4</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">74</int>
+			<int key="maxID">84</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1414,27 +1435,17 @@ bWUgb3IgcHJlc2VudC4</bytes>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="aboutBorderView">UIView</string>
 						<string key="aboutLabel">UILabel</string>
-						<string key="boss1Image">UIImageView</string>
 						<string key="boss1Label">UILabel</string>
-						<string key="boss2Image">UIImageView</string>
 						<string key="boss2Label">UILabel</string>
-						<string key="boss3Image">UIImageView</string>
 						<string key="boss3Label">UILabel</string>
 						<string key="cityBorderView">UIView</string>
 						<string key="cityLabel">UILabel</string>
-						<string key="cityPhoto1">UIImageView</string>
-						<string key="cityPhoto2">UIImageView</string>
-						<string key="cityPhoto3">UIImageView</string>
-						<string key="cityPhoto4">UIImageView</string>
 						<string key="eventDateLabel">UILabel</string>
 						<string key="eventDateSuffixLabel">UILabel</string>
 						<string key="eventTitle">UILabel</string>
 						<string key="eventVenueLabel">UILabel</string>
 						<string key="littleGlasses">UIImageView</string>
 						<string key="mainPicture">UIImageView</string>
-						<string key="presenter1Image">UIImageView</string>
-						<string key="presenter2Image">UIImageView</string>
-						<string key="presenter3Image">UIImageView</string>
 						<string key="yearEstablishedLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1446,25 +1457,13 @@ bWUgb3IgcHJlc2VudC4</bytes>
 							<string key="name">aboutLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="boss1Image">
-							<string key="name">boss1Image</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="boss1Label">
 							<string key="name">boss1Label</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="boss2Image">
-							<string key="name">boss2Image</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="boss2Label">
 							<string key="name">boss2Label</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="boss3Image">
-							<string key="name">boss3Image</string>
-							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="boss3Label">
 							<string key="name">boss3Label</string>
@@ -1477,22 +1476,6 @@ bWUgb3IgcHJlc2VudC4</bytes>
 						<object class="IBToOneOutletInfo" key="cityLabel">
 							<string key="name">cityLabel</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityPhoto1">
-							<string key="name">cityPhoto1</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityPhoto2">
-							<string key="name">cityPhoto2</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityPhoto3">
-							<string key="name">cityPhoto3</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityPhoto4">
-							<string key="name">cityPhoto4</string>
-							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="eventDateLabel">
 							<string key="name">eventDateLabel</string>
@@ -1518,21 +1501,26 @@ bWUgb3IgcHJlc2VudC4</bytes>
 							<string key="name">mainPicture</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="presenter1Image">
-							<string key="name">presenter1Image</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="presenter2Image">
-							<string key="name">presenter2Image</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="presenter3Image">
-							<string key="name">presenter3Image</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="yearEstablishedLabel">
 							<string key="name">yearEstablishedLabel</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toManyOutletInfosByName">
+						<object class="IBToManyOutletInfo" key="bossImages">
+							<string key="name">bossImages</string>
+							<string key="candidateClassName">UIImageView</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+						<object class="IBToManyOutletInfo" key="cityPhotos">
+							<string key="name">cityPhotos</string>
+							<string key="candidateClassName">UIImageView</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+						<object class="IBToManyOutletInfo" key="presenterImages">
+							<string key="name">presenterImages</string>
+							<string key="candidateClassName">UIImageView</string>
+							<string key="collectionClassName">NSArray</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
