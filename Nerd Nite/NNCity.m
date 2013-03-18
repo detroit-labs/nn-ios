@@ -31,6 +31,7 @@
         self.facebook = [dictionary nonNullStringForKey:@"facebook"];
         self.hashtag = [dictionary nonNullStringForKey:@"hashtag"];
         self.bannerImage = [dictionary nonNullStringForKey:@"banner_image"];
+        self.about = [dictionary nonNullStringForKey:@"description"];
         self.yearEst = [dictionary nonNullStringForKey:@"year_est"];
         self.nextEvent = [[NNEvent alloc] initWithDictionary:[dictionary objectForKey:@"next_event"]];
         NSArray *rawBosses = [dictionary objectForKey:@"bosses"];
