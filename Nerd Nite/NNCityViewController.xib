@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C3012</string>
+		<string key="IBDocument.SystemVersion">12C60</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
@@ -379,7 +379,7 @@
 						<string key="NSFrame">{{159, 304}, {153, 34}}</string>
 						<reference key="NSSuperview" ref="14031659"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="907601548"/>
+						<reference key="NSNextKeyView" ref="1065513689"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -668,6 +668,18 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
+					<object class="IBUIImageView" id="516387609">
+						<reference key="NSNextResponder" ref="14031659"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{10, 964}, {90, 90}}</string>
+						<reference key="NSSuperview" ref="14031659"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="498948215"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<int key="IBUIContentMode">2</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
 					<object class="IBUILabel" id="140709006">
 						<reference key="NSNextResponder" ref="14031659"/>
 						<int key="NSvFlags">292</int>
@@ -690,24 +702,13 @@
 						<reference key="IBUIFont" ref="933043037"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUIImageView" id="516387609">
-						<reference key="NSNextResponder" ref="14031659"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 964}, {90, 90}}</string>
-						<reference key="NSSuperview" ref="14031659"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="498948215"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<int key="IBUIContentMode">2</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-					</object>
 					<object class="IBUILabel" id="498948215">
 						<reference key="NSNextResponder" ref="14031659"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{10, 1058}, {90, 21}}</string>
 						<reference key="NSSuperview" ref="14031659"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -796,7 +797,7 @@
 				<string key="NSFrameSize">{161, 112}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="1065513689"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -821,7 +822,7 @@
 				<string key="NSFrameSize">{161, 112}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="1014776041"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -1182,8 +1183,8 @@
 							<reference ref="140709006"/>
 							<reference ref="511439664"/>
 							<reference ref="509428547"/>
-							<reference ref="516387609"/>
 							<reference ref="1018989687"/>
+							<reference ref="516387609"/>
 							<reference ref="498948215"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -1192,36 +1193,43 @@
 						<int key="objectID">6</int>
 						<reference key="object" ref="115820080"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - City Background</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
 						<reference key="object" ref="530100425"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">View - Overlay</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="312942653"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - City Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
 						<reference key="object" ref="899785516"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - City Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
 						<reference key="object" ref="5496660"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Button - Twitter</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
 						<reference key="object" ref="169490943"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Button - Facebook</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
 						<reference key="object" ref="356913083"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">View - NEXT EVENT</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
@@ -1232,6 +1240,7 @@
 						<int key="objectID">14</int>
 						<reference key="object" ref="536749605"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Event Title</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
@@ -1242,56 +1251,67 @@
 						<int key="objectID">21</int>
 						<reference key="object" ref="239912552"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Venue</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
 						<reference key="object" ref="1004293602"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Event Date Suffix</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">25</int>
 						<reference key="object" ref="133338782"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Button - Learn More</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">26</int>
 						<reference key="object" ref="827090747"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Presentation Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
 						<reference key="object" ref="131980177"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Presentation Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
 						<reference key="object" ref="5801525"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Presentation Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">41</int>
 						<reference key="object" ref="1065513689"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - City Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">42</int>
 						<reference key="object" ref="662077604"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - City Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">43</int>
 						<reference key="object" ref="318743178"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - City Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">44</int>
 						<reference key="object" ref="1033123298"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - City Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
 						<reference key="object" ref="1018989687"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">View - ABOUT US</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">53</int>
@@ -1307,11 +1327,13 @@
 						<int key="objectID">56</int>
 						<reference key="object" ref="659477313"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Est Year</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">58</int>
 						<reference key="object" ref="404700725"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Summary</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
@@ -1322,56 +1344,67 @@
 						<int key="objectID">61</int>
 						<reference key="object" ref="820835043"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Boss</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">62</int>
 						<reference key="object" ref="487484389"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Boss</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">63</int>
 						<reference key="object" ref="56059596"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Boss</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">69</int>
 						<reference key="object" ref="140709006"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Boss Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">70</int>
 						<reference key="object" ref="509428547"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Boss Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">71</int>
 						<reference key="object" ref="511439664"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Boss Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
 						<reference key="object" ref="264387025"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Event Date</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">88</int>
 						<reference key="object" ref="516387609"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Image - Boss</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">89</int>
 						<reference key="object" ref="498948215"/>
 						<reference key="parent" ref="14031659"/>
+						<string key="objectName">Label - Boss Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
 						<reference key="object" ref="907601548"/>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Button - Previous Events</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
 						<reference key="object" ref="1014776041"/>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Button - Upocoming Events</string>
 					</object>
 				</array>
 			</object>
