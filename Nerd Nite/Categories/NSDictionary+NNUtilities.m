@@ -10,7 +10,7 @@
 
 - (NSString *)nonNullStringForKey:(NSString *)key {
     NSString *value = [self valueForKey:key];
-    if (value == [NSNull null]) {
+    if (value == (id)[NSNull null]) {
         return nil;
     }
     return value;

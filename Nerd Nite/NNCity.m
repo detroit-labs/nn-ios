@@ -37,7 +37,7 @@
         NSMutableArray *bosses = [[NSMutableArray alloc] init];
 
         [rawBosses enumerateObjectsUsingBlock:^(NSDictionary *rawBoss, NSUInteger idx, BOOL *stop) {
-            if (rawBoss != [NSNull null]){
+            if (rawBoss != (id)[NSNull null]){
                 [bosses addObject:[[NNBoss alloc] initWithDictionary:rawBoss]];
             }
         }];
@@ -47,7 +47,7 @@
         NSMutableArray *previews = [[NSMutableArray alloc] init];
 
         [rawPreviews enumerateObjectsUsingBlock:^(NSDictionary *rawPreview, NSUInteger idx, BOOL *stop) {
-            if (rawPreview != [NSNull null]){
+            if (rawPreview != (id)[NSNull null]){
                 [previews addObject:[rawPreview nonNullStringForKey:@"link"]];
             }
         }];

@@ -1,0 +1,3 @@
+*.strings diff=stringconverter
+*.pbxproj binary merge=union
+*.strings binary merge=union
