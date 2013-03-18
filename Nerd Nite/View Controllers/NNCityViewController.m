@@ -11,6 +11,7 @@
 #import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
 #import "NNPresenter.h"
+#import "NNNextEventViewController.h"
 
 @interface NNCityViewController ()
 @property(nonatomic, strong) NNCity *city;
@@ -137,6 +138,8 @@
 }
 
 - (IBAction)learnMoreTapped:(id)sender {
+    NNNextEventViewController *eventVC = [[NNNextEventViewController alloc] initWithCity:self.city];
+    [self.navigationController pushViewController:eventVC animated:YES];
 }
 
 - (IBAction)previousEventsTapped:(id)sender {

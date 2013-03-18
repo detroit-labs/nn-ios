@@ -25,6 +25,8 @@
 		589F0EC3847BE09E3F5A9F57 /* NNService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06A007C01A2D5E37D104 /* NNService.m */; };
 		589F0F0D2E6BBEA39F5CF73C /* NNCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */; };
 		589F0F47DC2B5B7AAD765768 /* NNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F073E7A5D502E73493C7C /* NNCity.m */; };
+		83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */; };
+		83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */; };
 		964E18DC16D7DCD500AB85B1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DB16D7DCD500AB85B1 /* Default.png */; };
 		964E18DF16D7DCF300AB85B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DE16D7DCF300AB85B1 /* Default@2x.png */; };
 		964E18E116D7DD0200AB85B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */; };
@@ -92,6 +94,9 @@
 		589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NNUtilities.m"; sourceTree = "<group>"; };
 		589F0F177941788F0D8914BF /* NNPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresenter.m; sourceTree = "<group>"; };
 		589F0F193C630A7E5C104FC4 /* NNPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresenter.h; sourceTree = "<group>"; };
+		83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewController.xib; sourceTree = "<group>"; };
+		83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
+		83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
 		964E18DB16D7DCD500AB85B1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		964E18DE16D7DCF300AB85B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -309,6 +314,9 @@
 				96F6F14C16CECB2C0029BA26 /* NNCitiesListViewController.h */,
 				96F6F14D16CECB2C0029BA26 /* NNCitiesListViewController.m */,
 				96F6F14E16CECB2C0029BA26 /* NNCitiesListViewController.xib */,
+				83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */,
+				83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */,
+				83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -414,6 +422,7 @@
 				969E766716D987D00030AB24 /* upcomingEvents@2x.png in Resources */,
 				969E766916D989D50030AB24 /* learnMore@2x.png in Resources */,
 				969E768116D9A5540030AB24 /* littleGlasses@2x.png in Resources */,
+				83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +500,7 @@
 				589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */,
 				589F09EC0946DB73DF99CC13 /* NNPresenter.m in Sources */,
 				589F0BF7E0C7D7A5206B71ED /* NSDictionary+NNUtilities.m in Sources */,
+				83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
