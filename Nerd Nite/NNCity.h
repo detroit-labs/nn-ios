@@ -19,7 +19,7 @@
 @property(nonatomic, strong) NSString *facebook;
 @property(nonatomic, strong) NSString *hashtag;
 @property(nonatomic, strong) NSString *bannerImage;
-@property(nonatomic, strong) NSString *yearEst;
+@property(nonatomic, strong) NSNumber *yearEst;
 @property(nonatomic, strong) NNEvent *nextEvent;
 @property(nonatomic, strong) NSArray *previewImages;
 
