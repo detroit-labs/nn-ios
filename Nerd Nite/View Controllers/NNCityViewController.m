@@ -52,12 +52,10 @@
     [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
         self.city = city;
         [self.city.bosses enumerateObjectsUsingBlock:^(NNBoss *boss, NSUInteger idx, BOOL *stop) {
-            if (idx < 3) {
-                UIImageView *image = [self.bossImages objectAtIndex:idx];
-                [self makeCircle:image];
-                [self loadImage:image forPath:[boss pic]];
-                ((UILabel *) [self.bossLabels objectAtIndex:idx]).text = [boss name];
-            }
+            UIImageView *image = [self.bossImages objectAtIndex:idx];
+            [self makeCircle:image];
+            [self loadImage:image forPath:[boss pic]];
+            ((UILabel *) [self.bossLabels objectAtIndex:idx]).text = [boss name];
         }];
         [self loadImage:self.mainPicture forPath:self.city.bannerImage];
         [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
@@ -76,6 +74,8 @@
         [self setupDateLabel];
         self.aboutLabel.text = self.city.about;
         self.yearEstablishedLabel.text = [self.city.yearEst stringValue];
+        UIView *lastBoss = [self.bossLabels objectAtIndex:[self.city.bosses count] - 1];
+        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastBoss.frame.origin.y + lastBoss.frame.size.height + 20)];
     } andFailure:^() {
         [[[UIAlertView alloc] initWithTitle:@"NOES"
                                     message:@"Couldn't get city info!!"
@@ -83,8 +83,6 @@
                           otherButtonTitles:nil] show];
     }];
 
-    UIView *lastBoss = [self.bossLabels lastObject];
-    [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastBoss.frame.origin.y + lastBoss.frame.size.height + 20)];
 }
 
 - (void)setupDateLabel {
