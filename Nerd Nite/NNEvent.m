@@ -26,7 +26,7 @@
         NSMutableArray *presenters = [[NSMutableArray alloc] init];
 
         [rawPresenters enumerateObjectsUsingBlock:^(NSDictionary *rawPresenter, NSUInteger idx, BOOL *stop) {
-            if (rawPresenter != [NSNull null]){
+            if (rawPresenter != (id)[NSNull null]){
                 NNPresenter *presenter = [[NNPresenter alloc] initWithDictionary:rawPresenter];
                 [presenters addObject:presenter];
             }
