@@ -5,9 +5,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class NNCity;
 
 @interface NNService : NSObject
 
 -(void)getCitiesWithSuccess:(void(^)(NSArray *))success andFailure:(void(^)(void))failure;
+- (void)getCity:(NSString *)id withSuccess:(void (^)(NNCity *))success andFailure:(void (^)())failure;
 
 @end

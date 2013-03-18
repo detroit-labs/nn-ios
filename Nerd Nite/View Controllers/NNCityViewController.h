@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @class NNCity;
+@class NNService;
 
 
 @interface NNCityViewController : UIViewController
@@ -21,12 +22,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *yearEstablishedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *littleGlasses;
-@property (strong, nonatomic) IBOutlet UILabel *boss1Label;
-@property (strong, nonatomic) IBOutlet UILabel *boss2Label;
-@property (strong, nonatomic) IBOutlet UILabel *boss3Label;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *presenterImages;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *cityPhotos;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *bossImages;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bossLabels;
+
+@property(nonatomic, strong) NNService *service;
 
 - (IBAction)facebookTapped:(id)sender;
 - (IBAction)twitterTapped:(id)sender;

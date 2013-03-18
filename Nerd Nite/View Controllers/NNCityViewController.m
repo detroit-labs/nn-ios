@@ -8,12 +8,13 @@
 #import "NNCity.h"
 #import "AFImageRequestOperation.h"
 #import "NNBoss.h"
-#import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
 #import "NNPresenter.h"
 #import "NNNextEventViewController.h"
+#import "NNService.h"
 
 @interface NNCityViewController ()
+
 @property(nonatomic, strong) NNCity *city;
 
 @end
@@ -24,6 +25,7 @@
     self = [super initWithNibName:@"NNCityViewController" bundle:nil];
     if (self){
         self.city = city;
+        self.service = [[NNService alloc] init];
     }
     return self;
 }
@@ -48,44 +50,40 @@
     [self.aboutBorderView.layer setBorderColor:[UIColor blackColor].CGColor];
     [self.aboutBorderView.layer setBorderWidth:3];
 
-    NSString *path = [NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/cities/%@", self.city.id];
-    AFJSONRequestOperation *cityOp = [AFJSONRequestOperation
-            JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
-                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                        self.city = [[NNCity alloc] initWithDetail:JSON];
-                                        [self.city.bosses enumerateObjectsUsingBlock:^(NNBoss *boss, NSUInteger idx, BOOL *stop) {
-                                            if(idx < 3){
-                                                UIImageView *image = [self.bossImages objectAtIndex:idx];
-                                                [self makeCircle:image];
-                                                [self loadImage:image forPath:[boss pic]];
-                                            }
-                                        }];
-                                        [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-                                        [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
-                                            UIImageView *image = [self.presenterImages objectAtIndex:idx];
-                                            [self makeCircle:image];
-                                            [self loadImage:image forPath:[presenter pic]];
-                                        }];
+    [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
+        self.city = city;
+        [self.city.bosses enumerateObjectsUsingBlock:^(NNBoss *boss, NSUInteger idx, BOOL *stop) {
+            UIImageView *image = [self.bossImages objectAtIndex:idx];
+            [self makeCircle:image];
+            [self loadImage:image forPath:[boss pic]];
+            ((UILabel *) [self.bossLabels objectAtIndex:idx]).text = [boss name];
+        }];
+        [self loadImage:self.mainPicture forPath:self.city.bannerImage];
+        [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
+            UIImageView *image = [self.presenterImages objectAtIndex:idx];
+            [self makeCircle:image];
+            [self loadImage:image forPath:[presenter pic]];
+        }];
 
-                                        [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
-                                            UIImageView *image = [self.cityPhotos objectAtIndex:idx];
-                                            [self loadImage:image forPath:imagePath];
-                                        }];
-                                        self.cityLabel.text = self.city.name;
-                                        self.eventTitle.text = self.city.nextEvent.title;
-                                        self.eventVenueLabel.text = self.city.nextEvent.venueName;
-                                        [self setupDateLabel];
-                                    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                [[[UIAlertView alloc] initWithTitle:@"NOES"
-                                           message:@"Couldn't get city info!!"
-                                          delegate:nil
-                                 cancelButtonTitle:@"ok"
-                                 otherButtonTitles:nil] show];
-            }];
+        [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
+            UIImageView *image = [self.cityPhotos objectAtIndex:idx];
+            [self loadImage:image forPath:imagePath];
+        }];
+        self.cityLabel.text = self.city.name;
+        self.eventTitle.text = self.city.nextEvent.title;
+        self.eventVenueLabel.text = self.city.nextEvent.venueName;
+        [self setupDateLabel];
+        self.aboutLabel.text = self.city.about;
+        self.yearEstablishedLabel.text = [self.city.yearEst stringValue];
+        UIView *lastBoss = [self.bossLabels objectAtIndex:[self.city.bosses count] - 1];
+        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastBoss.frame.origin.y + lastBoss.frame.size.height + 20)];
+    } andFailure:^() {
+        [[[UIAlertView alloc] initWithTitle:@"NOES"
+                                    message:@"Couldn't get city info!!"
+                                   delegate:nil cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+    }];
 
-    [cityOp start];
-
-    [(UIScrollView *)self.view setContentSize:CGSizeMake(self.view.frame.size.width, self.boss3Label.frame.origin.y + self.boss3Label.frame.size.height + 20)];
 }
 
 - (void)setupDateLabel {
@@ -132,9 +130,11 @@
 }
 
 - (IBAction)facebookTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.city.facebook]];
 }
 
 - (IBAction)twitterTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://twitter.com/%@", self.city.twitter]]];
 }
 
 - (IBAction)learnMoreTapped:(id)sender {
@@ -164,9 +164,6 @@
     [self setYearEstablishedLabel:nil];
     [self setAboutLabel:nil];
     [self setLittleGlasses:nil];
-    [self setBoss1Label:nil];
-    [self setBoss2Label:nil];
-    [self setBoss3Label:nil];
     [self setPresenterImages:nil];
     [self setCityPhotos:nil];
     [self setBossImages:nil];

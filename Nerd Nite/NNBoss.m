@@ -13,11 +13,19 @@
     self = [super init];
     if (self) {
         self.id = [dictionary nonNullStringForKey:@"id"];
-        self.name = [dictionary nonNullStringForKey:@"name"];
+        self.name = [self shortenName:dictionary];
         self.pic = [dictionary nonNullStringForKey:@"pic"];
         self.link = [dictionary nonNullStringForKey:@"link"];
     }
     return self;
+}
+
+- (NSString *)shortenName:(NSDictionary *)dictionary {
+    NSString *name = [dictionary nonNullStringForKey:@"name"];
+    NSArray *words = [name componentsSeparatedByString:@" "];
+    NSString *firstName = [words objectAtIndex:0];
+    NSString *lastInitial = [NSString stringWithFormat:@"%@.", [[words lastObject] substringToIndex:1]];
+    return [@[firstName, lastInitial] componentsJoinedByString:@" "];
 }
 
 @end
