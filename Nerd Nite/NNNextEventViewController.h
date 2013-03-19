@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "NNCity.h"
+@class NNCity;
+@class NNService;
 
 @interface NNNextEventViewController : UIViewController
 
@@ -26,6 +27,8 @@
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *presenterImages;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *presenterNames;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *cityPhotos;
+
+@property(nonatomic, strong) NNService *service;
 
 - (IBAction)facebookTapped:(id)sender;
 - (IBAction)twitterTapped:(id)sender;

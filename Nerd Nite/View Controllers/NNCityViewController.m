@@ -30,13 +30,21 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)clearPlaceholderLabels {
+    self.cityLabel.text = nil;
+    self.eventTitle.text = nil;
+    self.eventVenueLabel.text = nil;
+    self.eventDateLabel.text = nil;
+    self.eventDateSuffixLabel.text = nil;
+    self.aboutLabel.text = nil;
+}
+
+-(void)createNavBar {
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
     UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
     NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
-
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
     [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
@@ -44,12 +52,21 @@
     UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
     [self.navigationItem setRightBarButtonItem:changeLocationButton];
 
+}
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self clearPlaceholderLabels];
+    
+    [self createNavBar];
+    
     [self.cityBorderView.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.cityBorderView.layer setBorderWidth:3];
-
+    
     [self.aboutBorderView.layer setBorderColor:[UIColor blackColor].CGColor];
     [self.aboutBorderView.layer setBorderWidth:3];
-
+    
     [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
         self.city = city;
         [self.city.bosses enumerateObjectsUsingBlock:^(NNBoss *boss, NSUInteger idx, BOOL *stop) {
@@ -64,7 +81,7 @@
             [self makeCircle:image];
             [self loadImage:image forPath:[presenter pic]];
         }];
-
+        
         [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
             UIImageView *image = [self.cityPhotos objectAtIndex:idx];
             [self loadImage:image forPath:imagePath];
@@ -83,7 +100,16 @@
                                    delegate:nil cancelButtonTitle:@"ok"
                           otherButtonTitles:nil] show];
     }];
+    
+}
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self createNavBar];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)setupDateLabel {
@@ -123,10 +149,6 @@
     CALayer *imageLayer = imageView.layer;
     [imageLayer setCornerRadius:imageView.frame.size.height/2];
     [imageLayer setMasksToBounds:YES];
-}
-
--(void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (IBAction)facebookTapped:(id)sender {

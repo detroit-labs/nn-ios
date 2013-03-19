@@ -32,7 +32,7 @@
         self.hashtag = [dictionary nonNullStringForKey:@"hashtag"];
         self.bannerImage = [dictionary nonNullStringForKey:@"banner_image"];
         self.about = [dictionary nonNullStringForKey:@"description"];
-        self.yearEst = [dictionary nonNullStringForKey:@"year_est"];
+        self.yearEst = [NSNumber numberWithInt:[[dictionary nonNullStringForKey:@"year_est"] intValue]];
         self.nextEvent = [[NNEvent alloc] initWithDictionary:[dictionary objectForKey:@"next_event"]];
         NSArray *rawBosses = [dictionary objectForKey:@"bosses"];
         NSMutableArray *bosses = [[NSMutableArray alloc] init];

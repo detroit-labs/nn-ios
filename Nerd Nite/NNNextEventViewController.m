@@ -14,6 +14,7 @@
 #import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
 #import "NNPresenter.h"
+#import "NNService.h"
 
 @interface NNNextEventViewController()
     @property(nonatomic, strong) NNCity *city;
@@ -26,14 +27,23 @@
     self = [super initWithNibName:@"NNNextEventViewController" bundle:nil];
     if (self){
         self.city = city;
+        self.service = [[NNService alloc] init];
     }
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)clearPlaceholderLabels {
+    self.cityLabel.text = nil;
+    self.eventTitle.text = nil;
+    self.eventVenueLabel.text = nil;
+    self.eventDateLabel.text = nil;
+    self.eventDateSuffixLabel.text = nil;
+    self.aboutLabel.text = nil;
+}
+
+-(void)createNavBar {
     [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
+    [self.navigationController.navigationBar.topItem setTitle:@"next event"];
     UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
     NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
     
@@ -41,43 +51,54 @@
     [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
     [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
     [self.navigationItem setHidesBackButton:YES];
-    UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
-    [self.navigationItem setRightBarButtonItem:changeLocationButton];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
+    [self.navigationItem setRightBarButtonItem:backButton];
     
-//    [self.cityBorderView.layer setBorderColor:[UIColor whiteColor].CGColor];
-//    [self.cityBorderView.layer setBorderWidth:3];
-//    
-//    [self.aboutBorderView.layer setBorderColor:[UIColor blackColor].CGColor];
-//    [self.aboutBorderView.layer setBorderWidth:3];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self createNavBar];
+}
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
     
-    NSString *path = [NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/cities/%@", self.city.id];
-    AFJSONRequestOperation *cityOp = [AFJSONRequestOperation
-                                      JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
-                                      success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                          self.city = [[NNCity alloc] initWithDetail:JSON];
-                                          [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-                                          [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
-                                              UIImageView *image = [self.presenterImages objectAtIndex:idx];
-                                              [self makeCircle:image];
-                                              [self loadImage:image forPath:[presenter pic]];
-                                          }];
-                                          
-                                          self.cityLabel.text = self.city.name;
-                                          self.eventTitle.text = self.city.nextEvent.title;
-                                          self.eventVenueLabel.text = self.city.nextEvent.venueName;
-                                          self.eventVenueAddressLabel.text = self.city.nextEvent.address;
-                                          [self setupDateLabel];
-                                      } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                          [[[UIAlertView alloc] initWithTitle:@"NOES"
-                                                                      message:@"Couldn't get city info!!"
-                                                                     delegate:nil
-                                                            cancelButtonTitle:@"ok"
-                                                            otherButtonTitles:nil] show];
-                                      }];
+    [self clearPlaceholderLabels];
+
+    [self createNavBar];
     
-    [cityOp start];
-    UILabel *presenterLabel = [self.presenterNames objectAtIndex:0];
-    [(UIScrollView *)self.view setContentSize:CGSizeMake(self.view.frame.size.width, presenterLabel.frame.origin.y + presenterLabel.frame.size.height + 20)];
+    [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
+        self.city = city;
+        [self loadImage:self.mainPicture forPath:self.city.bannerImage];
+        [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
+            UIImageView *image = [self.presenterImages objectAtIndex:idx];
+            [self makeCircle:image];
+            [self loadImage:image forPath:[presenter pic]];
+        }];
+        
+        [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
+            UIImageView *image = [self.cityPhotos objectAtIndex:idx];
+            [self loadImage:image forPath:imagePath];
+        }];
+        self.cityLabel.text = self.city.name;
+        self.eventTitle.text = self.city.nextEvent.title;
+        self.eventVenueLabel.text = self.city.nextEvent.venueName;
+        [self setupDateLabel];
+        self.aboutLabel.text = self.city.about;
+        UIView *lastPresenter = [self.presenterNames objectAtIndex:[self.city.nextEvent.presenters count] - 1];
+        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastPresenter.frame.origin.y + lastPresenter.frame.size.height + 20)];
+    } andFailure:^() {
+        [[[UIAlertView alloc] initWithTitle:@"NOES"
+                                    message:@"Couldn't get city info!!"
+                                   delegate:nil cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+    }];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)loadImage:(UIImageView *)imageView forPath:(NSString *)path {
@@ -119,5 +140,20 @@
     self.eventDateSuffixLabel.text = [[suffixes objectAtIndex:date_day - 1] uppercaseString];
 }
 
+- (IBAction)facebookTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.city.facebook]];
+}
+
+- (IBAction)twitterTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://twitter.com/%@", self.city.twitter]]];
+}
+
+- (IBAction)buyTicketsTapped:(id)sender {
+    
+}
+
+-(void)goBack {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
