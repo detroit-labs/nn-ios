@@ -12,6 +12,7 @@
 #import "NNPresenter.h"
 #import "NNNextEventViewController.h"
 #import "NNService.h"
+#import "NNPastEventsViewController.h"
 
 @interface NNCityViewController ()
 
@@ -44,14 +45,13 @@
     [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
     UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
     NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
-    
+
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
     [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
     [self.navigationItem setHidesBackButton:YES];
     UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
     [self.navigationItem setRightBarButtonItem:changeLocationButton];
-
 }
 
 -(void)viewDidLoad {
@@ -165,6 +165,8 @@
 }
 
 - (IBAction)previousEventsTapped:(id)sender {
+    NNPastEventsViewController *controller = [[NNPastEventsViewController alloc] initWithCity:self.city];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)upcomingEventsTapped:(id)sender {

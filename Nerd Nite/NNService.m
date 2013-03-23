@@ -6,12 +6,13 @@
 #import "NNService.h"
 #import "AFJSONRequestOperation.h"
 #import "NNCity.h"
+#import "NNEvent.h"
 
 
 @implementation NNService
 
 -(void)getCitiesWithSuccess:(void(^)(NSArray *))success andFailure:(void(^)(void))failure {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://nn-server-dev.herokuapp.com/cities"]];
+    NSURLRequest *request= [self getNSURLRequestForPath:@"cities"];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
            NSArray *rawCities = (NSArray *) JSON;
@@ -30,9 +31,14 @@
     [operation start];
 }
 
+- (NSURLRequest *)getNSURLRequestForPath:(NSString *)path {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/%@", path]]];
+    return request;
+}
+
 - (void)getCity:(NSString *)id withSuccess:(void (^)(NNCity *))success andFailure:(void (^)())failure {
-    NSString *path = [NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/cities/%@", id];
-    AFJSONRequestOperation *cityOp = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
+    NSURLRequest *request= [self getNSURLRequestForPath:[NSString stringWithFormat:@"cities/%@", id]];
+    AFJSONRequestOperation *cityOp = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
          success:^(NSURLRequest *request, NSHTTPURLResponse *response, NSDictionary *JSON) {
              NNCity *city = [[NNCity alloc] initWithDetail:JSON];
              if (success) {
@@ -46,6 +52,26 @@
          }];
 
     [cityOp start];
+}
+
+- (void)getPastEventsForCity:(NNCity *)city withSuccess:(void (^)(NSArray *))success andFailure:(void (^)())failure {
+    NSURLRequest *request= [self getNSURLRequestForPath:[NSString stringWithFormat:@"past-events/%@", city.id]];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            NSArray *rawEvents = (NSArray *) JSON;
+            NSMutableArray *events = [[NSMutableArray alloc] init];
+
+            [rawEvents enumerateObjectsUsingBlock:^(NSDictionary *rawEvent, NSUInteger idx, BOOL *stop) {
+                NNEvent *event = [[NNEvent alloc] initWithDictionary:rawEvent];
+                [events addObject:event];
+            }];
+
+            success(events);
+        }
+        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            failure();
+        }];
+    [operation start];
 }
 
 @end
