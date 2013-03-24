@@ -12,8 +12,7 @@
 
 @interface NNPastEventView : UICollectionViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *eventTitle;
-@property (strong, nonatomic) IBOutlet UILabel *wasLabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventDateSuffixLabel;
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;

@@ -24,7 +24,7 @@
 }
 
 - (void)setEvent:(NNEvent *)event {
-    [self.eventTitle setText:event.title];
+    [self.eventTitleLabel setText:event.title];
     [self.descriptionLabel setText:event.about];
     [self.venueLabel setText:event.venueName];
     [self setupDateLabel:event.date];
@@ -36,11 +36,7 @@
     NSString *dateString = [[df stringFromDate:eventDate] uppercaseString];
     self.eventDateLabel.text = dateString;
 
-    CGRect dateFrame = self.eventDateLabel.frame;
-    CGSize dateSize = [dateString sizeWithFont:self.eventDateLabel.font constrainedToSize:dateFrame.size];
-    CGRect suffixFrame = self.eventDateSuffixLabel.frame;
-    self.eventDateSuffixLabel.frame = CGRectMake(dateFrame.origin.x + dateSize.width,
-            suffixFrame.origin.y, suffixFrame.size.width, suffixFrame.size.height);
+    [self moveLabel:self.eventDateSuffixLabel toTheRightOf:self.eventDateLabel];
 
     NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
     [monthDayFormatter setDateFormat:@"d"];
@@ -49,6 +45,14 @@
             @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"st", @"nd", @"rd", @"th", @"th", @"th", @"th", @"th",
             @"th", @"th", @"st"];
     self.eventDateSuffixLabel.text = [[suffixes objectAtIndex:date_day - 1] uppercaseString];
+}
+
+- (void)moveLabel:(UILabel *)rightLabel toTheRightOf:(UILabel *)leftLabel {
+    CGRect leftFrame = leftLabel.frame;
+    CGSize leftLabelSize = [leftLabel.text sizeWithFont:leftLabel.font constrainedToSize:leftFrame.size];
+    CGRect rightFrame = rightLabel.frame;
+    rightLabel.frame = CGRectMake(leftFrame.origin.x + leftLabelSize.width,
+            rightFrame.origin.y, rightFrame.size.width, rightFrame.size.height);
 }
 
 @end
