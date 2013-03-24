@@ -11,6 +11,7 @@
 #import "NNService.h"
 #import "NNCity.h"
 #import "NNPastEventView.h"
+#import "NNEvent.h"
 
 static NSString *const cellId = @"PastEventCell";
 
@@ -33,12 +34,6 @@ static NSString *const cellId = @"PastEventCell";
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"NNPastEventView" bundle:nil] forCellWithReuseIdentifier:cellId];
-}
-
 -(void)createNavBar {
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
@@ -55,13 +50,23 @@ static NSString *const cellId = @"PastEventCell";
     [super viewDidAppear:animated];
 
     [self createNavBar];
-    CGRect frame = self.collectionView.frame;
-    self.collectionView.frame = (CGRect){frame.origin, {frame.size.width, self.view.frame.size.height - 20}};
 
     [self.service getPastEventsForCity:self.city withSuccess:^(NSArray *events) {
         self.events = events;
-        self.pageControl.numberOfPages = [self.events count];
-        [self.collectionView reloadData];
+        self.pageControl.numberOfPages = [events count];
+
+        __block int x = 0;
+        [events enumerateObjectsUsingBlock:^(NNEvent *event, NSUInteger idx, BOOL *stop) {
+            NNPastEventView *view = [[[NSBundle mainBundle] loadNibNamed:@"NNPastEventView" owner:self options:nil] objectAtIndex:0];
+            [view setEvent:event];
+            [view setFrame:(CGRect){{x, 0}, {view.frame.size.width, self.scrollView.frame.size.height}}];
+            x += view.frame.size.width;
+            [self.scrollView addSubview:view];
+        }];
+        
+        CGSize contentSize = self.scrollView.contentSize;
+        [self.scrollView setContentSize:CGSizeMake(x, contentSize.height)];
+
     } andFailure:^{
         [[[UIAlertView alloc] initWithTitle:@"oh, snap!"
                                    message:@"could not get past events."
@@ -76,21 +81,13 @@ static NSString *const cellId = @"PastEventCell";
     [super didReceiveMemoryWarning];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.events count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NNPastEventView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    [cell setEvent:[self.events objectAtIndex:indexPath.row]];
-    return cell;
-}
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    int page = floor((scrollView.contentOffset.x - 275 / [self.events count]) / 275) + 1;
-    self.pageControl.currentPage = page;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:page inSection:0];
-    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    self.pageControl.currentPage = floor(scrollView.contentOffset.x / 275);
+}
+
+- (IBAction)pageChanged:(id)sender {
+    NSInteger currentPage = [(UIPageControl *)sender currentPage];
+    [self.scrollView setContentOffset:CGPointMake(currentPage * 275, 0) animated:YES];
 }
 
 @end

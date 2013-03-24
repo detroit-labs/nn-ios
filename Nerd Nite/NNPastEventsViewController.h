@@ -10,11 +10,12 @@
 
 @class NNCity;
 
-@interface NNPastEventsViewController :UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
+@interface NNPastEventsViewController :UIViewController <UIScrollViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (id)initWithCity: (NNCity *)city;
+- (IBAction)pageChanged:(id)sender;
 
 @end
