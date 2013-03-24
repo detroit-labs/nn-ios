@@ -108,10 +108,6 @@
     [self createNavBar];
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
 - (void)setupDateLabel {
     NSDate *eventDate = self.city.nextEvent.date;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];

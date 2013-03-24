@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Detroit Labs. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "NNPastEventsViewController.h"
 #import "NNService.h"
 #import "NNCity.h"
@@ -47,18 +48,19 @@ static NSString *const cellId = @"PastEventCell";
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
     [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
-    [self.navigationItem setHidesBackButton:YES];
-    UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
-    [self.navigationItem setRightBarButtonItem:changeLocationButton];
+    [self.navigationItem setHidesBackButton:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     [self createNavBar];
+    CGRect frame = self.collectionView.frame;
+    self.collectionView.frame = (CGRect){frame.origin, {frame.size.width, self.view.frame.size.height - 20}};
 
     [self.service getPastEventsForCity:self.city withSuccess:^(NSArray *events) {
         self.events = events;
+        self.pageControl.numberOfPages = [self.events count];
         [self.collectionView reloadData];
     } andFailure:^{
         [[[UIAlertView alloc] initWithTitle:@"oh, snap!"
@@ -82,6 +84,13 @@ static NSString *const cellId = @"PastEventCell";
     NNPastEventView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     [cell setEvent:[self.events objectAtIndex:indexPath.row]];
     return cell;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int page = floor((scrollView.contentOffset.x - 275 / [self.events count]) / 275) + 1;
+    self.pageControl.currentPage = page;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:page inSection:0];
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
 }
 
 @end

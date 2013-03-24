@@ -10,9 +10,10 @@
 
 @class NNCity;
 
-@interface NNPastEventsViewController :UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface NNPastEventsViewController :UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (id)initWithCity: (NNCity *)city;
 
