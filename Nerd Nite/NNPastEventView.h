@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *eventDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventDateSuffixLabel;
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionLabel;
 
 - (IBAction)voteButtonTapped:(id)sender;
 - (IBAction)picsButtonTapped:(id)sender;
