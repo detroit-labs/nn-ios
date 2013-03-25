@@ -27,6 +27,11 @@
 		589F0EC3847BE09E3F5A9F57 /* NNService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06A007C01A2D5E37D104 /* NNService.m */; };
 		589F0F0D2E6BBEA39F5CF73C /* NNCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */; };
 		589F0F47DC2B5B7AAD765768 /* NNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F073E7A5D502E73493C7C /* NNCity.m */; };
+		8310D2D116FFFEFC00713013 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8310D2D016FFFEFC00713013 /* Icon.png */; };
+		8310D2D316FFFF0500713013 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8310D2D216FFFF0500713013 /* Icon@2x.png */; };
+		8310D2D416FFFF1700713013 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DB16D7DCD500AB85B1 /* Default.png */; };
+		8310D2D516FFFFEB00713013 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DE16D7DCF300AB85B1 /* Default@2x.png */; };
+		8310D2D616FFFFF100713013 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */; };
 		83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */; };
 		83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */; };
 		9659465B16FCE26400EB5898 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463B16FCE26400EB5898 /* arrow.png */; };
@@ -126,9 +131,6 @@
 		96C1B12D16CEB40100D95991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96C1B12B16CEB40100D95991 /* InfoPlist.strings */; };
 		96C1B12F16CEB40100D95991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1B12E16CEB40100D95991 /* main.m */; };
 		96C1B13316CEB40100D95991 /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1B13216CEB40100D95991 /* NNAppDelegate.m */; };
-		96C1B13516CEB40100D95991 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C1B13416CEB40100D95991 /* Default.png */; };
-		96C1B13716CEB40100D95991 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C1B13616CEB40100D95991 /* Default@2x.png */; };
-		96C1B13916CEB40100D95991 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C1B13816CEB40100D95991 /* Default-568h@2x.png */; };
 		96C1B14716CEB40100D95991 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C1B14616CEB40100D95991 /* SenTestingKit.framework */; };
 		96C1B14816CEB40100D95991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C1B12216CEB40100D95991 /* UIKit.framework */; };
 		96C1B14916CEB40100D95991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C1B12416CEB40100D95991 /* Foundation.framework */; };
@@ -174,6 +176,8 @@
 		589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NNUtilities.m"; sourceTree = "<group>"; };
 		589F0F177941788F0D8914BF /* NNPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresenter.m; sourceTree = "<group>"; };
 		589F0F193C630A7E5C104FC4 /* NNPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresenter.h; sourceTree = "<group>"; };
+		8310D2D016FFFEFC00713013 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8310D2D216FFFF0500713013 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewController.xib; sourceTree = "<group>"; };
 		83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
 		83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
@@ -384,10 +388,12 @@
 		96C1B11316CEB40100D95991 = {
 			isa = PBXGroup;
 			children = (
-				969E766A16D98FA60030AB24 /* QuartzCore.framework */,
-				964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */,
-				964E18DE16D7DCF300AB85B1 /* Default@2x.png */,
 				964E18DB16D7DCD500AB85B1 /* Default.png */,
+				964E18DE16D7DCF300AB85B1 /* Default@2x.png */,
+				964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */,
+				8310D2D216FFFF0500713013 /* Icon@2x.png */,
+				8310D2D016FFFEFC00713013 /* Icon.png */,
+				969E766A16D98FA60030AB24 /* QuartzCore.framework */,
 				96C1B12816CEB40100D95991 /* Nerd Nite */,
 				96B7856A16D8401800C943F1 /* Images */,
 				96C1B14C16CEB40100D95991 /* Nerd NiteTests */,
@@ -571,9 +577,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C1B12D16CEB40100D95991 /* InfoPlist.strings in Resources */,
-				96C1B13516CEB40100D95991 /* Default.png in Resources */,
-				96C1B13716CEB40100D95991 /* Default@2x.png in Resources */,
-				96C1B13916CEB40100D95991 /* Default-568h@2x.png in Resources */,
 				96F6F15116CECB2C0029BA26 /* NNCitiesListViewController.xib in Resources */,
 				96B4AAB716D829A00071B430 /* NNCityTableViewCell.xib in Resources */,
 				96B7855E16D839E000C943F1 /* NNCityViewController.xib in Resources */,
@@ -626,6 +629,11 @@
 				965946A516FCE4CB00EB5898 /* prev-vote-up-bttn@2x.png in Resources */,
 				965946B316FD035400EB5898 /* NNPastEventsViewController.xib in Resources */,
 				96C1B2BB16FD0DA600EDA714 /* NNPastEventView.xib in Resources */,
+				8310D2D116FFFEFC00713013 /* Icon.png in Resources */,
+				8310D2D316FFFF0500713013 /* Icon@2x.png in Resources */,
+				8310D2D416FFFF1700713013 /* Default.png in Resources */,
+				8310D2D516FFFFEB00713013 /* Default@2x.png in Resources */,
+				8310D2D616FFFFF100713013 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
