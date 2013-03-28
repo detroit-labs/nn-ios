@@ -32,6 +32,7 @@
 		8310D2D416FFFF1700713013 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DB16D7DCD500AB85B1 /* Default.png */; };
 		8310D2D516FFFFEB00713013 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DE16D7DCF300AB85B1 /* Default@2x.png */; };
 		8310D2D616FFFFF100713013 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */; };
+		8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8321EC2E17049A2E00FD74AC /* NNViewController.m */; };
 		83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */; };
 		83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */; };
 		9659465B16FCE26400EB5898 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463B16FCE26400EB5898 /* arrow.png */; };
@@ -178,6 +179,8 @@
 		589F0F193C630A7E5C104FC4 /* NNPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresenter.h; sourceTree = "<group>"; };
 		8310D2D016FFFEFC00713013 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8310D2D216FFFF0500713013 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		8321EC2D17049A2E00FD74AC /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNViewController.h; path = "View Controllers/NNViewController.h"; sourceTree = "<group>"; };
+		8321EC2E17049A2E00FD74AC /* NNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNViewController.m; path = "View Controllers/NNViewController.m"; sourceTree = "<group>"; };
 		83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewController.xib; sourceTree = "<group>"; };
 		83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
 		83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
@@ -477,6 +480,8 @@
 		96F6F13916CEB8BF0029BA26 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8321EC2D17049A2E00FD74AC /* NNViewController.h */,
+				8321EC2E17049A2E00FD74AC /* NNViewController.m */,
 				589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */,
 				589F00206A98DB00F889B845 /* NNCityViewController.h */,
 				96B7855D16D839E000C943F1 /* NNCityViewController.xib */,
@@ -751,6 +756,7 @@
 				83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */,
 				965946B116FD035400EB5898 /* NNPastEventsViewController.m in Sources */,
 				96C1B2B816FD0D9100EDA714 /* NNPastEventView.m in Sources */,
+				8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

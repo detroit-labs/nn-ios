@@ -7,18 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NNViewController.h"
 
 @class NNCity;
 @class NNService;
 
-@interface NNNextEventViewController : UIViewController
+@interface NNNextEventViewController : NNViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *mainPicture;
 @property (strong, nonatomic) IBOutlet UIView *cityBorderView;
 @property (strong, nonatomic) IBOutlet UILabel *cityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventTitle;
-@property (strong, nonatomic) IBOutlet UILabel *eventDateLabel;
-@property (strong, nonatomic) IBOutlet UILabel *eventDateSuffixLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *eventDateLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *eventDateSuffixLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventVenueLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventVenueAddressLabel;
 @property (strong, nonatomic) IBOutlet UIView *aboutBorderView;

@@ -16,8 +16,6 @@
 
 @interface NNCityViewController ()
 
-@property(nonatomic, strong) NNCity *city;
-
 @end
 
 @implementation NNCityViewController
@@ -41,14 +39,8 @@
 }
 
 -(void)createNavBar {
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
-    UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
-    NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
-
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
-    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
+    [super createNavBar:@"nerd nite"];
+    
     [self.navigationItem setHidesBackButton:YES];
     UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
     [self.navigationItem setRightBarButtonItem:changeLocationButton];
@@ -103,48 +95,13 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self createNavBar];
-}
-
-- (void)setupDateLabel {
-    NSDate *eventDate = self.city.nextEvent.date;
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MMMM dd"];
-    NSString *dateString = [[df stringFromDate:eventDate] uppercaseString];
-    self.eventDateLabel.text = dateString;
-
-    CGRect dateFrame = self.eventDateLabel.frame;
-    CGSize dateSize = [dateString sizeWithFont:self.eventDateLabel.font constrainedToSize:dateFrame.size];
-    CGRect suffixFrame = self.eventDateSuffixLabel.frame;
-    self.eventDateSuffixLabel.frame = CGRectMake(dateFrame.origin.x + dateSize.width,
-            suffixFrame.origin.y, suffixFrame.size.width, suffixFrame.size.height);
-
-    NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
-    [monthDayFormatter setDateFormat:@"d"];
-    int date_day = [[monthDayFormatter stringFromDate:eventDate] intValue];
-    NSArray *suffixes = @[@"st",@"nd", @"rd", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th",
-            @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"st", @"nd", @"rd", @"th", @"th", @"th", @"th", @"th",
-            @"th", @"th", @"st"];
-    self.eventDateSuffixLabel.text = [[suffixes objectAtIndex:date_day - 1] uppercaseString];
-}
-
-- (void)loadImage:(UIImageView *)imageView forPath:(NSString *)path {
-    if(path){
-        AFImageRequestOperation *imageRequestOperation = [AFImageRequestOperation
-                imageRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
-                                         success:^(UIImage *image) {
-                                             [imageView setImage:image];
-                                         }];
-        [imageRequestOperation start];
-    }
-}
-
-- (void)makeCircle:(UIImageView *)imageView {
-    CALayer *imageLayer = imageView.layer;
-    [imageLayer setCornerRadius:imageView.frame.size.height/2];
-    [imageLayer setMasksToBounds:YES];
 }
 
 - (IBAction)facebookTapped:(id)sender {

@@ -7,18 +7,14 @@
 //
 
 #import "NNNextEventViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "NNCityViewController.h"
 #import "NNCity.h"
-#import "AFImageRequestOperation.h"
 #import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
 #import "NNPresenter.h"
 #import "NNService.h"
 
 @interface NNNextEventViewController()
-    @property(nonatomic, strong) NNCity *city;
-    @property(nonatomic, strong) NNEvent *event;
 @end
 
 @implementation NNNextEventViewController
@@ -42,14 +38,8 @@
 }
 
 -(void)createNavBar {
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController.navigationBar.topItem setTitle:@"next event"];
-    UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
-    NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
+    [super createNavBar:@"next event"];
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
-    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
     [self.navigationItem setHidesBackButton:YES];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     [self.navigationItem setRightBarButtonItem:backButton];
@@ -99,45 +89,6 @@
 
 -(void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES];
-}
-
-- (void)loadImage:(UIImageView *)imageView forPath:(NSString *)path {
-    if(path){
-        AFImageRequestOperation *imageRequestOperation = [AFImageRequestOperation
-                                                          imageRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]
-                                                          success:^(UIImage *image) {
-                                                              [imageView setImage:image];
-                                                          }];
-        [imageRequestOperation start];
-    }
-}
-
-- (void)makeCircle:(UIImageView *)imageView {
-    CALayer *imageLayer = imageView.layer;
-    [imageLayer setCornerRadius:imageView.frame.size.height/2];
-    [imageLayer setMasksToBounds:YES];
-}
-
-- (void)setupDateLabel {
-    NSDate *eventDate = self.city.nextEvent.date;
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MMMM dd"];
-    NSString *dateString = [[df stringFromDate:eventDate] uppercaseString];
-    self.eventDateLabel.text = dateString;
-    
-    CGRect dateFrame = self.eventDateLabel.frame;
-    CGSize dateSize = [dateString sizeWithFont:self.eventDateLabel.font constrainedToSize:dateFrame.size];
-    CGRect suffixFrame = self.eventDateSuffixLabel.frame;
-    self.eventDateSuffixLabel.frame = CGRectMake(dateFrame.origin.x + dateSize.width,
-                                                 suffixFrame.origin.y, suffixFrame.size.width, suffixFrame.size.height);
-    
-    NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
-    [monthDayFormatter setDateFormat:@"d"];
-    int date_day = [[monthDayFormatter stringFromDate:eventDate] intValue];
-    NSArray *suffixes = @[@"st",@"nd", @"rd", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th",
-                          @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"st", @"nd", @"rd", @"th", @"th", @"th", @"th", @"th",
-                          @"th", @"th", @"st"];
-    self.eventDateSuffixLabel.text = [[suffixes objectAtIndex:date_day - 1] uppercaseString];
 }
 
 - (IBAction)facebookTapped:(id)sender {
