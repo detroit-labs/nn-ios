@@ -35,6 +35,7 @@
     self.eventDateLabel.text = nil;
     self.eventDateSuffixLabel.text = nil;
     self.aboutLabel.text = nil;
+    self.eventVenueAddressLabel.text = nil;
 }
 
 -(void)createNavBar {
@@ -60,11 +61,19 @@
     
     [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
         self.city = city;
+        NNEvent *nextEvent = self.city.nextEvent;
         [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-        [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
+        [nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
             UIImageView *image = [self.presenterImages objectAtIndex:idx];
             [self makeCircle:image];
             [self loadImage:image forPath:[presenter pic]];
+            ((UILabel *) [self.presenterNames objectAtIndex:idx]).text = [presenter name];
+            UILabel *topicLabel = ((UILabel *) [self.presenterTopics objectAtIndex:idx]);
+            ((UILabel *) [self.presenterTopics objectAtIndex:idx]).text = [presenter topic] ? [presenter topic] : @"";
+            [((UILabel *) [self.presenterTopics objectAtIndex:idx]) sizeToFit];
+            CGRect topicFrame = topicLabel.frame;
+            topicFrame = CGRectMake(topicFrame.origin.x, topicFrame.origin.y, 90, topicFrame.size.height);
+            topicLabel.frame = topicFrame;
         }];
         
         [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
@@ -72,12 +81,18 @@
             [self loadImage:image forPath:imagePath];
         }];
         self.cityLabel.text = self.city.name;
-        self.eventTitle.text = self.city.nextEvent.title;
-        self.eventVenueLabel.text = self.city.nextEvent.venueName;
+        self.eventTitle.text = nextEvent.title;
+        self.eventVenueLabel.text = nextEvent.venueName;
         [self setupDateLabel];
-        self.aboutLabel.text = self.city.about;
-        UIView *lastPresenter = [self.presenterNames objectAtIndex:[self.city.nextEvent.presenters count] - 1];
-        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastPresenter.frame.origin.y + lastPresenter.frame.size.height + 20)];
+        self.eventVenueAddressLabel.text = nextEvent.address;
+        self.aboutLabel.text = nextEvent.about;
+        [self.aboutLabel sizeToFit];
+        
+        CGRect glassesFrame = self.littleGlasses.frame;
+        
+        
+        UIView *lastTopic = [self.presenterTopics objectAtIndex:[nextEvent.presenters count] - 1];
+        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastTopic.frame.origin.y + lastTopic.frame.size.height + 20)];
     } andFailure:^() {
         [[[UIAlertView alloc] initWithTitle:@"NOES"
                                     message:@"Couldn't get city info!!"
