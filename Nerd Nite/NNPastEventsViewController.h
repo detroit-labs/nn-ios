@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNViewController.h"
 
 @class NNCity;
 
-@interface NNPastEventsViewController :UIViewController <UIScrollViewDelegate>
+@interface NNPastEventsViewController : NNViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;

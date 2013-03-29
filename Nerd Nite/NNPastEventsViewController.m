@@ -17,8 +17,6 @@ static NSString *const cellId = @"PastEventCell";
 
 @interface NNPastEventsViewController ()
 
-@property (strong, nonatomic) NNService *service;
-@property (strong, nonatomic) NNCity *city;
 @property (nonatomic, strong) NSArray *events;
 
 @end
@@ -35,14 +33,7 @@ static NSString *const cellId = @"PastEventCell";
 }
 
 -(void)createNavBar {
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController.navigationBar.topItem setTitle:@"nerd nite"];
-    UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
-    NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};
-
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTitleTextAttributes:titleBarTextAttributes];
-    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:6.0f forBarMetrics:UIBarMetricsDefault];
+    [super createNavBar:@"past events"];
     [self.navigationItem setHidesBackButton:NO];
 }
 
