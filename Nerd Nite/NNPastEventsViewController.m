@@ -49,7 +49,7 @@ static NSString *const cellId = @"PastEventCell";
         __block int x = 0;
         [events enumerateObjectsUsingBlock:^(NNEvent *event, NSUInteger idx, BOOL *stop) {
             NNPastEventView *view = [[[NSBundle mainBundle] loadNibNamed:@"NNPastEventView" owner:self options:nil] objectAtIndex:0];
-            [view setEvent:event];
+            [view setEventToView:event];
             [view setFrame:(CGRect){{x, 0}, {view.frame.size.width, self.scrollView.frame.size.height}}];
             x += view.frame.size.width;
             [self.scrollView addSubview:view];
