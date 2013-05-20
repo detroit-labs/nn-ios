@@ -103,6 +103,10 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     [self createNavBar];
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if(collectionView == self.bossCollectionView) {
         return [self.city.bosses count];
