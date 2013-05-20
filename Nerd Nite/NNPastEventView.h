@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class NNEvent;
+@protocol NNPastEventDelegate;
 
 @interface NNPastEventView : UICollectionViewCell
 
@@ -20,6 +21,6 @@
 
 - (IBAction)voteButtonTapped:(id)sender;
 - (IBAction)picsButtonTapped:(id)sender;
-- (void)setEvent:(NNEvent *)event;
+- (void)setEventToView:(NNEvent *)event;
 
 @end

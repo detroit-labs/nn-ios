@@ -8,6 +8,13 @@
 
 #import "NNPastEventView.h"
 #import "NNEvent.h"
+#import "NNEventPicturesViewController.h"
+
+@interface NNPastEventView ()
+
+@property(nonatomic, strong) NNEvent *event;
+
+@end
 
 @implementation NNPastEventView
 
@@ -21,9 +28,13 @@
 }
 
 - (IBAction)picsButtonTapped:(id)sender {
+    NNEventPicturesViewController *controller = [[NNEventPicturesViewController alloc] init];
+    [controller.view setFrame:self.frame];
+    [self addSubview:controller.view];
 }
 
-- (void)setEvent:(NNEvent *)event {
+- (void)setEventToView:(NNEvent *)event {
+    self.event = event;
     [self.eventTitleLabel setText:event.title];
     [self.descriptionLabel setText:event.about];
     [self.venueLabel setText:event.venueName];

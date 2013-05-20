@@ -10,8 +10,7 @@
 @class NNCity;
 @class NNService;
 
-
-@interface NNCityViewController : NNViewController
+@interface NNCityViewController : NNViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *mainPicture;
 @property (strong, nonatomic) IBOutlet UIView *cityBorderView;
@@ -22,10 +21,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *yearEstablishedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *littleGlasses;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *presenterImages;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *cityPhotos;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *bossImages;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bossLabels;
+@property (strong, nonatomic) IBOutlet UICollectionView *bossCollectionView;
+@property (strong, nonatomic) IBOutlet UICollectionView *cityPreviewImages;
+@property (strong, nonatomic) IBOutlet UICollectionView *presenterImages;
 
 @property(nonatomic, strong) NNService *service;
 

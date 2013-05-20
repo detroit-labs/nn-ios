@@ -13,6 +13,13 @@
 #import "NNNextEventViewController.h"
 #import "NNService.h"
 #import "NNPastEventsViewController.h"
+#import "NNBossCollectionViewCell.h"
+#import "NNCityPreviewImageCollectionViewCell.h"
+#import "NNPresenterImageCollectionViewCell.h"
+
+static NSString *const bossCellIdentifier = @"NNBossCell";
+static NSString *const previewImageCellIdentifier = @"NNCityPreviewImageCollectionViewCell";
+static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollectionViewCell";
 
 @interface NNCityViewController ()
 
@@ -48,7 +55,11 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [self.bossCollectionView registerNib:[UINib nibWithNibName:@"NNBossCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:bossCellIdentifier];
+    [self.cityPreviewImages registerNib:[UINib nibWithNibName:@"NNCityPreviewImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:previewImageCellIdentifier];
+    [self.presenterImages registerNib:[UINib nibWithNibName:@"NNPresenterImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:presenterImageCellIdentifier];
+
     [self clearPlaceholderLabels];
     
     [self createNavBar];
@@ -61,31 +72,19 @@
     
     [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
         self.city = city;
-        [self.city.bosses enumerateObjectsUsingBlock:^(NNBoss *boss, NSUInteger idx, BOOL *stop) {
-            UIImageView *image = [self.bossImages objectAtIndex:idx];
-            [self makeCircle:image];
-            [self loadImage:image forPath:[boss pic]];
-            ((UILabel *) [self.bossLabels objectAtIndex:idx]).text = [boss name];
-        }];
+        [self.bossCollectionView reloadData];
+        [self.cityPreviewImages reloadData];
+        [self.presenterImages reloadData];
         [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-        [self.city.nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
-            UIImageView *image = [self.presenterImages objectAtIndex:idx];
-            [self makeCircle:image];
-            [self loadImage:image forPath:[presenter pic]];
-        }];
-        
-        [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
-            UIImageView *image = [self.cityPhotos objectAtIndex:idx];
-            [self loadImage:image forPath:imagePath];
-        }];
         self.cityLabel.text = self.city.name;
         self.eventTitle.text = self.city.nextEvent.title;
         self.eventVenueLabel.text = self.city.nextEvent.venueName;
         [self setupDateLabel];
         self.aboutLabel.text = self.city.about;
         self.yearEstablishedLabel.text = [self.city.yearEst stringValue];
-        UIView *lastBoss = [self.bossLabels objectAtIndex:[self.city.bosses count] - 1];
-        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastBoss.frame.origin.y + lastBoss.frame.size.height + 20)];
+        [(UIScrollView *) self.view
+                setContentSize:CGSizeMake(self.view.frame.size.width,
+                        self.bossCollectionView.frame.origin.y + 252 + 20)];
     } andFailure:^() {
         [[[UIAlertView alloc] initWithTitle:@"NOES"
                                     message:@"Couldn't get city info!!"
@@ -102,6 +101,41 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self createNavBar];
+}
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if(collectionView == self.bossCollectionView) {
+        return [self.city.bosses count];
+    } else if (collectionView == self.cityPreviewImages){
+        return [self.city.previewImages count];
+    } else if (collectionView == self.presenterImages){
+        return [self.city.nextEvent.presenters count];
+    }
+    return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if(collectionView == self.bossCollectionView) {
+        NNBoss *boss = [self.city.bosses objectAtIndex:[indexPath row]];
+        NNBossCollectionViewCell *bossCell = [collectionView dequeueReusableCellWithReuseIdentifier:bossCellIdentifier forIndexPath:indexPath];
+        [bossCell setBoss:boss];
+        return bossCell;
+    } else if (collectionView == self.cityPreviewImages) {
+        NSString *imagePath = [self.city.previewImages objectAtIndex:[indexPath row]];
+        NNCityPreviewImageCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:previewImageCellIdentifier forIndexPath:indexPath];
+        [imageCell setImage:imagePath];
+        return imageCell;
+    } else if (collectionView == self.presenterImages) {
+        NNPresenter *presenter = [self.city.nextEvent.presenters objectAtIndex:[indexPath row]];
+        NNPresenterImageCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:presenterImageCellIdentifier forIndexPath:indexPath];
+        [imageCell setImage:[presenter pic]];
+        return imageCell;
+    }
+    return nil;
 }
 
 - (IBAction)facebookTapped:(id)sender {
@@ -142,8 +176,6 @@
     [self setAboutLabel:nil];
     [self setLittleGlasses:nil];
     [self setPresenterImages:nil];
-    [self setCityPhotos:nil];
-    [self setBossImages:nil];
     [super viewDidUnload];
 }
 @end
