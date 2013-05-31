@@ -11,6 +11,7 @@
 #import "NNCity.h"
 #import "NNEvent.h"
 #import "AFImageRequestOperation.h"
+#import "NNDateLabelFormatter.h"
 
 @interface NNViewController ()
 @end
@@ -18,26 +19,12 @@
 @implementation NNViewController
 
 - (void)setupDateLabel {
+    NSDate *date = self.city.nextEvent.date;
+    UILabel *eventDateLabel = self.eventDateLabel;
+    UILabel *eventDateSuffixLabel = self.eventDateSuffixLabel;
+
     if(self.city.nextEvent.id) {
-        NSDate *eventDate = self.city.nextEvent.date;
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"MMMM dd"];
-        NSString *dateString = [[df stringFromDate:eventDate] uppercaseString];
-        self.eventDateLabel.text = dateString;
-
-        CGRect dateFrame = self.eventDateLabel.frame;
-        CGSize dateSize = [dateString sizeWithFont:self.eventDateLabel.font constrainedToSize:dateFrame.size];
-        CGRect suffixFrame = self.eventDateSuffixLabel.frame;
-        self.eventDateSuffixLabel.frame = CGRectMake(dateFrame.origin.x + dateSize.width,
-                                                     suffixFrame.origin.y, suffixFrame.size.width, suffixFrame.size.height);
-
-        NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
-        [monthDayFormatter setDateFormat:@"d"];
-        int date_day = [[monthDayFormatter stringFromDate:eventDate] intValue];
-        NSArray *suffixes = @[@"st",@"nd", @"rd", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th",
-                              @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"st", @"nd", @"rd", @"th", @"th", @"th", @"th", @"th",
-                              @"th", @"th", @"st"];
-        self.eventDateSuffixLabel.text = [[suffixes objectAtIndex:date_day - 1] uppercaseString];
+        [NNDateLabelFormatter setUpDateLabel:eventDateLabel andSuffixLabel:eventDateSuffixLabel forDate:date];
     }
 }
 
