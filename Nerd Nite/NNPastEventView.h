@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class NNEvent;
-@protocol NNPastEventDelegate;
+
+@protocol NNPastEventDelegate <NSObject>
+
+- (void)viewPhotosFromEvent:(NNEvent *)event;
+
+@end
 
 @interface NNPastEventView : UICollectionViewCell
 
@@ -21,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *voteButton;
 @property (strong, nonatomic) IBOutlet UIButton *picsButton;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property(nonatomic, strong) id<NNPastEventDelegate> delegate;
 
 - (IBAction)voteButtonTapped:(id)sender;
 - (IBAction)picsButtonTapped:(id)sender;

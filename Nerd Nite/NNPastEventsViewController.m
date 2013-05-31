@@ -12,6 +12,7 @@
 #import "NNCity.h"
 #import "NNPastEventView.h"
 #import "NNEvent.h"
+#import "NNEventPicturesViewController.h"
 
 static NSString *const cellId = @"PastEventCell";
 
@@ -52,6 +53,7 @@ static NSString *const cellId = @"PastEventCell";
             [view setEventToView:event];
             [view setFrame:(CGRect){{x, 0}, {view.frame.size.width, self.scrollView.frame.size.height}}];
             x += view.frame.size.width;
+            [view setDelegate:self];
             [self.scrollView addSubview:view];
         }];
         
@@ -79,6 +81,13 @@ static NSString *const cellId = @"PastEventCell";
 - (IBAction)pageChanged:(id)sender {
     NSInteger currentPage = [(UIPageControl *)sender currentPage];
     [self.scrollView setContentOffset:CGPointMake(currentPage * 275, 0) animated:YES];
+}
+
+- (void)viewPhotosFromEvent:(NNEvent *)event {
+    NNEventPicturesViewController *controller = [[NNEventPicturesViewController alloc] init];
+    CGRect navControllerFrame = self.navigationController.view.frame;
+    [controller.view setFrame:CGRectMake(0, 20, navControllerFrame.size.width, navControllerFrame.size.height - 20)];
+    [self.navigationController.view addSubview:controller.view];
 }
 
 @end

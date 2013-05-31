@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Detroit Labs. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "NNPastEventView.h"
 #import "NNEvent.h"
 #import "NNEventPicturesViewController.h"
@@ -30,9 +29,7 @@
 }
 
 - (IBAction)picsButtonTapped:(id)sender {
-    NNEventPicturesViewController *controller = [[NNEventPicturesViewController alloc] init];
-    [controller.view setFrame:self.frame];
-    [self addSubview:controller.view];
+    [self.delegate viewPhotosFromEvent:self.event];
 }
 
 - (void)setEventToView:(NNEvent *)event {
