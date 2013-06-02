@@ -19,6 +19,7 @@ static NSString *const cellId = @"PastEventCell";
 @interface NNPastEventsViewController ()
 
 @property (nonatomic, strong) NSArray *events;
+@property (nonatomic, strong) NNEventPicturesViewController *eventPicturesViewController;
 
 @end
 
@@ -33,9 +34,15 @@ static NSString *const cellId = @"PastEventCell";
     return self;
 }
 
--(void)createNavBar {
+- (void)createNavBar {
     [super createNavBar:@"past events"];
     [self.navigationItem setHidesBackButton:NO];
+}
+
+- (void)viewDidLoad {
+    self.eventPicturesViewController = [[NNEventPicturesViewController alloc] init];
+    CGRect navControllerFrame = self.navigationController.view.frame;
+    [self.eventPicturesViewController.view setFrame:CGRectMake(0, 20, navControllerFrame.size.width, navControllerFrame.size.height - 20)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -84,10 +91,7 @@ static NSString *const cellId = @"PastEventCell";
 }
 
 - (void)viewPhotosFromEvent:(NNEvent *)event {
-    NNEventPicturesViewController *controller = [[NNEventPicturesViewController alloc] init];
-    CGRect navControllerFrame = self.navigationController.view.frame;
-    [controller.view setFrame:CGRectMake(0, 20, navControllerFrame.size.width, navControllerFrame.size.height - 20)];
-    [self.navigationController.view addSubview:controller.view];
+    [self.navigationController.view addSubview:self.eventPicturesViewController.view];
 }
 
 @end
