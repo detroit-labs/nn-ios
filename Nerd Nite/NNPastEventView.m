@@ -9,6 +9,7 @@
 #import "NNPastEventView.h"
 #import "NNEvent.h"
 #import "NNEventPicturesViewController.h"
+#import "NNDateLabelFormatter.h"
 
 @interface NNPastEventView ()
 
@@ -28,42 +29,36 @@
 }
 
 - (IBAction)picsButtonTapped:(id)sender {
-    NNEventPicturesViewController *controller = [[NNEventPicturesViewController alloc] init];
-    [controller.view setFrame:self.frame];
-    [self addSubview:controller.view];
+    [self.delegate viewPhotosFromEvent:self.event];
 }
 
 - (void)setEventToView:(NNEvent *)event {
     self.event = event;
+
     [self.eventTitleLabel setText:event.title];
     [self.descriptionLabel setText:event.about];
     [self.venueLabel setText:event.venueName];
-    [self setupDateLabel:event.date];
+    [NNDateLabelFormatter setUpDateLabel:self.eventDateLabel andSuffixLabel:self.eventDateSuffixLabel forDate:event.date];
+
+    [self resizeLabel:self.descriptionLabel toFitText:event.about];
+
+    [self moveViewElement:self.voteButton belowViewElement:self.descriptionLabel];
+    [self moveViewElement:self.picsButton belowViewElement:self.voteButton];
+
+    float viewHeight = self.picsButton.frame.origin.y + self.picsButton.frame.size.height + 10;
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, viewHeight)];
 }
 
-- (void)setupDateLabel: (NSDate *)eventDate {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MMMM dd"];
-    NSString *dateString = [[df stringFromDate:eventDate] uppercaseString];
-    self.eventDateLabel.text = dateString;
-
-    [self moveLabel:self.eventDateSuffixLabel toTheRightOf:self.eventDateLabel];
-
-    NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
-    [monthDayFormatter setDateFormat:@"d"];
-    int date_day = [[monthDayFormatter stringFromDate:eventDate] intValue];
-    NSArray *suffixes = @[@"st",@"nd", @"rd", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"th",
-            @"th", @"th", @"th", @"th", @"th", @"th", @"th", @"st", @"nd", @"rd", @"th", @"th", @"th", @"th", @"th",
-            @"th", @"th", @"st"];
-    self.eventDateSuffixLabel.text = [[suffixes objectAtIndex:date_day - 1] uppercaseString];
+- (void)resizeLabel:(UILabel *)label toFitText:(NSString *)text {
+    CGRect originalDescriptionFrame = label.frame;
+    CGFloat descriptionWidth = originalDescriptionFrame.size.width;
+    CGSize descriptionSize = [text sizeWithFont:label.font constrainedToSize:CGSizeMake(descriptionWidth, MAXFLOAT)];
+    [label setFrame:(CGRect) {originalDescriptionFrame.origin, {descriptionWidth, descriptionSize.height}}];
 }
 
-- (void)moveLabel:(UILabel *)rightLabel toTheRightOf:(UILabel *)leftLabel {
-    CGRect leftFrame = leftLabel.frame;
-    CGSize leftLabelSize = [leftLabel.text sizeWithFont:leftLabel.font constrainedToSize:leftFrame.size];
-    CGRect rightFrame = rightLabel.frame;
-    rightLabel.frame = CGRectMake(leftFrame.origin.x + leftLabelSize.width,
-            rightFrame.origin.y, rightFrame.size.width, rightFrame.size.height);
+- (void)moveViewElement:(UIView *)bottom belowViewElement:(UIView *)top {
+    float bottomY = top.frame.origin.y + top.frame.size.height + 10;
+    [bottom setFrame:(CGRect) {{bottom.frame.origin.x, bottomY}, bottom.frame.size}];
 }
 
 @end

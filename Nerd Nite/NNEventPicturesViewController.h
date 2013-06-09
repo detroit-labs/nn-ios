@@ -10,4 +10,6 @@
 
 @interface NNEventPicturesViewController : UIViewController
 
+- (IBAction)close:(id)sender;
+
 @end
