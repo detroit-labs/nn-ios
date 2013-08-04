@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.SystemVersion">12E55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.AppKitVersion">1187.39</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -416,7 +416,7 @@
 								<int key="NSvFlags">1314</int>
 								<array class="NSMutableArray" key="NSSubviews"/>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{10, 112}, {130, 40}}</string>
+								<string key="NSFrame">{{10, 112}, {141, 40}}</string>
 								<reference key="NSSuperview" ref="381452882"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="133338782"/>
@@ -430,6 +430,7 @@
 								<float key="IBUIMaximumZoomScale">0.0</float>
 								<object class="IBUICollectionViewFlowLayout" key="IBUICollectionViewLayout" id="471824132">
 									<reference key="IBUICollectionView" ref="982758499"/>
+									<int key="IBUIScrollDirection">1</int>
 									<string key="IBUIItemSize">{40, 40}</string>
 									<float key="IBUIMinimumLineSpacing">5</float>
 									<float key="IBUIMinimumInteritemSpacing">5</float>
@@ -722,7 +723,7 @@
 						<int key="NSvFlags">1314</int>
 						<array class="NSMutableArray" key="NSSubviews"/>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{10, 946}, {300, 281}}</string>
+						<string key="NSFrame">{{10, 946}, {300, 126}}</string>
 						<reference key="NSSuperview" ref="14031659"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -743,7 +744,7 @@
 						<reference key="IBUICells" ref="0"/>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 64}, {320, 1227}}</string>
+				<string key="NSFrame">{{0, 64}, {320, 1083}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="7312623"/>
@@ -1011,17 +1012,20 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
 						<reference key="object" ref="25876353"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="14031659"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
 						<reference key="object" ref="1014776041"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="14031659"/>
 						<string key="objectName">Button - Upcoming Events</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
 						<reference key="object" ref="907601548"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="14031659"/>
 						<string key="objectName">Button - Previous Events</string>
 					</object>
@@ -1058,6 +1062,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">6</int>
 						<reference key="object" ref="115820080"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="7312623"/>
 						<string key="objectName">Image - City Background</string>
 					</object>
@@ -1076,18 +1081,21 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
 						<reference key="object" ref="899785516"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="7312623"/>
 						<string key="objectName">Label - City Name</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
 						<reference key="object" ref="5496660"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="7312623"/>
 						<string key="objectName">Button - Twitter</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
 						<reference key="object" ref="169490943"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="7312623"/>
 						<string key="objectName">Button - Facebook</string>
 					</object>
@@ -1100,6 +1108,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
 						<reference key="object" ref="153322538"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="7312623"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1120,35 +1129,41 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
 						<reference key="object" ref="536749605"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="381452882"/>
 						<string key="objectName">Label - Event Title</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
 						<reference key="object" ref="264387025"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="381452882"/>
 						<string key="objectName">Label - Event Date</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
 						<reference key="object" ref="1004293602"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="381452882"/>
 						<string key="objectName">Label - Event Date Suffix</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
 						<reference key="object" ref="644837820"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="381452882"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
 						<reference key="object" ref="239912552"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="381452882"/>
 						<string key="objectName">Label - Venue</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">25</int>
 						<reference key="object" ref="133338782"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="381452882"/>
 						<string key="objectName">Button - Learn More</string>
 					</object>
@@ -1182,6 +1197,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">55</int>
 						<reference key="object" ref="55168033"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="291410001"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1193,17 +1209,20 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">53</int>
 						<reference key="object" ref="870820724"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="291410001"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">56</int>
 						<reference key="object" ref="659477313"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="291410001"/>
 						<string key="objectName">Label - Est Year</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">58</int>
 						<reference key="object" ref="404700725"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="291410001"/>
 						<string key="objectName">Label - Summary</string>
 					</object>
@@ -1270,7 +1289,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">111</int>
+			<int key="maxID">339</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

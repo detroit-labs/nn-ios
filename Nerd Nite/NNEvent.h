@@ -18,6 +18,7 @@
 @property(nonatomic, strong) NSString *price;
 @property(nonatomic, strong) NSString *eventLink;
 @property(nonatomic, strong) NSArray *presenters;
+@property(nonatomic, strong) NSArray *photos;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

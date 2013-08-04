@@ -82,9 +82,15 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         [self setupDateLabel];
         self.aboutLabel.text = self.city.about;
         self.yearEstablishedLabel.text = [self.city.yearEst stringValue];
+
+        NSUInteger numberOfBossRows = ([self.city.bosses count] % 3) + 1;
+        int heightOfBossRow = 126;
+        NSUInteger correctedBossCollectionHeight = (numberOfBossRows * heightOfBossRow) - 10;
+        [self.bossCollectionView setFrame:(CGRect) {self.bossCollectionView.frame.origin,
+                {self.bossCollectionView.frame.size.width, correctedBossCollectionHeight}}];
         [(UIScrollView *) self.view
                 setContentSize:CGSizeMake(self.view.frame.size.width,
-                        self.bossCollectionView.frame.origin.y + 252 + 20)];
+                        self.bossCollectionView.frame.origin.y + correctedBossCollectionHeight + 10)];
     } andFailure:^() {
         [[[UIAlertView alloc] initWithTitle:@"NOES"
                                     message:@"Couldn't get city info!!"
@@ -119,23 +125,25 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell;
     if(collectionView == self.bossCollectionView) {
         NNBoss *boss = [self.city.bosses objectAtIndex:[indexPath row]];
         NNBossCollectionViewCell *bossCell = [collectionView dequeueReusableCellWithReuseIdentifier:bossCellIdentifier forIndexPath:indexPath];
         [bossCell setBoss:boss];
-        return bossCell;
+        cell = bossCell;
     } else if (collectionView == self.cityPreviewImages) {
         NSString *imagePath = [self.city.previewImages objectAtIndex:[indexPath row]];
         NNCityPreviewImageCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:previewImageCellIdentifier forIndexPath:indexPath];
         [imageCell setImage:imagePath];
-        return imageCell;
+        cell = imageCell;
     } else if (collectionView == self.presenterImages) {
         NNPresenter *presenter = [self.city.nextEvent.presenters objectAtIndex:[indexPath row]];
         NNPresenterImageCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:presenterImageCellIdentifier forIndexPath:indexPath];
         [imageCell setImage:[presenter pic]];
-        return imageCell;
+        cell = imageCell;
     }
-    return nil;
+
+    return cell;
 }
 
 - (IBAction)facebookTapped:(id)sender {

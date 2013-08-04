@@ -6,6 +6,7 @@
 #import "NNEvent.h"
 #import "NNPresenter.h"
 #import "NSDictionary+NNUtilities.h"
+#import "NNPhoto.h"
 
 
 @implementation NNEvent
@@ -33,6 +34,18 @@
         }];
 
         self.presenters = [NSArray arrayWithArray:presenters];
+
+        NSArray *rawPhotos = [dictionary objectForKey:@"photos"];
+        NSMutableArray *photos = [[NSMutableArray alloc] init];
+
+        [rawPhotos enumerateObjectsUsingBlock:^(NSDictionary *rawPhoto, NSUInteger idx, BOOL *stop) {
+            if (rawPhoto != (id)[NSNull null]){
+                NNPhoto *photo = [[NNPhoto alloc] initWithDictionary:rawPhoto];
+                [photos addObject:photo];
+            }
+        }];
+
+        self.photos = [NSArray arrayWithArray:photos];
     }
     return self;
 }

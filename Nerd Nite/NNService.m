@@ -32,8 +32,8 @@
 }
 
 - (NSURLRequest *)getNSURLRequestForPath:(NSString *)path {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://nn-server-dev.herokuapp.com/%@", path]]];
-    return request;
+    NSString *server = @"http://nn-server-dev.herokuapp.com";
+    return [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", server, path]]];
 }
 
 - (void)getCity:(NSString *)id withSuccess:(void (^)(NNCity *))success andFailure:(void (^)())failure {
