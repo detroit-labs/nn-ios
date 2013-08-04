@@ -11,7 +11,7 @@
 #import "NNCity.h"
 #import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
-#import "NNPresenter.h"
+#import "NNPresentation.h"
 #import "NNService.h"
 
 @interface NNNextEventViewControllerOld ()
@@ -63,7 +63,7 @@
         self.city = city;
         NNEvent *nextEvent = self.city.nextEvent;
         [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-        [nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
+        [nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresentation *presenter, NSUInteger idx, BOOL *stop) {
             UIImageView *image = [self.presenterImages objectAtIndex:idx];
             [self makeCircle:image];
             [self loadImage:image forPath:[presenter pic]];

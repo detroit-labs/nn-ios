@@ -8,6 +8,10 @@
 
 #import "NNViewController.h"
 
-@interface NNNextEventViewController : NNViewController
+@interface NNNextEventViewController : NNViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *presentationTableView;
+
+- (id)initWithEvent:(NNEvent *)event;
 
 @end

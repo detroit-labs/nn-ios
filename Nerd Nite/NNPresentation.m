@@ -3,11 +3,11 @@
 //
 
 
-#import "NNPresenter.h"
+#import "NNPresentation.h"
 #import "NSDictionary+NNUtilities.h"
 
 
-@implementation NNPresenter
+@implementation NNPresentation
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];

@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NNPresenter : NSObject
+@interface NNPresentation : NSObject
 
 @property(nonatomic, strong) NSString *id;
 @property(nonatomic, strong) NSString *name;

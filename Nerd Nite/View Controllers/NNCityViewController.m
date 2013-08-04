@@ -9,7 +9,7 @@
 #import "AFImageRequestOperation.h"
 #import "NNBoss.h"
 #import "NNEvent.h"
-#import "NNPresenter.h"
+#import "NNPresentation.h"
 #import "NNNextEventViewController.h"
 #import "NNService.h"
 #import "NNPastEventsViewController.h"
@@ -61,9 +61,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     [self.presenterImages registerNib:[UINib nibWithNibName:@"NNPresenterImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:presenterImageCellIdentifier];
 
     [self clearPlaceholderLabels];
-    
-    [self createNavBar];
-    
+
     [self.cityBorderView.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.cityBorderView.layer setBorderWidth:3];
     
@@ -100,10 +98,6 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self createNavBar];
@@ -137,7 +131,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         [imageCell setImage:imagePath];
         cell = imageCell;
     } else if (collectionView == self.presenterImages) {
-        NNPresenter *presenter = [self.city.nextEvent.presenters objectAtIndex:[indexPath row]];
+        NNPresentation *presenter = [self.city.nextEvent.presenters objectAtIndex:[indexPath row]];
         NNPresenterImageCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:presenterImageCellIdentifier forIndexPath:indexPath];
         [imageCell setImage:[presenter pic]];
         cell = imageCell;
@@ -155,7 +149,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
 }
 
 - (IBAction)learnMoreTapped:(id)sender {
-    NNNextEventViewController *eventVC = [[NNNextEventViewController alloc] initWithCity:self.city];
+    NNNextEventViewController *eventVC = [[NNNextEventViewController alloc] initWithEvent:self.city.nextEvent];
     [self.navigationController pushViewController:eventVC animated:YES];
 }
 

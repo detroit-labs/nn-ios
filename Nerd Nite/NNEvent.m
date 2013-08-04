@@ -4,7 +4,7 @@
 
 
 #import "NNEvent.h"
-#import "NNPresenter.h"
+#import "NNPresentation.h"
 #import "NSDictionary+NNUtilities.h"
 #import "NNPhoto.h"
 
@@ -28,7 +28,7 @@
 
         [rawPresenters enumerateObjectsUsingBlock:^(NSDictionary *rawPresenter, NSUInteger idx, BOOL *stop) {
             if (rawPresenter != (id)[NSNull null]){
-                NNPresenter *presenter = [[NNPresenter alloc] initWithDictionary:rawPresenter];
+                NNPresentation *presenter = [[NNPresentation alloc] initWithDictionary:rawPresenter];
                 [presenters addObject:presenter];
             }
         }];
