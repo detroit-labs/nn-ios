@@ -10,7 +10,7 @@
 #import "NNBoss.h"
 #import "NNEvent.h"
 #import "NNPresenter.h"
-#import "NNNextEventViewController.h"
+#import "NNNextEventViewControllerOld.h"
 #import "NNService.h"
 #import "NNPastEventsViewController.h"
 #import "NNBossCollectionViewCell.h"
@@ -100,10 +100,6 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self createNavBar];
@@ -155,16 +151,13 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
 }
 
 - (IBAction)learnMoreTapped:(id)sender {
-    NNNextEventViewController *eventVC = [[NNNextEventViewController alloc] initWithCity:self.city];
+    NNNextEventViewControllerOld *eventVC = [[NNNextEventViewControllerOld alloc] initWithCity:self.city];
     [self.navigationController pushViewController:eventVC animated:YES];
 }
 
 - (IBAction)previousEventsTapped:(id)sender {
     NNPastEventsViewController *controller = [[NNPastEventsViewController alloc] initWithCity:self.city];
     [self.navigationController pushViewController:controller animated:YES];
-}
-
-- (IBAction)upcomingEventsTapped:(id)sender {
 }
 
 -(void)changeLocation {
