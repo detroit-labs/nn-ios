@@ -10,7 +10,7 @@
 #import "NNBoss.h"
 #import "NNEvent.h"
 #import "NNPresentation.h"
-#import "NNNextEventViewController.h"
+#import "NNNextEventViewControllerOld.h"
 #import "NNService.h"
 #import "NNPastEventsViewController.h"
 #import "NNBossCollectionViewCell.h"
@@ -61,7 +61,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     [self.presenterImages registerNib:[UINib nibWithNibName:@"NNPresenterImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:presenterImageCellIdentifier];
 
     [self clearPlaceholderLabels];
-
+    
     [self.cityBorderView.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.cityBorderView.layer setBorderWidth:3];
     
@@ -156,9 +156,6 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
 - (IBAction)previousEventsTapped:(id)sender {
     NNPastEventsViewController *controller = [[NNPastEventsViewController alloc] initWithCity:self.city];
     [self.navigationController pushViewController:controller animated:YES];
-}
-
-- (IBAction)upcomingEventsTapped:(id)sender {
 }
 
 -(void)changeLocation {

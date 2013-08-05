@@ -31,7 +31,6 @@
 - (IBAction)twitterTapped:(id)sender;
 - (IBAction)learnMoreTapped:(id)sender;
 - (IBAction)previousEventsTapped:(id)sender;
-- (IBAction)upcomingEventsTapped:(id)sender;
 
 - (id)initWithCity:(NNCity *)city;
 
