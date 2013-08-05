@@ -20,6 +20,7 @@
         self.address = [dictionary nonNullStringForKey:@"address"];
         self.about = [dictionary nonNullStringForKey:@"description"];
         self.date = [self getDate:dictionary];
+        self.time = [dictionary nonNullStringForKey:@"time"];
         self.ticketsLink = [dictionary nonNullStringForKey:@"tickets_link"];
         self.price = [dictionary nonNullStringForKey:@"price"];
         self.eventLink = [dictionary nonNullStringForKey:@"event_link"];

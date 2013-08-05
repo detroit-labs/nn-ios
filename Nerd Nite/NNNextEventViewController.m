@@ -11,6 +11,7 @@
 #import "NNEvent.h"
 #import "NNPresentationTableViewCell.h"
 #import "NNMapAnnotation.h"
+#import "NNDateLabelFormatter.h"
 
 static NSString *const PresentationCellId = @"NNPresentationCell";
 
@@ -59,6 +60,12 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
         [self.mapView addAnnotations:@[annotation]];
 
     }];
+
+    [self.eventTitleLabel setText:self.event.title];
+    [self.eventAddressLabel setText:self.event.address];
+    [self.eventVenueLabel setText:self.event.venueName];
+    [self.doorsAndCoverLabel setText:[NSString stringWithFormat:@"DOORS AT %@PM / $%@ COVER", self.event.time, self.event.price]];
+    [NNDateLabelFormatter setUpDateLabel:self.eventDateLabel andSuffixLabel:self.eventDateSuffixLabel forDate:self.event.date];
 
     NSUInteger numberOfPresentationRows = [self.event.presenters count];
     int heightOfPresentationRow = 311;

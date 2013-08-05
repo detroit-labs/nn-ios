@@ -14,6 +14,7 @@
 @property(nonatomic, strong) NSString *address;
 @property(nonatomic, strong) NSString *about;
 @property(nonatomic, strong) NSDate *date;
+@property(nonatomic, strong) NSString *time;
 @property(nonatomic, strong) NSString *ticketsLink;
 @property(nonatomic, strong) NSString *price;
 @property(nonatomic, strong) NSString *eventLink;

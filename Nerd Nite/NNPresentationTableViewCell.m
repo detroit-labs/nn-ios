@@ -48,10 +48,4 @@
     //resize all the shits
 }
 
-//@property (strong, nonatomic) IBOutlet UILabel *presenterAndTopicLabel;
-//@property (strong, nonatomic) IBOutlet UIImageView *topicImage;
-//@property (strong, nonatomic) IBOutlet UILabel *abstractLabel;
-//@property (strong, nonatomic) IBOutlet UILabel *aboutPresenterTitleLabel;
-//@property (strong, nonatomic) IBOutlet UILabel *bioLabel;
-
 @end

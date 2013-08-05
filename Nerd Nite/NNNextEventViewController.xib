@@ -364,6 +364,7 @@
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<float key="IBUIMinimumFontSize">8</float>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="451318198">
 									<string key="name">Avenir-Heavy</string>
 									<string key="family">Avenir</string>
@@ -375,7 +376,6 @@
 									<double key="NSSize">13</double>
 									<int key="NSfFlags">16</int>
 								</object>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUIButton" id="204729674">
 								<reference key="NSNextResponder" ref="867446246"/>
