@@ -43,9 +43,17 @@
     [self resizeLabel:self.descriptionLabel toFitText:event.about];
 
     [self moveViewElement:self.voteButton belowViewElement:self.descriptionLabel];
-    [self moveViewElement:self.picsButton belowViewElement:self.voteButton];
+    UIButton *lastButton = self.voteButton;
 
-    float viewHeight = self.picsButton.frame.origin.y + self.picsButton.frame.size.height + 10;
+    if([self.event.photos count] > 0){
+        [self moveViewElement:self.picsButton belowViewElement:self.voteButton];
+        lastButton = self.picsButton;
+        [self.picsButton setHidden:NO];
+    } else {
+        [self.picsButton setHidden:YES];
+    }
+
+    float viewHeight = lastButton.frame.origin.y + lastButton.frame.size.height + 10;
     [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, viewHeight)];
 }
 
