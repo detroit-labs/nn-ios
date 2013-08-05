@@ -3,19 +3,19 @@
 //
 
 
+#import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "NNCityViewController.h"
 #import "NNCity.h"
-#import "AFImageRequestOperation.h"
 #import "NNBoss.h"
 #import "NNEvent.h"
 #import "NNPresentation.h"
-#import "NNNextEventViewControllerOld.h"
 #import "NNService.h"
 #import "NNPastEventsViewController.h"
 #import "NNBossCollectionViewCell.h"
 #import "NNCityPreviewImageCollectionViewCell.h"
 #import "NNPresenterImageCollectionViewCell.h"
+#import "NNNextEventViewController.h"
 
 static NSString *const bossCellIdentifier = @"NNBossCell";
 static NSString *const previewImageCellIdentifier = @"NNCityPreviewImageCollectionViewCell";
