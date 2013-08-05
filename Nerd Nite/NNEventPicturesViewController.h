@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NNEventPicturesViewController : UIViewController
+@class NNEvent;
+
+@interface NNEventPicturesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NNEvent *event;
 
 - (IBAction)close:(id)sender;
 

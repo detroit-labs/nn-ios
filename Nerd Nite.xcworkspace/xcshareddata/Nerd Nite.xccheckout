@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8B44E225-1A10-4E37-A394-0B478749BEBB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Nerd Nite</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C7E016C1-0BB3-4437-928A-887E6E5F8530</key>
+		<string>ssh://github.com/crebma/nn-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Nerd Nite.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C7E016C1-0BB3-4437-928A-887E6E5F8530</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/crebma/nn-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C7E016C1-0BB3-4437-928A-887E6E5F8530</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C7E016C1-0BB3-4437-928A-887E6E5F8530</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nn-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

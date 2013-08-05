@@ -6,11 +6,9 @@
 //  Copyright (c) 2013 Detroit Labs. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "NNPastEventsViewController.h"
 #import "NNService.h"
 #import "NNCity.h"
-#import "NNPastEventView.h"
 #import "NNEvent.h"
 #import "NNEventPicturesViewController.h"
 
@@ -91,6 +89,7 @@ static NSString *const cellId = @"PastEventCell";
 }
 
 - (void)viewPhotosFromEvent:(NNEvent *)event {
+    [self.eventPicturesViewController setEvent:event];
     [self.navigationController.view addSubview:self.eventPicturesViewController.view];
 }
 

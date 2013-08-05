@@ -12,17 +12,21 @@
 		589F01B957C1EECDD6A66DFC /* NNDateLabelFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0FB3B2CF3679E8FD6045 /* NNDateLabelFormatter.m */; };
 		589F02FF2F473CFDEC582039 /* NNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F051669B22CDC148FCAAE /* NNCollectionViewCell.m */; };
 		589F045B71A885371A0E79A2 /* NNService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06A007C01A2D5E37D104 /* NNService.m */; };
+		589F0535B658A4C628BB2828 /* NNPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0FE0FEC95A34AD287941 /* NNPhoto.m */; };
 		589F05AF591785BCBC521341 /* NNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F073E7A5D502E73493C7C /* NNCity.m */; };
 		589F05B9C3C969152EDAC71E /* NNBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0AD8EACCB98FEEC06094 /* NNBoss.m */; };
 		589F06C194A5744E04D2F55E /* NNPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresenter.m */; };
 		589F06EC86CF3236933923CA /* change-Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 589F08A9186BB065589D3708 /* change-Location.png */; };
+		589F06FE2C8F3C891006B1DA /* NNPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0FE0FEC95A34AD287941 /* NNPhoto.m */; };
 		589F0738ABC0702B97A2121B /* NNBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0AD8EACCB98FEEC06094 /* NNBoss.m */; };
 		589F09AEFA9A4E57471E58F4 /* NNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06D6F0324A5ADDBB2958 /* NNCityTableViewCell.m */; };
 		589F09EC0946DB73DF99CC13 /* NNPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresenter.m */; };
 		589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
+		589F0B977DD3CC3010E0E666 /* NNEventPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */; };
 		589F0B9BB0623D087CDFB754 /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
 		589F0BDD4BE4B808FF211A24 /* NSDictionary+NNUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */; };
 		589F0BF7E0C7D7A5206B71ED /* NSDictionary+NNUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */; };
+		589F0D0321FF3BD79DD40774 /* NNEventPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */; };
 		589F0D454D5FEECF8B55935C /* change-Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 589F077C3D2B861C343E822D /* change-Location@2x.png */; };
 		589F0DCF5CFA60E45E93FFF0 /* NNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F051669B22CDC148FCAAE /* NNCollectionViewCell.m */; };
 		589F0DFCB7252CA8FCCA8F5B /* NNCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */; };
@@ -38,6 +42,7 @@
 		8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8321EC2E17049A2E00FD74AC /* NNViewController.m */; };
 		83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */; };
 		83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */; };
+		961BC8291764D04A00DF6345 /* NNEventPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */; };
 		9659465B16FCE26400EB5898 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463B16FCE26400EB5898 /* arrow.png */; };
 		9659465C16FCE26400EB5898 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463B16FCE26400EB5898 /* arrow.png */; };
 		9659465D16FCE26400EB5898 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463C16FCE26400EB5898 /* arrow@2x.png */; };
@@ -189,15 +194,19 @@
 		589F06D6F0324A5ADDBB2958 /* NNCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCityTableViewCell.m; sourceTree = "<group>"; };
 		589F073E7A5D502E73493C7C /* NNCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCity.m; sourceTree = "<group>"; };
 		589F077C3D2B861C343E822D /* change-Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "change-Location@2x.png"; path = "../Images/change-Location@2x.png"; sourceTree = "<group>"; };
+		589F07896884FC81A9338689 /* NNPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPhoto.h; sourceTree = "<group>"; };
 		589F07E60A6248BB9888E293 /* NNDateLabelFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNDateLabelFormatter.h; path = "View Controllers/NNDateLabelFormatter.h"; sourceTree = "<group>"; };
 		589F08A9186BB065589D3708 /* change-Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "change-Location.png"; path = "../Images/change-Location.png"; sourceTree = "<group>"; };
 		589F0976585135A720ACD676 /* NNCityViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCityViewControllerSpec.m; sourceTree = "<group>"; };
 		589F0AD8EACCB98FEEC06094 /* NNBoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBoss.m; sourceTree = "<group>"; };
+		589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEventPictureCell.m; sourceTree = "<group>"; };
 		589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNCityViewController.m; path = "View Controllers/NNCityViewController.m"; sourceTree = "<group>"; };
 		589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NNUtilities.m"; sourceTree = "<group>"; };
+		589F0D0BE4EFCDAC31286950 /* NNEventPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEventPictureCell.h; sourceTree = "<group>"; };
 		589F0F177941788F0D8914BF /* NNPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresenter.m; sourceTree = "<group>"; };
 		589F0F193C630A7E5C104FC4 /* NNPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresenter.h; sourceTree = "<group>"; };
 		589F0FB3B2CF3679E8FD6045 /* NNDateLabelFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNDateLabelFormatter.m; path = "View Controllers/NNDateLabelFormatter.m"; sourceTree = "<group>"; };
+		589F0FE0FEC95A34AD287941 /* NNPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPhoto.m; sourceTree = "<group>"; };
 		8310D2D016FFFEFC00713013 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8310D2D216FFFF0500713013 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8321EC2D17049A2E00FD74AC /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNViewController.h; path = "View Controllers/NNViewController.h"; sourceTree = "<group>"; };
@@ -205,6 +214,7 @@
 		83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewController.xib; sourceTree = "<group>"; };
 		83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
 		83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
+		961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEventPictureCell.xib; sourceTree = "<group>"; };
 		964E18DB16D7DCD500AB85B1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		964E18DE16D7DCF300AB85B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -359,6 +369,9 @@
 				96C7B6E3174717B000C8B9C7 /* NNPresenterImageCollectionViewCell.xib */,
 				96C7B6E6174717D000C8B9C7 /* NNPresenterImageCollectionViewCell.h */,
 				96C7B6E7174717D000C8B9C7 /* NNPresenterImageCollectionViewCell.m */,
+				589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */,
+				589F0D0BE4EFCDAC31286950 /* NNEventPictureCell.h */,
+				961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -374,6 +387,8 @@
 				589F0187DE80137ED4E6F838 /* NNEvent.h */,
 				589F0F177941788F0D8914BF /* NNPresenter.m */,
 				589F0F193C630A7E5C104FC4 /* NNPresenter.h */,
+				589F0FE0FEC95A34AD287941 /* NNPhoto.m */,
+				589F07896884FC81A9338689 /* NNPhoto.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -692,6 +707,7 @@
 				966E6CBF1747026B003C7E69 /* NNBossCollectionViewCell.xib in Resources */,
 				96C7B6DE17470EFD00C8B9C7 /* NNCityPreviewImageCollectionViewCell.xib in Resources */,
 				96C7B6E4174717B000C8B9C7 /* NNPresenterImageCollectionViewCell.xib in Resources */,
+				961BC8291764D04A00DF6345 /* NNEventPictureCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +834,8 @@
 				96C7B6E117470F3D00C8B9C7 /* NNCityPreviewImageCollectionViewCell.m in Sources */,
 				96C7B6E8174717D000C8B9C7 /* NNPresenterImageCollectionViewCell.m in Sources */,
 				589F01B957C1EECDD6A66DFC /* NNDateLabelFormatter.m in Sources */,
+				589F0D0321FF3BD79DD40774 /* NNEventPictureCell.m in Sources */,
+				589F06FE2C8F3C891006B1DA /* NNPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +861,8 @@
 				589F02FF2F473CFDEC582039 /* NNCollectionViewCell.m in Sources */,
 				96C7B6E217470F3D00C8B9C7 /* NNCityPreviewImageCollectionViewCell.m in Sources */,
 				96C7B6E9174717D000C8B9C7 /* NNPresenterImageCollectionViewCell.m in Sources */,
+				589F0B977DD3CC3010E0E666 /* NNEventPictureCell.m in Sources */,
+				589F0535B658A4C628BB2828 /* NNPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,12 +928,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.detroitlabs.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
 				INFOPLIST_FILE = "Nerd Nite/Nerd Nite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -970,6 +992,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.detroitlabs.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -978,6 +1001,7 @@
 				INFOPLIST_FILE = "Nerd Nite/Nerd Nite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1035,6 +1059,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.nerdnite.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1043,6 +1068,7 @@
 				INFOPLIST_FILE = "Nerd Nite/Nerd Nite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
