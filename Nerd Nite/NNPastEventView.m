@@ -42,18 +42,17 @@
 
     [self resizeLabel:self.descriptionLabel toFitText:event.about];
 
-    [self moveViewElement:self.voteButton belowViewElement:self.descriptionLabel withMargin:10];
-    UIButton *lastButton = self.voteButton;
+    UIView *lastElement = self.descriptionLabel;
 
     if([self.event.photos count] > 0){
-        [self moveViewElement:self.picsButton belowViewElement:self.voteButton withMargin:10];
-        lastButton = self.picsButton;
+        [self moveViewElement:self.picsButton belowViewElement:self.descriptionLabel withMargin:10];
+        lastElement = self.picsButton;
         [self.picsButton setHidden:NO];
     } else {
         [self.picsButton setHidden:YES];
     }
 
-    float viewHeight = lastButton.frame.origin.y + lastButton.frame.size.height + 10;
+    float viewHeight = lastElement.frame.origin.y + lastElement.frame.size.height + 10;
     [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, viewHeight)];
 }
 
