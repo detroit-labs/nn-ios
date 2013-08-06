@@ -3,19 +3,19 @@
 //
 
 
+#import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "NNCityViewController.h"
 #import "NNCity.h"
-#import "AFImageRequestOperation.h"
 #import "NNBoss.h"
 #import "NNEvent.h"
-#import "NNPresenter.h"
-#import "NNNextEventViewControllerOld.h"
+#import "NNPresentation.h"
 #import "NNService.h"
 #import "NNPastEventsViewController.h"
 #import "NNBossCollectionViewCell.h"
 #import "NNCityPreviewImageCollectionViewCell.h"
 #import "NNPresenterImageCollectionViewCell.h"
+#import "NNNextEventViewController.h"
 
 static NSString *const bossCellIdentifier = @"NNBossCell";
 static NSString *const previewImageCellIdentifier = @"NNCityPreviewImageCollectionViewCell";
@@ -61,8 +61,6 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     [self.presenterImages registerNib:[UINib nibWithNibName:@"NNPresenterImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:presenterImageCellIdentifier];
 
     [self clearPlaceholderLabels];
-    
-    [self createNavBar];
     
     [self.cityBorderView.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self.cityBorderView.layer setBorderWidth:3];
@@ -133,7 +131,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         [imageCell setImage:imagePath];
         cell = imageCell;
     } else if (collectionView == self.presenterImages) {
-        NNPresenter *presenter = [self.city.nextEvent.presenters objectAtIndex:[indexPath row]];
+        NNPresentation *presenter = [self.city.nextEvent.presenters objectAtIndex:[indexPath row]];
         NNPresenterImageCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:presenterImageCellIdentifier forIndexPath:indexPath];
         [imageCell setImage:[presenter pic]];
         cell = imageCell;
@@ -151,7 +149,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
 }
 
 - (IBAction)learnMoreTapped:(id)sender {
-    NNNextEventViewControllerOld *eventVC = [[NNNextEventViewControllerOld alloc] initWithCity:self.city];
+    NNNextEventViewController *eventVC = [[NNNextEventViewController alloc] initWithEvent:self.city.nextEvent];
     [self.navigationController pushViewController:eventVC animated:YES];
 }
 

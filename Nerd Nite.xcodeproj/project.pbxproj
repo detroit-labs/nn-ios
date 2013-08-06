@@ -10,17 +10,19 @@
 		2B8DADDF168D42E2A82E2EE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD1AECA49F148F88B970C97 /* libPods.a */; };
 		541543C3EBFE4BA2A2CEFEC2 /* libPods-Nerd NiteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36BBCDDD539487EB37526A9 /* libPods-Nerd NiteTests.a */; };
 		589F01B957C1EECDD6A66DFC /* NNDateLabelFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0FB3B2CF3679E8FD6045 /* NNDateLabelFormatter.m */; };
+		589F0284180CB851209963CB /* NNMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F8D7E73686897B87214 /* NNMapAnnotation.m */; };
 		589F02FF2F473CFDEC582039 /* NNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F051669B22CDC148FCAAE /* NNCollectionViewCell.m */; };
 		589F045B71A885371A0E79A2 /* NNService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06A007C01A2D5E37D104 /* NNService.m */; };
 		589F0535B658A4C628BB2828 /* NNPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0FE0FEC95A34AD287941 /* NNPhoto.m */; };
 		589F05AF591785BCBC521341 /* NNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F073E7A5D502E73493C7C /* NNCity.m */; };
 		589F05B9C3C969152EDAC71E /* NNBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0AD8EACCB98FEEC06094 /* NNBoss.m */; };
-		589F06C194A5744E04D2F55E /* NNPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresenter.m */; };
+		589F06C194A5744E04D2F55E /* NNPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresentation.m */; };
 		589F06EC86CF3236933923CA /* change-Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 589F08A9186BB065589D3708 /* change-Location.png */; };
 		589F06FE2C8F3C891006B1DA /* NNPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0FE0FEC95A34AD287941 /* NNPhoto.m */; };
 		589F0738ABC0702B97A2121B /* NNBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0AD8EACCB98FEEC06094 /* NNBoss.m */; };
+		589F0748608C41227AF01531 /* NNMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F8D7E73686897B87214 /* NNMapAnnotation.m */; };
 		589F09AEFA9A4E57471E58F4 /* NNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06D6F0324A5ADDBB2958 /* NNCityTableViewCell.m */; };
-		589F09EC0946DB73DF99CC13 /* NNPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresenter.m */; };
+		589F09EC0946DB73DF99CC13 /* NNPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresentation.m */; };
 		589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
 		589F0B977DD3CC3010E0E666 /* NNEventPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */; };
 		589F0B9BB0623D087CDFB754 /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
@@ -40,9 +42,18 @@
 		8310D2D516FFFFEB00713013 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DE16D7DCF300AB85B1 /* Default@2x.png */; };
 		8310D2D616FFFFF100713013 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */; };
 		8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8321EC2E17049A2E00FD74AC /* NNViewController.m */; };
-		83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */; };
-		83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */; };
+		83A6EDDC16F5840900E39F56 /* NNNextEventViewControllerOld.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewControllerOld.xib */; };
+		83A6EDDF16F584A500E39F56 /* NNNextEventViewControllerOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewControllerOld.m */; };
 		961BC8291764D04A00DF6345 /* NNEventPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */; };
+		9622797D17ADFCA200B34367 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622797B17ADFCA200B34367 /* NNNextEventViewController.m */; };
+		9622797E17ADFCA200B34367 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622797B17ADFCA200B34367 /* NNNextEventViewController.m */; };
+		9622797F17ADFCA200B34367 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9622797C17ADFCA200B34367 /* NNNextEventViewController.xib */; };
+		9622798017ADFCA200B34367 /* NNNextEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9622797C17ADFCA200B34367 /* NNNextEventViewController.xib */; };
+		9622798F17AEA61A00B34367 /* NNPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622798E17AEA61A00B34367 /* NNPresentationTableViewCell.m */; };
+		9622799017AEA61A00B34367 /* NNPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622798E17AEA61A00B34367 /* NNPresentationTableViewCell.m */; };
+		9622799217AEA62E00B34367 /* NNPresentationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9622799117AEA62E00B34367 /* NNPresentationTableViewCell.xib */; };
+		9622799417AEBA3300B34367 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9622799317AEBA3200B34367 /* MapKit.framework */; };
+		9622799617B05D4A00B34367 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9622799517B05D4A00B34367 /* CoreLocation.framework */; };
 		9659465B16FCE26400EB5898 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463B16FCE26400EB5898 /* arrow.png */; };
 		9659465C16FCE26400EB5898 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463B16FCE26400EB5898 /* arrow.png */; };
 		9659465D16FCE26400EB5898 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9659463C16FCE26400EB5898 /* arrow@2x.png */; };
@@ -187,6 +198,7 @@
 		589F02619ABCBC716AC4D3EE /* NNEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEvent.m; sourceTree = "<group>"; };
 		589F04172AAEF9F05C937309 /* NNCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCityTableViewCell.h; sourceTree = "<group>"; };
 		589F051669B22CDC148FCAAE /* NNCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCollectionViewCell.m; sourceTree = "<group>"; };
+		589F05DC873F27675B72435F /* NNMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMapAnnotation.h; sourceTree = "<group>"; };
 		589F05F69384FD8847286256 /* NNService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNService.h; sourceTree = "<group>"; };
 		589F0648A52552C08704B463 /* NNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCollectionViewCell.h; sourceTree = "<group>"; };
 		589F06A007C01A2D5E37D104 /* NNService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNService.m; sourceTree = "<group>"; };
@@ -203,18 +215,27 @@
 		589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNCityViewController.m; path = "View Controllers/NNCityViewController.m"; sourceTree = "<group>"; };
 		589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NNUtilities.m"; sourceTree = "<group>"; };
 		589F0D0BE4EFCDAC31286950 /* NNEventPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEventPictureCell.h; sourceTree = "<group>"; };
-		589F0F177941788F0D8914BF /* NNPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresenter.m; sourceTree = "<group>"; };
-		589F0F193C630A7E5C104FC4 /* NNPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresenter.h; sourceTree = "<group>"; };
+		589F0F177941788F0D8914BF /* NNPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresentation.m; sourceTree = "<group>"; };
+		589F0F193C630A7E5C104FC4 /* NNPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresentation.h; sourceTree = "<group>"; };
+		589F0F8D7E73686897B87214 /* NNMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMapAnnotation.m; sourceTree = "<group>"; };
 		589F0FB3B2CF3679E8FD6045 /* NNDateLabelFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNDateLabelFormatter.m; path = "View Controllers/NNDateLabelFormatter.m"; sourceTree = "<group>"; };
 		589F0FE0FEC95A34AD287941 /* NNPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPhoto.m; sourceTree = "<group>"; };
 		8310D2D016FFFEFC00713013 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8310D2D216FFFF0500713013 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8321EC2D17049A2E00FD74AC /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNViewController.h; path = "View Controllers/NNViewController.h"; sourceTree = "<group>"; };
 		8321EC2E17049A2E00FD74AC /* NNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNViewController.m; path = "View Controllers/NNViewController.m"; sourceTree = "<group>"; };
-		83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewController.xib; sourceTree = "<group>"; };
-		83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
-		83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
+		83A6EDDB16F5840900E39F56 /* NNNextEventViewControllerOld.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewControllerOld.xib; sourceTree = "<group>"; };
+		83A6EDDD16F584A500E39F56 /* NNNextEventViewControllerOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewControllerOld.h; sourceTree = "<group>"; };
+		83A6EDDE16F584A500E39F56 /* NNNextEventViewControllerOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewControllerOld.m; sourceTree = "<group>"; };
 		961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEventPictureCell.xib; sourceTree = "<group>"; };
+		9622797A17ADFCA200B34367 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
+		9622797B17ADFCA200B34367 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
+		9622797C17ADFCA200B34367 /* NNNextEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewController.xib; sourceTree = "<group>"; };
+		9622798D17AEA61A00B34367 /* NNPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPresentationTableViewCell.h; sourceTree = "<group>"; };
+		9622798E17AEA61A00B34367 /* NNPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresentationTableViewCell.m; sourceTree = "<group>"; };
+		9622799117AEA62E00B34367 /* NNPresentationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNPresentationTableViewCell.xib; sourceTree = "<group>"; };
+		9622799317AEBA3200B34367 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9622799517B05D4A00B34367 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		964E18DB16D7DCD500AB85B1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		964E18DE16D7DCF300AB85B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -316,6 +337,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9622799617B05D4A00B34367 /* CoreLocation.framework in Frameworks */,
+				9622799417AEBA3300B34367 /* MapKit.framework in Frameworks */,
 				969E766B16D98FA60030AB24 /* QuartzCore.framework in Frameworks */,
 				96C1B12316CEB40100D95991 /* UIKit.framework in Frameworks */,
 				96C1B12516CEB40100D95991 /* Foundation.framework in Frameworks */,
@@ -372,6 +395,9 @@
 				589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */,
 				589F0D0BE4EFCDAC31286950 /* NNEventPictureCell.h */,
 				961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */,
+				9622798D17AEA61A00B34367 /* NNPresentationTableViewCell.h */,
+				9622798E17AEA61A00B34367 /* NNPresentationTableViewCell.m */,
+				9622799117AEA62E00B34367 /* NNPresentationTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -385,8 +411,8 @@
 				589F00C3A3BC08693D1A61CD /* NNBoss.h */,
 				589F02619ABCBC716AC4D3EE /* NNEvent.m */,
 				589F0187DE80137ED4E6F838 /* NNEvent.h */,
-				589F0F177941788F0D8914BF /* NNPresenter.m */,
-				589F0F193C630A7E5C104FC4 /* NNPresenter.h */,
+				589F0F177941788F0D8914BF /* NNPresentation.m */,
+				589F0F193C630A7E5C104FC4 /* NNPresentation.h */,
 				589F0FE0FEC95A34AD287941 /* NNPhoto.m */,
 				589F07896884FC81A9338689 /* NNPhoto.h */,
 			);
@@ -450,6 +476,8 @@
 		96C1B11316CEB40100D95991 = {
 			isa = PBXGroup;
 			children = (
+				9622799517B05D4A00B34367 /* CoreLocation.framework */,
+				9622799317AEBA3200B34367 /* MapKit.framework */,
 				964E18DB16D7DCD500AB85B1 /* Default.png */,
 				964E18DE16D7DCF300AB85B1 /* Default@2x.png */,
 				964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */,
@@ -500,6 +528,8 @@
 				96F6F13916CEB8BF0029BA26 /* View Controllers */,
 				96B4AAB316D829540071B430 /* Views */,
 				589F0134ABD60D542F335B38 /* Categories */,
+				589F0F8D7E73686897B87214 /* NNMapAnnotation.m */,
+				589F05DC873F27675B72435F /* NNMapAnnotation.h */,
 			);
 			path = "Nerd Nite";
 			sourceTree = "<group>";
@@ -547,9 +577,12 @@
 				96F6F14C16CECB2C0029BA26 /* NNCitiesListViewController.h */,
 				96F6F14D16CECB2C0029BA26 /* NNCitiesListViewController.m */,
 				96F6F14E16CECB2C0029BA26 /* NNCitiesListViewController.xib */,
-				83A6EDDB16F5840900E39F56 /* NNNextEventViewController.xib */,
-				83A6EDDD16F584A500E39F56 /* NNNextEventViewController.h */,
-				83A6EDDE16F584A500E39F56 /* NNNextEventViewController.m */,
+				9622797A17ADFCA200B34367 /* NNNextEventViewController.h */,
+				9622797B17ADFCA200B34367 /* NNNextEventViewController.m */,
+				9622797C17ADFCA200B34367 /* NNNextEventViewController.xib */,
+				83A6EDDB16F5840900E39F56 /* NNNextEventViewControllerOld.xib */,
+				83A6EDDD16F584A500E39F56 /* NNNextEventViewControllerOld.h */,
+				83A6EDDE16F584A500E39F56 /* NNNextEventViewControllerOld.m */,
 				965946AE16FD035400EB5898 /* NNPastEventsViewController.h */,
 				965946AF16FD035400EB5898 /* NNPastEventsViewController.m */,
 				965946B016FD035400EB5898 /* NNPastEventsViewController.xib */,
@@ -657,7 +690,7 @@
 				969E766716D987D00030AB24 /* upcomingEvents@2x.png in Resources */,
 				969E766916D989D50030AB24 /* learnMore@2x.png in Resources */,
 				969E768116D9A5540030AB24 /* littleGlasses@2x.png in Resources */,
-				83A6EDDC16F5840900E39F56 /* NNNextEventViewController.xib in Resources */,
+				83A6EDDC16F5840900E39F56 /* NNNextEventViewControllerOld.xib in Resources */,
 				589F06EC86CF3236933923CA /* change-Location.png in Resources */,
 				589F0D454D5FEECF8B55935C /* change-Location@2x.png in Resources */,
 				9659465B16FCE26400EB5898 /* arrow.png in Resources */,
@@ -708,6 +741,8 @@
 				96C7B6DE17470EFD00C8B9C7 /* NNCityPreviewImageCollectionViewCell.xib in Resources */,
 				96C7B6E4174717B000C8B9C7 /* NNPresenterImageCollectionViewCell.xib in Resources */,
 				961BC8291764D04A00DF6345 /* NNEventPictureCell.xib in Resources */,
+				9622797F17ADFCA200B34367 /* NNNextEventViewController.xib in Resources */,
+				9622799217AEA62E00B34367 /* NNPresentationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,6 +793,7 @@
 				965946B416FD035400EB5898 /* NNPastEventsViewController.xib in Resources */,
 				96DADCA51711188900333091 /* NNEventPicturesViewController.xib in Resources */,
 				96C7B6E5174717B000C8B9C7 /* NNPresenterImageCollectionViewCell.xib in Resources */,
+				9622798017ADFCA200B34367 /* NNNextEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,9 +858,9 @@
 				96B7856816D83C0000C943F1 /* NNNavigationBar.m in Sources */,
 				589F0738ABC0702B97A2121B /* NNBoss.m in Sources */,
 				589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */,
-				589F09EC0946DB73DF99CC13 /* NNPresenter.m in Sources */,
+				589F09EC0946DB73DF99CC13 /* NNPresentation.m in Sources */,
 				589F0BF7E0C7D7A5206B71ED /* NSDictionary+NNUtilities.m in Sources */,
-				83A6EDDF16F584A500E39F56 /* NNNextEventViewController.m in Sources */,
+				83A6EDDF16F584A500E39F56 /* NNNextEventViewControllerOld.m in Sources */,
 				965946B116FD035400EB5898 /* NNPastEventsViewController.m in Sources */,
 				96C1B2B816FD0D9100EDA714 /* NNPastEventView.m in Sources */,
 				8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */,
@@ -836,6 +872,9 @@
 				589F01B957C1EECDD6A66DFC /* NNDateLabelFormatter.m in Sources */,
 				589F0D0321FF3BD79DD40774 /* NNEventPictureCell.m in Sources */,
 				589F06FE2C8F3C891006B1DA /* NNPhoto.m in Sources */,
+				9622797D17ADFCA200B34367 /* NNNextEventViewController.m in Sources */,
+				9622798F17AEA61A00B34367 /* NNPresentationTableViewCell.m in Sources */,
+				589F0284180CB851209963CB /* NNMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,7 +891,7 @@
 				96B7856916D83C0000C943F1 /* NNNavigationBar.m in Sources */,
 				589F05B9C3C969152EDAC71E /* NNBoss.m in Sources */,
 				589F0B9BB0623D087CDFB754 /* NNEvent.m in Sources */,
-				589F06C194A5744E04D2F55E /* NNPresenter.m in Sources */,
+				589F06C194A5744E04D2F55E /* NNPresentation.m in Sources */,
 				589F0BDD4BE4B808FF211A24 /* NSDictionary+NNUtilities.m in Sources */,
 				965946B216FD035400EB5898 /* NNPastEventsViewController.m in Sources */,
 				96C1B2B916FD0D9100EDA714 /* NNPastEventView.m in Sources */,
@@ -863,6 +902,9 @@
 				96C7B6E9174717D000C8B9C7 /* NNPresenterImageCollectionViewCell.m in Sources */,
 				589F0B977DD3CC3010E0E666 /* NNEventPictureCell.m in Sources */,
 				589F0535B658A4C628BB2828 /* NNPhoto.m in Sources */,
+				9622797E17ADFCA200B34367 /* NNNextEventViewController.m in Sources */,
+				9622799017AEA61A00B34367 /* NNPresentationTableViewCell.m in Sources */,
+				589F0748608C41227AF01531 /* NNMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

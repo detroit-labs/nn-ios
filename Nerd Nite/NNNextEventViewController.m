@@ -2,124 +2,157 @@
 //  NNNextEventViewController.m
 //  Nerd Nite
 //
-//  Created by Christopher Trevarthen on 3/17/13.
+//  Created by Amber Conville on 8/3/13.
 //  Copyright (c) 2013 Detroit Labs. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import "NNNextEventViewController.h"
-#import "NNCityViewController.h"
-#import "NNCity.h"
-#import "AFJSONRequestOperation.h"
 #import "NNEvent.h"
-#import "NNPresenter.h"
-#import "NNService.h"
+#import "NNPresentationTableViewCell.h"
+#import "NNMapAnnotation.h"
+#import "NNDateLabelFormatter.h"
+#import "NNPresentation.h"
 
-@interface NNNextEventViewController()
+static NSString *const PresentationCellId = @"NNPresentationCell";
+
+@interface NNNextEventViewController ()
+
+@property (strong, nonatomic) NNEvent *event;
+@property(strong, nonatomic) CLLocationManager *locationManager;
+@property(nonatomic) CLLocationCoordinate2D destination;
+
 @end
 
 @implementation NNNextEventViewController
 
-- (id)initWithCity:(NNCity *)city {
+- (id)initWithEvent:(NNEvent *)event
+{
     self = [super initWithNibName:@"NNNextEventViewController" bundle:nil];
-    if (self){
-        self.city = city;
-        self.service = [[NNService alloc] init];
+    if (self) {
+        self.event = event;
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
     }
     return self;
 }
 
-- (void)clearPlaceholderLabels {
-    self.cityLabel.text = nil;
-    self.eventTitle.text = nil;
-    self.eventVenueLabel.text = nil;
-    self.eventDateLabel.text = nil;
-    self.eventDateSuffixLabel.text = nil;
-    self.aboutLabel.text = nil;
-    self.eventVenueAddressLabel.text = nil;
-}
-
--(void)createNavBar {
-    [super createNavBar:@"next event"];
-    
-    [self.navigationItem setHidesBackButton:YES];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
-    [self.navigationItem setRightBarButtonItem:backButton];
-    
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self createNavBar];
-}
-
--(void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    [self clearPlaceholderLabels];
 
-    [self createNavBar];
-    
-    [self.service getCity:self.city.id withSuccess:^(NNCity *city) {
-        self.city = city;
-        NNEvent *nextEvent = self.city.nextEvent;
-        [self loadImage:self.mainPicture forPath:self.city.bannerImage];
-        [nextEvent.presenters enumerateObjectsUsingBlock:^(NNPresenter *presenter, NSUInteger idx, BOOL *stop) {
-            UIImageView *image = [self.presenterImages objectAtIndex:idx];
-            [self makeCircle:image];
-            [self loadImage:image forPath:[presenter pic]];
-            ((UILabel *) [self.presenterNames objectAtIndex:idx]).text = [presenter name];
-            UILabel *topicLabel = ((UILabel *) [self.presenterTopics objectAtIndex:idx]);
-            ((UILabel *) [self.presenterTopics objectAtIndex:idx]).text = [presenter topic] ? [presenter topic] : @"";
-            [((UILabel *) [self.presenterTopics objectAtIndex:idx]) sizeToFit];
-            CGRect topicFrame = topicLabel.frame;
-            topicFrame = CGRectMake(topicFrame.origin.x, topicFrame.origin.y, 90, topicFrame.size.height);
-            topicLabel.frame = topicFrame;
-        }];
-        
-        [self.city.previewImages enumerateObjectsUsingBlock:^(NSString *imagePath, NSUInteger idx, BOOL *stop) {
-            UIImageView *image = [self.cityPhotos objectAtIndex:idx];
-            [self loadImage:image forPath:imagePath];
-        }];
-        self.cityLabel.text = self.city.name;
-        self.eventTitle.text = nextEvent.title;
-        self.eventVenueLabel.text = nextEvent.venueName;
-        [self setupDateLabel];
-        self.eventVenueAddressLabel.text = nextEvent.address;
-        self.aboutLabel.text = nextEvent.about;
-        [self.aboutLabel sizeToFit];
-        
-        CGRect glassesFrame = self.littleGlasses.frame;
-        
-        
-        UIView *lastTopic = [self.presenterTopics objectAtIndex:[nextEvent.presenters count] - 1];
-        [(UIScrollView *) self.view setContentSize:CGSizeMake(self.view.frame.size.width, lastTopic.frame.origin.y + lastTopic.frame.size.height + 20)];
-    } andFailure:^() {
-        [[[UIAlertView alloc] initWithTitle:@"NOES"
-                                    message:@"Couldn't get city info!!"
-                                   delegate:nil cancelButtonTitle:@"ok"
-                          otherButtonTitles:nil] show];
+    [self.presentationTableView registerNib:[UINib nibWithNibName:@"NNPresentationTableViewCell" bundle:nil]
+                     forCellReuseIdentifier:PresentationCellId];
+
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:self.event.address completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        CLLocation *location = placemark.location;
+        CLLocationCoordinate2D coordinate = location.coordinate;
+
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 0.25 * 1609.344, 0.25 * 1609.344);
+        MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+        [self.mapView setRegion:adjustedRegion animated:NO];
+
+        NNMapAnnotation *annotation = [[NNMapAnnotation alloc] initWithCoordinate:coordinate
+                                                                         andTitle:self.event.venueName
+                                                                         andImage:@"custom-pin"];
+
+        [self.mapView addAnnotations:@[annotation]];
+
     }];
-    
+
+    [self.eventTitleLabel setText:self.event.title];
+    [self.eventAddressLabel setText:self.event.address];
+    [self.eventVenueLabel setText:self.event.venueName];
+    [self.doorsAndCoverLabel setText:[NSString stringWithFormat:@"DOORS AT %@PM / $%@ COVER", self.event.time, self.event.price]];
+    [NNDateLabelFormatter setUpDateLabel:self.eventDateLabel andSuffixLabel:self.eventDateSuffixLabel forDate:self.event.date];
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES];
+- (void)viewDidAppear:(BOOL)animated {
+    [super createNavBar:@"next event"];
 }
 
-- (IBAction)facebookTapped:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.city.facebook]];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 }
 
-- (IBAction)twitterTapped:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://twitter.com/%@", self.city.twitter]]];
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation {
+    NNMapAnnotation *mapAnnotation = (NNMapAnnotation *) annotation;
+    static NSString *AnnotationViewID = @"annotationViewID";
+
+    MKAnnotationView *annotationView = [map dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    if (annotationView == nil) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:mapAnnotation reuseIdentifier:AnnotationViewID];
+    }
+
+    annotationView.centerOffset = CGPointMake(mapAnnotation.image.size.width / 6.0, -mapAnnotation.image.size.height / 2.0);
+    [annotationView setImage:mapAnnotation.image];
+
+    return annotationView;
 }
 
-- (IBAction)buyTicketsTapped:(id)sender {
-    
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    [mapView deselectAnnotation:[view annotation] animated:YES];
+    self.destination = ((NNMapAnnotation *) view.annotation).coordinate;
+    CLLocation *currentLocation = [self.locationManager location];
+    if (currentLocation == nil) {
+        [self.locationManager startUpdatingLocation];
+    } else {
+        [self getDirections:currentLocation];
+    }
 }
 
--(void)goBack {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self.locationManager stopUpdatingLocation];
+    [self getDirections:newLocation];
+}
+
+- (void)getDirections:(CLLocation *)location {
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    NSString *latitude = [[NSNumber numberWithDouble:coordinate.latitude] stringValue];
+    NSString *longitude = [[NSNumber numberWithDouble:coordinate.longitude] stringValue];
+
+    NSString *destinationLatitude = [[NSNumber numberWithDouble:self.destination.latitude] stringValue];
+    NSString *destinationLongitude = [[NSNumber numberWithDouble:self.destination.longitude] stringValue];
+    NSString *destinationString = [NSString stringWithFormat:@"%@,%@",destinationLatitude,destinationLongitude];
+
+    NSString *maps = [NSString stringWithFormat:@"maps://?saddr=%@,%@&daddr=%@", latitude, longitude, destinationString];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:maps]];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.event.presenters count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NNPresentationTableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NNPresentationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PresentationCellId];
+    [cell setPresentation:[self.event.presenters objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+- (void)viewDidUnload {
+    [self.locationManager stopUpdatingLocation];
+    [self setMapView:nil];
+    [super viewDidUnload];
+}
+
+- (IBAction)facebookButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.event.eventLink]];
+}
+
+- (IBAction)buyTicketsButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.event.ticketsLink]];
 }
 
 @end

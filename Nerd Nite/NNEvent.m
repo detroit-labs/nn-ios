@@ -4,7 +4,7 @@
 
 
 #import "NNEvent.h"
-#import "NNPresenter.h"
+#import "NNPresentation.h"
 #import "NSDictionary+NNUtilities.h"
 #import "NNPhoto.h"
 
@@ -20,6 +20,7 @@
         self.address = [dictionary nonNullStringForKey:@"address"];
         self.about = [dictionary nonNullStringForKey:@"description"];
         self.date = [self getDate:dictionary];
+        self.time = [dictionary nonNullStringForKey:@"time"];
         self.ticketsLink = [dictionary nonNullStringForKey:@"tickets_link"];
         self.price = [dictionary nonNullStringForKey:@"price"];
         self.eventLink = [dictionary nonNullStringForKey:@"event_link"];
@@ -28,7 +29,7 @@
 
         [rawPresenters enumerateObjectsUsingBlock:^(NSDictionary *rawPresenter, NSUInteger idx, BOOL *stop) {
             if (rawPresenter != (id)[NSNull null]){
-                NNPresenter *presenter = [[NNPresenter alloc] initWithDictionary:rawPresenter];
+                NNPresentation *presenter = [[NNPresentation alloc] initWithDictionary:rawPresenter];
                 [presenters addObject:presenter];
             }
         }];
