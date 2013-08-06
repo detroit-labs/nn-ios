@@ -43,7 +43,7 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIScrollView" id="971175967">
 								<reference key="NSNextResponder" ref="203961920"/>
-								<int key="NSvFlags">1292</int>
+								<int key="NSvFlags">1298</int>
 								<array class="NSMutableArray" key="NSSubviews">
 									<object class="IBUILabel" id="1016538986">
 										<reference key="NSNextResponder" ref="971175967"/>
@@ -248,7 +248,6 @@
 										<string key="NSFrame">{{10, 318}, {255, 58}}</string>
 										<reference key="NSSuperview" ref="971175967"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<object class="NSColor" key="IBUIBackgroundColor">
 											<int key="NSColorSpace">1</int>
@@ -513,20 +512,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">NNPastEventView</string>
 					<string key="superclassName">UICollectionViewCell</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="picsButtonTapped:">id</string>
-						<string key="voteButtonTapped:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="picsButtonTapped:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">picsButtonTapped:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">picsButtonTapped:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">picsButtonTapped:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="voteButtonTapped:">
-							<string key="name">voteButtonTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="descriptionLabel">UILabel</string>
 						<string key="eventDateLabel">UILabel</string>

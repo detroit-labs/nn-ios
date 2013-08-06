@@ -25,9 +25,6 @@
     return self;
 }
 
-- (IBAction)voteButtonTapped:(id)sender {
-}
-
 - (IBAction)picsButtonTapped:(id)sender {
     [self.delegate viewPhotosFromEvent:self.event];
 }

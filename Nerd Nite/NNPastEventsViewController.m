@@ -62,8 +62,7 @@ static NSString *const cellId = @"PastEventCell";
             [self.scrollView addSubview:view];
         }];
         
-        CGSize contentSize = self.scrollView.contentSize;
-        [self.scrollView setContentSize:CGSizeMake(x, contentSize.height)];
+        [self.scrollView setContentSize:CGSizeMake(x, self.scrollView.frame.size.height)];
 
     } andFailure:^{
         [[[UIAlertView alloc] initWithTitle:@"oh, snap!"
