@@ -20,12 +20,12 @@
 @property (strong, nonatomic) IBOutlet UIView *aboutBorderView;
 @property (strong, nonatomic) IBOutlet UILabel *yearEstablishedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *littleGlasses;
 @property (strong, nonatomic) IBOutlet UICollectionView *bossCollectionView;
 @property (strong, nonatomic) IBOutlet UICollectionView *cityPreviewImages;
 @property (strong, nonatomic) IBOutlet UICollectionView *presenterImages;
 
 @property(nonatomic, strong) NNService *service;
+@property (strong, nonatomic) IBOutlet UILabel *meetTheBossesLabel;
 
 - (IBAction)facebookTapped:(id)sender;
 - (IBAction)twitterTapped:(id)sender;

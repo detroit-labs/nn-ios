@@ -81,6 +81,11 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         self.aboutLabel.text = self.city.about;
         self.yearEstablishedLabel.text = [self.city.yearEst stringValue];
 
+        [self resizeLabelForText:self.aboutLabel width:300];
+
+        [self moveViewElement:self.meetTheBossesLabel belowViewElement:self.aboutLabel withMargin:20];
+        [self moveViewElement:self.bossCollectionView belowViewElement:self.meetTheBossesLabel withMargin:10];
+
         NSUInteger numberOfBossRows = ([self.city.bosses count] % 3) + 1;
         int heightOfBossRow = 126;
         NSUInteger correctedBossCollectionHeight = (numberOfBossRows * heightOfBossRow) - 10;
@@ -96,6 +101,16 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
                           otherButtonTitles:nil] show];
     }];
     
+}
+
+- (void)resizeLabelForText:(UILabel *)label width:(CGFloat)width {
+    CGSize size = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(width, MAXFLOAT)];
+    [label setFrame:(CGRect){label.frame.origin, size}];
+}
+
+- (void)moveViewElement:(UIView *)bottom belowViewElement:(UIView *)top withMargin:(int)margin {
+    float bottomY = top.frame.origin.y + top.frame.size.height + margin;
+    [bottom setFrame:(CGRect) {{bottom.frame.origin.x, bottomY}, bottom.frame.size}];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -173,7 +188,6 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     [self setAboutBorderView:nil];
     [self setYearEstablishedLabel:nil];
     [self setAboutLabel:nil];
-    [self setLittleGlasses:nil];
     [self setPresenterImages:nil];
     [super viewDidUnload];
 }
