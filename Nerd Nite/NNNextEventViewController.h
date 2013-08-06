@@ -19,10 +19,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *eventVenueLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventAddressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *doorsAndCoverLabel;
+@property (strong, nonatomic) IBOutlet UITableViewCell *eventHeaderCell;
 
 - (id)initWithEvent:(NNEvent *)event;
-@property (strong, nonatomic) IBOutlet UIButton *facebookButtonTapped;
-@property (strong, nonatomic) IBOutlet UIButton *twitterButtonTapped;
-@property (strong, nonatomic) IBOutlet UIButton *butTicketsButtonTapped;
+- (IBAction)facebookButtonTapped:(id)sender;
+- (IBAction)twitterButtonTapped:(id)sender;
+- (IBAction)buyTicketsButtonTapped:(id)sender;
 
 @end

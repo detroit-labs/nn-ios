@@ -12,6 +12,7 @@
 #import "NNPresentationTableViewCell.h"
 #import "NNMapAnnotation.h"
 #import "NNDateLabelFormatter.h"
+#import "NNPresentation.h"
 
 static NSString *const PresentationCellId = @"NNPresentationCell";
 
@@ -66,15 +67,6 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
     [self.eventVenueLabel setText:self.event.venueName];
     [self.doorsAndCoverLabel setText:[NSString stringWithFormat:@"DOORS AT %@PM / $%@ COVER", self.event.time, self.event.price]];
     [NNDateLabelFormatter setUpDateLabel:self.eventDateLabel andSuffixLabel:self.eventDateSuffixLabel forDate:self.event.date];
-
-    NSUInteger numberOfPresentationRows = [self.event.presenters count];
-    int heightOfPresentationRow = 311;
-    NSUInteger correctedPresentationTableHeight = numberOfPresentationRows * heightOfPresentationRow;
-    [self.presentationTableView setFrame:(CGRect) {self.presentationTableView.frame.origin,
-            {self.presentationTableView.frame.size.width, correctedPresentationTableHeight}}];
-    [(UIScrollView *) self.view
-            setContentSize:CGSizeMake(self.view.frame.size.width,
-                    self.presentationTableView.frame.origin.y + correctedPresentationTableHeight + 10)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -139,7 +131,8 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 311;
+    NNPresentationTableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,6 +145,15 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
     [self.locationManager stopUpdatingLocation];
     [self setMapView:nil];
     [super viewDidUnload];
+}
+
+- (IBAction)facebookButtonTapped:(id)sender {
+}
+
+- (IBAction)twitterButtonTapped:(id)sender {
+}
+
+- (IBAction)buyTicketsButtonTapped:(id)sender {
 }
 
 @end

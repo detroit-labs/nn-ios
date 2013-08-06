@@ -42,11 +42,11 @@
 
     [self resizeLabel:self.descriptionLabel toFitText:event.about];
 
-    [self moveViewElement:self.voteButton belowViewElement:self.descriptionLabel];
+    [self moveViewElement:self.voteButton belowViewElement:self.descriptionLabel withMargin:10];
     UIButton *lastButton = self.voteButton;
 
     if([self.event.photos count] > 0){
-        [self moveViewElement:self.picsButton belowViewElement:self.voteButton];
+        [self moveViewElement:self.picsButton belowViewElement:self.voteButton withMargin:10];
         lastButton = self.picsButton;
         [self.picsButton setHidden:NO];
     } else {
@@ -64,8 +64,8 @@
     [label setFrame:(CGRect) {originalDescriptionFrame.origin, {descriptionWidth, descriptionSize.height}}];
 }
 
-- (void)moveViewElement:(UIView *)bottom belowViewElement:(UIView *)top {
-    float bottomY = top.frame.origin.y + top.frame.size.height + 10;
+- (void)moveViewElement:(UIView *)bottom belowViewElement:(UIView *)top withMargin:(int)margin {
+    float bottomY = top.frame.origin.y + top.frame.size.height + margin;
     [bottom setFrame:(CGRect) {{bottom.frame.origin.x, bottomY}, bottom.frame.size}];
 }
 
