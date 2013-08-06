@@ -148,12 +148,11 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
 }
 
 - (IBAction)facebookButtonTapped:(id)sender {
-}
-
-- (IBAction)twitterButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.event.eventLink]];
 }
 
 - (IBAction)buyTicketsButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.event.ticketsLink]];
 }
 
 @end

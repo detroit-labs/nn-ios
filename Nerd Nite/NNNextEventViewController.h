@@ -23,7 +23,6 @@
 
 - (id)initWithEvent:(NNEvent *)event;
 - (IBAction)facebookButtonTapped:(id)sender;
-- (IBAction)twitterButtonTapped:(id)sender;
 - (IBAction)buyTicketsButtonTapped:(id)sender;
 
 @end
