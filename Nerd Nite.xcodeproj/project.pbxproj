@@ -42,8 +42,6 @@
 		8310D2D516FFFFEB00713013 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18DE16D7DCF300AB85B1 /* Default@2x.png */; };
 		8310D2D616FFFFF100713013 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 964E18E016D7DD0200AB85B1 /* Default-568h@2x.png */; };
 		8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8321EC2E17049A2E00FD74AC /* NNViewController.m */; };
-		83A6EDDC16F5840900E39F56 /* NNNextEventViewControllerOld.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A6EDDB16F5840900E39F56 /* NNNextEventViewControllerOld.xib */; };
-		83A6EDDF16F584A500E39F56 /* NNNextEventViewControllerOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6EDDE16F584A500E39F56 /* NNNextEventViewControllerOld.m */; };
 		961BC8291764D04A00DF6345 /* NNEventPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */; };
 		9622797D17ADFCA200B34367 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622797B17ADFCA200B34367 /* NNNextEventViewController.m */; };
 		9622797E17ADFCA200B34367 /* NNNextEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622797B17ADFCA200B34367 /* NNNextEventViewController.m */; };
@@ -224,9 +222,6 @@
 		8310D2D216FFFF0500713013 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8321EC2D17049A2E00FD74AC /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNViewController.h; path = "View Controllers/NNViewController.h"; sourceTree = "<group>"; };
 		8321EC2E17049A2E00FD74AC /* NNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNViewController.m; path = "View Controllers/NNViewController.m"; sourceTree = "<group>"; };
-		83A6EDDB16F5840900E39F56 /* NNNextEventViewControllerOld.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNextEventViewControllerOld.xib; sourceTree = "<group>"; };
-		83A6EDDD16F584A500E39F56 /* NNNextEventViewControllerOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewControllerOld.h; sourceTree = "<group>"; };
-		83A6EDDE16F584A500E39F56 /* NNNextEventViewControllerOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewControllerOld.m; sourceTree = "<group>"; };
 		961BC8281764D04A00DF6345 /* NNEventPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEventPictureCell.xib; sourceTree = "<group>"; };
 		9622797A17ADFCA200B34367 /* NNNextEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNextEventViewController.h; sourceTree = "<group>"; };
 		9622797B17ADFCA200B34367 /* NNNextEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNextEventViewController.m; sourceTree = "<group>"; };
@@ -580,9 +575,6 @@
 				9622797A17ADFCA200B34367 /* NNNextEventViewController.h */,
 				9622797B17ADFCA200B34367 /* NNNextEventViewController.m */,
 				9622797C17ADFCA200B34367 /* NNNextEventViewController.xib */,
-				83A6EDDB16F5840900E39F56 /* NNNextEventViewControllerOld.xib */,
-				83A6EDDD16F584A500E39F56 /* NNNextEventViewControllerOld.h */,
-				83A6EDDE16F584A500E39F56 /* NNNextEventViewControllerOld.m */,
 				965946AE16FD035400EB5898 /* NNPastEventsViewController.h */,
 				965946AF16FD035400EB5898 /* NNPastEventsViewController.m */,
 				965946B016FD035400EB5898 /* NNPastEventsViewController.xib */,
@@ -690,7 +682,6 @@
 				969E766716D987D00030AB24 /* upcomingEvents@2x.png in Resources */,
 				969E766916D989D50030AB24 /* learnMore@2x.png in Resources */,
 				969E768116D9A5540030AB24 /* littleGlasses@2x.png in Resources */,
-				83A6EDDC16F5840900E39F56 /* NNNextEventViewControllerOld.xib in Resources */,
 				589F06EC86CF3236933923CA /* change-Location.png in Resources */,
 				589F0D454D5FEECF8B55935C /* change-Location@2x.png in Resources */,
 				9659465B16FCE26400EB5898 /* arrow.png in Resources */,
@@ -860,7 +851,6 @@
 				589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */,
 				589F09EC0946DB73DF99CC13 /* NNPresentation.m in Sources */,
 				589F0BF7E0C7D7A5206B71ED /* NSDictionary+NNUtilities.m in Sources */,
-				83A6EDDF16F584A500E39F56 /* NNNextEventViewControllerOld.m in Sources */,
 				965946B116FD035400EB5898 /* NNPastEventsViewController.m in Sources */,
 				96C1B2B816FD0D9100EDA714 /* NNPastEventView.m in Sources */,
 				8321EC2F17049A2E00FD74AC /* NNViewController.m in Sources */,
