@@ -43,6 +43,12 @@ static NSString *const cellId = @"PastEventCell";
     [self.eventPicturesViewController.view setFrame:CGRectMake(0, 20, navControllerFrame.size.width, navControllerFrame.size.height - 20)];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO
+                                             animated:animated];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 

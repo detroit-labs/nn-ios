@@ -29,7 +29,6 @@
 }
 
 -(void)createNavBar:(NSString*)title {
-    [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar.topItem setTitle:title];
     UIFont *titleBarFont = [UIFont fontWithName:@"Courier New" size:12.0f];
     NSDictionary *titleBarTextAttributes = @{UITextAttributeFont:titleBarFont, UITextAttributeTextColor: [UIColor blackColor]};

@@ -73,6 +73,12 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
     [super createNavBar:@"next event"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO
+                                             animated:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
