@@ -40,9 +40,15 @@
     [self.tableView registerNib:cityCell forCellReuseIdentifier:NNCityCellId];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES
+                                             animated:animated];
+}
+
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
     [self loadData];
 }
 
