@@ -49,7 +49,12 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
     [super createNavBar:@"nerd nite"];
     
     [self.navigationItem setHidesBackButton:YES];
-    UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithTitle:@"change" style:UIBarButtonItemStylePlain target:self action:@selector(changeLocation)];
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.bounds = CGRectMake(0, 0, 28.0, 28.0);
+    [button setBackgroundImage:[UIImage imageNamed:@"change-location"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *changeLocationButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     [self.navigationItem setRightBarButtonItem:changeLocationButton];
 }
 
