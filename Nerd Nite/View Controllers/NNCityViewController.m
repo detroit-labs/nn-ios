@@ -163,7 +163,7 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
 }
 
 - (IBAction)facebookTapped:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.city.facebook]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"fb://profile/%@", self.city.facebook]]];
 }
 
 - (IBAction)twitterTapped:(id)sender {
