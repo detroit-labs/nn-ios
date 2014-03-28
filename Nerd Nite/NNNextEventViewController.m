@@ -65,7 +65,12 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
     [self.eventTitleLabel setText:self.event.title];
     [self.eventAddressLabel setText:self.event.address];
     [self.eventVenueLabel setText:self.event.venueName];
-    [self.doorsAndCoverLabel setText:[NSString stringWithFormat:@"DOORS AT %@PM / $%@ COVER", self.event.time, self.event.price]];
+   
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"HH:mm"];
+    NSString *timeString = [format stringFromDate:self.event.date];
+    
+    [self.doorsAndCoverLabel setText:[NSString stringWithFormat:@"DOORS AT %@PM / $%@ COVER", timeString, self.event.price]];
     [NNDateLabelFormatter setUpDateLabel:self.eventDateLabel andSuffixLabel:self.eventDateSuffixLabel forDate:self.event.date];
 }
 

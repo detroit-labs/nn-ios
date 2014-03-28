@@ -19,6 +19,10 @@
     [navigationController setNavigationBarHidden:YES];
     [navigationController addChildViewController:[[NNCitiesListViewController alloc] initWithNibName:@"NNCitiesListViewController" bundle:nil]];
 
+    UIImage * backButtonImage = [UIImage imageNamed: @"back-arrow"];
+    backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 24 topCapHeight: 17];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage: backButtonImage forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
+
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
