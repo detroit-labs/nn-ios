@@ -86,6 +86,10 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         self.aboutLabel.text = self.city.about;
         self.yearEstablishedLabel.text = [self.city.yearEst stringValue];
 
+        if (!self.city.nextEvent.id) {
+            [self.learnMoreButton setHidden:YES];
+        }
+
         [self resizeLabelForText:self.aboutLabel width:300];
 
         [self moveViewElement:self.meetTheBossesLabel belowViewElement:self.aboutLabel withMargin:20];

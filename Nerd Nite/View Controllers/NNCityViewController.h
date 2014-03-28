@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *bossCollectionView;
 @property (strong, nonatomic) IBOutlet UICollectionView *cityPreviewImages;
 @property (strong, nonatomic) IBOutlet UICollectionView *presenterImages;
+@property (strong, nonatomic) IBOutlet UIButton *learnMoreButton;
 
 @property(nonatomic, strong) NNService *service;
 @property (strong, nonatomic) IBOutlet UILabel *meetTheBossesLabel;
