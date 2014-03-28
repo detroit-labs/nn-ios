@@ -20,7 +20,6 @@
         self.address = [dictionary nonNullStringForKey:@"address"];
         self.about = [dictionary nonNullStringForKey:@"description"];
         self.date = [self getDate:dictionary];
-        self.time = [dictionary nonNullStringForKey:@"time"];
         self.ticketsLink = [dictionary nonNullStringForKey:@"tickets_link"];
         self.price = [dictionary nonNullStringForKey:@"price"];
         self.eventLink = [dictionary nonNullStringForKey:@"event_link"];
@@ -52,10 +51,8 @@
 }
 
 - (NSDate *)getDate:(NSDictionary *)dictionary {
-    NSString *dateString = [dictionary valueForKey:@"date"];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd"];
-    return [df dateFromString:dateString];
+    NSTimeInterval date = [[dictionary valueForKey:@"date"]doubleValue];
+    return [NSDate dateWithTimeIntervalSince1970:date];
 }
 
 @end

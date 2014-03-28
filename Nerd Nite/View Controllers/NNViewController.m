@@ -60,4 +60,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationController.navigationBar.topItem.title = @"";
+}
 @end
