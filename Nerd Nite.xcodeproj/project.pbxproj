@@ -24,6 +24,7 @@
 		589F09AEFA9A4E57471E58F4 /* NNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06D6F0324A5ADDBB2958 /* NNCityTableViewCell.m */; };
 		589F09EC0946DB73DF99CC13 /* NNPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F177941788F0D8914BF /* NNPresentation.m */; };
 		589F0A5A9755F3B7980A401D /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
+		589F0ABA4862F4DDD28E46E3 /* NNCityViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0C8CCFECB9029AE77A9C /* NNCityViewControllerSpec.m */; };
 		589F0B977DD3CC3010E0E666 /* NNEventPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */; };
 		589F0B9BB0623D087CDFB754 /* NNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F02619ABCBC716AC4D3EE /* NNEvent.m */; };
 		589F0BDD4BE4B808FF211A24 /* NSDictionary+NNUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */; };
@@ -32,7 +33,7 @@
 		589F0D454D5FEECF8B55935C /* change-Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 589F077C3D2B861C343E822D /* change-Location@2x.png */; };
 		589F0DCF5CFA60E45E93FFF0 /* NNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F051669B22CDC148FCAAE /* NNCollectionViewCell.m */; };
 		589F0DFCB7252CA8FCCA8F5B /* NNCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */; };
-		589F0E6C956FFA125F339BD6 /* NNCityViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0976585135A720ACD676 /* NNCityViewControllerSpec.m */; };
+		589F0E6C956FFA125F339BD6 /* NNCitiesListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0976585135A720ACD676 /* NNCitiesListViewControllerSpec.m */; };
 		589F0EC3847BE09E3F5A9F57 /* NNService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F06A007C01A2D5E37D104 /* NNService.m */; };
 		589F0F0D2E6BBEA39F5CF73C /* NNCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */; };
 		589F0F47DC2B5B7AAD765768 /* NNCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F073E7A5D502E73493C7C /* NNCity.m */; };
@@ -210,10 +211,11 @@
 		589F07896884FC81A9338689 /* NNPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPhoto.h; sourceTree = "<group>"; };
 		589F07E60A6248BB9888E293 /* NNDateLabelFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNDateLabelFormatter.h; path = "View Controllers/NNDateLabelFormatter.h"; sourceTree = "<group>"; };
 		589F08A9186BB065589D3708 /* change-Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "change-Location.png"; path = "../Images/change-Location.png"; sourceTree = "<group>"; };
-		589F0976585135A720ACD676 /* NNCityViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCityViewControllerSpec.m; sourceTree = "<group>"; };
+		589F0976585135A720ACD676 /* NNCitiesListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCitiesListViewControllerSpec.m; sourceTree = "<group>"; };
 		589F0AD8EACCB98FEEC06094 /* NNBoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBoss.m; sourceTree = "<group>"; };
 		589F0B5511796E0C1266FCFA /* NNEventPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEventPictureCell.m; sourceTree = "<group>"; };
 		589F0BCC722B9DE9B1CB06E6 /* NNCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNCityViewController.m; path = "View Controllers/NNCityViewController.m"; sourceTree = "<group>"; };
+		589F0C8CCFECB9029AE77A9C /* NNCityViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCityViewControllerSpec.m; sourceTree = "<group>"; };
 		589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NNUtilities.m"; sourceTree = "<group>"; };
 		589F0D0BE4EFCDAC31286950 /* NNEventPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEventPictureCell.h; sourceTree = "<group>"; };
 		589F0F177941788F0D8914BF /* NNPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPresentation.m; sourceTree = "<group>"; };
@@ -598,7 +600,8 @@
 			isa = PBXGroup;
 			children = (
 				96F6F14316CEB9610029BA26 /* NNPresenterViewControllerSpec.m */,
-				589F0976585135A720ACD676 /* NNCityViewControllerSpec.m */,
+				589F0976585135A720ACD676 /* NNCitiesListViewControllerSpec.m */,
+				589F0C8CCFECB9029AE77A9C /* NNCityViewControllerSpec.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -881,7 +884,7 @@
 			files = (
 				96F6F14416CEB9610029BA26 /* NNPresenterViewControllerSpec.m in Sources */,
 				96F6F15016CECB2C0029BA26 /* NNCitiesListViewController.m in Sources */,
-				589F0E6C956FFA125F339BD6 /* NNCityViewControllerSpec.m in Sources */,
+				589F0E6C956FFA125F339BD6 /* NNCitiesListViewControllerSpec.m in Sources */,
 				589F0F47DC2B5B7AAD765768 /* NNCity.m in Sources */,
 				589F0EC3847BE09E3F5A9F57 /* NNService.m in Sources */,
 				589F0F0D2E6BBEA39F5CF73C /* NNCityViewController.m in Sources */,
@@ -903,6 +906,7 @@
 				9622797E17ADFCA200B34367 /* NNNextEventViewController.m in Sources */,
 				9622799017AEA61A00B34367 /* NNPresentationTableViewCell.m in Sources */,
 				589F0748608C41227AF01531 /* NNMapAnnotation.m in Sources */,
+				589F0ABA4862F4DDD28E46E3 /* NNCityViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
