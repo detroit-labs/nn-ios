@@ -66,6 +66,30 @@ describe(@"NNCityViewController", ^{
                 });
             });
         });
+        describe(@"the facebook button", ^{
+            __block UIButton *facebookButton;
+
+            beforeEach(^{
+                facebookButton = [UIButton nullMock];
+                controller.facebookButton = facebookButton;
+            });
+            context(@"get a city with no facebook", ^{
+                it(@"hides the facebookButton", ^{
+                    [[facebookButton should] receive:@selector(setHidden:) withArguments:theValue(YES)];
+
+                    [controller viewDidLoad];
+                });
+            });
+            context(@"get a city with a facebook", ^{
+                it(@"does not hide the facebookButton", ^{
+                    city.facebook = @"facebook.com/poop";
+
+                    [[facebookButton shouldNot] receive:@selector(setHidden:)];
+
+                    [controller viewDidLoad];
+                });
+            });
+        });
     });
 
 });

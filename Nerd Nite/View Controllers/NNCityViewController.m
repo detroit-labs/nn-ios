@@ -92,6 +92,9 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         if (!self.city.twitter) {
             [self.twitterButton setHidden:YES];
         }
+        if (!self.city.facebook) {
+            [self.facebookButton setHidden:YES];
+        }
 
         [self resizeLabelForText:self.aboutLabel width:300];
 
