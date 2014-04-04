@@ -60,17 +60,26 @@ static NSString *const cellId = @"PastEventCell";
         self.events = events;
         self.pageControl.numberOfPages = [events count];
 
-        __block int x = 0;
-        [events enumerateObjectsUsingBlock:^(NNEvent *event, NSUInteger idx, BOOL *stop) {
-            NNPastEventView *view = [[[NSBundle mainBundle] loadNibNamed:@"NNPastEventView" owner:self options:nil] objectAtIndex:0];
-            [view setEventToView:event];
-            [view setFrame:(CGRect){{x, 0}, {view.frame.size.width, self.scrollView.frame.size.height}}];
-            x += view.frame.size.width;
-            [view setDelegate:self];
-            [self.scrollView addSubview:view];
-        }];
-        
-        [self.scrollView setContentSize:CGSizeMake(x, self.scrollView.frame.size.height)];
+        if([events count] > 0) {
+            __block int x = 0;
+            [events enumerateObjectsUsingBlock:^(NNEvent *event, NSUInteger idx, BOOL *stop) {
+                NNPastEventView *view = [[[NSBundle mainBundle] loadNibNamed:@"NNPastEventView" owner:self options:nil] objectAtIndex:0];
+                [view setEventToView:event];
+                [view setFrame:(CGRect){{x, 0}, {view.frame.size.width, self.scrollView.frame.size.height}}];
+                x += view.frame.size.width;
+                [view setDelegate:self];
+                [self.scrollView addSubview:view];
+            }];
+
+            [self.scrollView setContentSize:CGSizeMake(x, self.scrollView.frame.size.height)];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"oh, snap!"
+                                       message:@"no past events!"
+                                      delegate:self
+                             cancelButtonTitle:@"go back to the future"
+                             otherButtonTitles:nil] show];
+        }
+
 
     } andFailure:^{
         [[[UIAlertView alloc] initWithTitle:@"oh, snap!"
@@ -79,6 +88,10 @@ static NSString *const cellId = @"PastEventCell";
                          cancelButtonTitle:@"ok"
                          otherButtonTitles:nil] show];
     }];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

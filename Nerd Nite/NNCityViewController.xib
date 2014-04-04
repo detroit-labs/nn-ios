@@ -22,6 +22,7 @@
                 <outlet property="mainPicture" destination="6" id="7"/>
                 <outlet property="meetTheBossesLabel" destination="59" id="343"/>
                 <outlet property="presenterImages" destination="105" id="107"/>
+                <outlet property="previousEventsButton" destination="23" id="2rJ-tO-z7r"/>
                 <outlet property="twitterButton" destination="8" id="kQh-bS-Oyl"/>
                 <outlet property="view" destination="45" id="51"/>
                 <outlet property="yearEstablishedLabel" destination="56" id="57"/>

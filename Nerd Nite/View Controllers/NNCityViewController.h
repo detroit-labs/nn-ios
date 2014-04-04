@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *learnMoreButton;
 @property (strong, nonatomic) IBOutlet UIButton *twitterButton;
 @property (strong, nonatomic) IBOutlet UIButton *facebookButton;
+@property (strong, nonatomic) IBOutlet UIButton *previousEventsButton;
 
 @property(nonatomic, strong) NNService *service;
 @property (strong, nonatomic) IBOutlet UILabel *meetTheBossesLabel;
