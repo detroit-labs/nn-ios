@@ -12,6 +12,7 @@
 SPEC_BEGIN(NNCityViewControllerSpec)
 
 describe(@"NNCityViewController", ^{
+
     describe(@"#viewDidLoad", ^{
         context(@"get a city with no event", ^{
             it(@"hides the learnMoreButton", ^{
@@ -25,15 +26,16 @@ describe(@"NNCityViewController", ^{
                     successBlock(city);
                     return nil;
                 }];
-
                 UIButton *learnMoreButton = [UIButton nullMock];
-                [[learnMoreButton should] receive:@selector(setHidden:) withArguments:theValue(YES)];
                 controller.learnMoreButton = learnMoreButton;
+
+                [[learnMoreButton should] receive:@selector(setHidden:) withArguments:theValue(YES)];
 
                 [controller viewDidLoad];
             });
         });
     });
+
 });
 
 SPEC_END
