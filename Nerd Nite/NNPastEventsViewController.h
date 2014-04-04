@@ -12,7 +12,7 @@
 
 @class NNCity;
 
-@interface NNPastEventsViewController : NNViewController <UIScrollViewDelegate, NNPastEventDelegate>
+@interface NNPastEventsViewController : NNViewController <UIScrollViewDelegate, NNPastEventDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
