@@ -38,6 +38,8 @@ static NSString *const cellId = @"PastEventCell";
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+
     self.eventPicturesViewController = [[NNEventPicturesViewController alloc] init];
     CGRect navControllerFrame = self.navigationController.view.frame;
     [self.eventPicturesViewController.view setFrame:CGRectMake(0, 20, navControllerFrame.size.width, navControllerFrame.size.height - 20)];

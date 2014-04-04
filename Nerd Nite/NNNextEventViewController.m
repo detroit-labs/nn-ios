@@ -69,7 +69,6 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"h:mm"];
     NSString *timeString = [format stringFromDate:self.event.date];
-    NSLog(timeString);
     
     [self.doorsAndCoverLabel setText:[NSString stringWithFormat:@"DOORS AT %@PM / $%@ COVER", timeString, self.event.price]];
     [NNDateLabelFormatter setUpDateLabel:self.eventDateLabel andSuffixLabel:self.eventDateSuffixLabel forDate:self.event.date];
@@ -143,7 +142,7 @@ static NSString *const PresentationCellId = @"NNPresentationCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NNPresentationTableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    NNPresentationTableViewCell *cell = (NNPresentationTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
 }
 
