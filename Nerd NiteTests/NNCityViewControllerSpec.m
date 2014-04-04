@@ -34,6 +34,45 @@ describe(@"NNCityViewController", ^{
                 [controller viewDidLoad];
             });
         });
+        context(@"get a city with no twitter", ^{
+            it(@"hides the twitterButton", ^{
+                NNCity *city = [[NNCity alloc] init];
+                NNCityViewController *controller = [[NNCityViewController alloc] init];
+                NNService *service = [NNService nullMock];
+                controller.service = service;
+                [service stub:@selector(getCity:withSuccess:andFailure:) withBlock:^id(NSArray *params) {
+                    void (^successBlock)(NNCity *successCity) = [params objectAtIndex:1];
+                    successBlock(city);
+                    return nil;
+                }];
+                UIButton *twitterButton = [UIButton nullMock];
+                controller.twitterButton = twitterButton;
+
+                [[twitterButton should] receive:@selector(setHidden:) withArguments:theValue(YES)];
+
+                [controller viewDidLoad];
+            });
+        });
+        context(@"get a city with a twitter", ^{
+            it(@"does not hide the twitterButton", ^{
+                NNCity *city = [[NNCity alloc] init];
+                city.twitter = @"Twitter.com/detroit";
+                NNCityViewController *controller = [[NNCityViewController alloc] init];
+                NNService *service = [NNService nullMock];
+                controller.service = service;
+                [service stub:@selector(getCity:withSuccess:andFailure:) withBlock:^id(NSArray *params) {
+                    void (^successBlock)(NNCity *successCity) = [params objectAtIndex:1];
+                    successBlock(city);
+                    return nil;
+                }];
+                UIButton *twitterButton = [UIButton nullMock];
+                controller.twitterButton = twitterButton;
+
+                [[twitterButton shouldNot] receive:@selector(setHidden:)];
+
+                [controller viewDidLoad];
+            });
+        });
     });
 
 });

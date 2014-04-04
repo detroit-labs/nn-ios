@@ -89,6 +89,9 @@ static NSString *const presenterImageCellIdentifier = @"NNPresenterImageCollecti
         if (!self.city.nextEvent.id) {
             [self.learnMoreButton setHidden:YES];
         }
+        if (!self.city.twitter) {
+            [self.twitterButton setHidden:YES];
+        }
 
         [self resizeLabelForText:self.aboutLabel width:300];
 

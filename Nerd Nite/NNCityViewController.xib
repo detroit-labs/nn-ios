@@ -17,10 +17,12 @@
                 <outlet property="eventDateSuffixLabel" destination="16" id="36"/>
                 <outlet property="eventTitle" destination="14" id="34"/>
                 <outlet property="eventVenueLabel" destination="21" id="37"/>
+                <outlet property="facebookButton" destination="9" id="Mqt-Vb-Nc9"/>
                 <outlet property="learnMoreButton" destination="25" id="FIA-7e-LdR"/>
                 <outlet property="mainPicture" destination="6" id="7"/>
                 <outlet property="meetTheBossesLabel" destination="59" id="343"/>
                 <outlet property="presenterImages" destination="105" id="107"/>
+                <outlet property="twitterButton" destination="8" id="kQh-bS-Oyl"/>
                 <outlet property="view" destination="45" id="51"/>
                 <outlet property="yearEstablishedLabel" destination="56" id="57"/>
             </connections>
