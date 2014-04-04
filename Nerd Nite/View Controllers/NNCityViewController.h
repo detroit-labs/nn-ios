@@ -24,6 +24,8 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *cityPreviewImages;
 @property (strong, nonatomic) IBOutlet UICollectionView *presenterImages;
 @property (strong, nonatomic) IBOutlet UIButton *learnMoreButton;
+@property (strong, nonatomic) IBOutlet UIButton *twitterButton;
+@property (strong, nonatomic) IBOutlet UIButton *facebookButton;
 
 @property(nonatomic, strong) NNService *service;
 @property (strong, nonatomic) IBOutlet UILabel *meetTheBossesLabel;
