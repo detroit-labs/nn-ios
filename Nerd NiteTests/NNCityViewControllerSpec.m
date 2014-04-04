@@ -14,18 +14,24 @@ SPEC_BEGIN(NNCityViewControllerSpec)
 describe(@"NNCityViewController", ^{
 
     describe(@"#viewDidLoad", ^{
+        __block NNCity *city;
+        __block NNCityViewController *controller;
+
+        beforeEach(^{
+           city = [[NNCity alloc] init];
+
+            controller = [[NNCityViewController alloc] init];
+            NNService *service = [NNService nullMock];
+            controller.service = service;
+            [service stub:@selector(getCity:withSuccess:andFailure:) withBlock:^id(NSArray *params) {
+                void (^successBlock)(NNCity *successCity) = [params objectAtIndex:1];
+                successBlock(city);
+                return nil;
+            }];
+        });
         context(@"get a city with no event", ^{
             it(@"hides the learnMoreButton", ^{
-                NNCity *city = [[NNCity alloc] init];
                 city.nextEvent = [[NNEvent alloc] init];
-                NNCityViewController *controller = [[NNCityViewController alloc] init];
-                NNService *service = [NNService nullMock];
-                controller.service = service;
-                [service stub:@selector(getCity:withSuccess:andFailure:) withBlock:^id(NSArray *params) {
-                    void (^successBlock)(NNCity *successCity) = [params objectAtIndex:1];
-                    successBlock(city);
-                    return nil;
-                }];
                 UIButton *learnMoreButton = [UIButton nullMock];
                 controller.learnMoreButton = learnMoreButton;
 
@@ -34,43 +40,30 @@ describe(@"NNCityViewController", ^{
                 [controller viewDidLoad];
             });
         });
-        context(@"get a city with no twitter", ^{
-            it(@"hides the twitterButton", ^{
-                NNCity *city = [[NNCity alloc] init];
-                NNCityViewController *controller = [[NNCityViewController alloc] init];
-                NNService *service = [NNService nullMock];
-                controller.service = service;
-                [service stub:@selector(getCity:withSuccess:andFailure:) withBlock:^id(NSArray *params) {
-                    void (^successBlock)(NNCity *successCity) = [params objectAtIndex:1];
-                    successBlock(city);
-                    return nil;
-                }];
-                UIButton *twitterButton = [UIButton nullMock];
-                controller.twitterButton = twitterButton;
 
-                [[twitterButton should] receive:@selector(setHidden:) withArguments:theValue(YES)];
 
-                [controller viewDidLoad];
+        describe(@"the twitter button", ^{
+            __block UIButton *twitterButton;
+
+            beforeEach(^{
+                twitterButton = [UIButton nullMock];
+                    controller.twitterButton = twitterButton;
             });
-        });
-        context(@"get a city with a twitter", ^{
-            it(@"does not hide the twitterButton", ^{
-                NNCity *city = [[NNCity alloc] init];
-                city.twitter = @"Twitter.com/detroit";
-                NNCityViewController *controller = [[NNCityViewController alloc] init];
-                NNService *service = [NNService nullMock];
-                controller.service = service;
-                [service stub:@selector(getCity:withSuccess:andFailure:) withBlock:^id(NSArray *params) {
-                    void (^successBlock)(NNCity *successCity) = [params objectAtIndex:1];
-                    successBlock(city);
-                    return nil;
-                }];
-                UIButton *twitterButton = [UIButton nullMock];
-                controller.twitterButton = twitterButton;
+            context(@"get a city with no twitter", ^{
+                it(@"hides the twitterButton", ^{
+                    [[twitterButton should] receive:@selector(setHidden:) withArguments:theValue(YES)];
 
-                [[twitterButton shouldNot] receive:@selector(setHidden:)];
+                    [controller viewDidLoad];
+                });
+            });
+            context(@"get a city with a twitter", ^{
+                it(@"does not hide the twitterButton", ^{
+                    city.twitter = @"Twitter.com/detroit";
 
-                [controller viewDidLoad];
+                    [[twitterButton shouldNot] receive:@selector(setHidden:)];
+
+                    [controller viewDidLoad];
+                });
             });
         });
     });
