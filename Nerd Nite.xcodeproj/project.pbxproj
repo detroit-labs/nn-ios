@@ -659,6 +659,11 @@
 				CLASSPREFIX = NN;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Detroit Labs";
+				TargetAttributes = {
+					96C1B11D16CEB40100D95991 = {
+						DevelopmentTeam = 69MZ6T95LT;
+					};
+				};
 			};
 			buildConfigurationList = 96C1B11816CEB40100D95991 /* Build configuration list for PBXProject "Nerd Nite" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -968,7 +973,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -978,7 +983,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.detroitlabs.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
@@ -1032,7 +1038,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1042,8 +1048,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.detroitlabs.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
@@ -1099,7 +1105,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1109,8 +1115,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CUSTOM_BUNDLE_IDENTIFIER = "com.nerdnite.Nerd-Nite";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
