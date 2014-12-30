@@ -1,3 +1,4 @@
+*.xccheckout
 .DS_Store
 .idea
 Pods
