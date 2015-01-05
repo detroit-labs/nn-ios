@@ -193,7 +193,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4469C6BD895344AAB8F8D4D9 /* Pods-Nerd NiteTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nerd NiteTests.xcconfig"; path = "Pods/Pods-Nerd NiteTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		065B15C03E6DFBA1AA142C14 /* Pods-Nerd NiteTests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nerd NiteTests.testflight.xcconfig"; path = "Pods/Target Support Files/Pods-Nerd NiteTests/Pods-Nerd NiteTests.testflight.xcconfig"; sourceTree = "<group>"; };
 		589F001603B864E78CD67687 /* NNCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCity.h; sourceTree = "<group>"; };
 		589F00206A98DB00F889B845 /* NNCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNCityViewController.h; path = "View Controllers/NNCityViewController.h"; sourceTree = "<group>"; };
 		589F00C3A3BC08693D1A61CD /* NNBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBoss.h; sourceTree = "<group>"; };
@@ -226,6 +226,11 @@
 		589F0F8D7E73686897B87214 /* NNMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMapAnnotation.m; sourceTree = "<group>"; };
 		589F0FB3B2CF3679E8FD6045 /* NNDateLabelFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNDateLabelFormatter.m; path = "View Controllers/NNDateLabelFormatter.m"; sourceTree = "<group>"; };
 		589F0FE0FEC95A34AD287941 /* NNPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPhoto.m; sourceTree = "<group>"; };
+		597E83C2EDC738A2E91CBF53 /* Pods.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.testflight.xcconfig; path = "Pods/Target Support Files/Pods/Pods.testflight.xcconfig"; sourceTree = "<group>"; };
+		5B108324747E400A3AA45D3B /* Pods.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.appstore.xcconfig; path = "Pods/Target Support Files/Pods/Pods.appstore.xcconfig"; sourceTree = "<group>"; };
+		5BC9AC8A2EDAE8C09064B598 /* Pods-Nerd NiteTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nerd NiteTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Nerd NiteTests/Pods-Nerd NiteTests.appstore.xcconfig"; sourceTree = "<group>"; };
+		605B0F0342724EE719481054 /* Pods-Nerd NiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nerd NiteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nerd NiteTests/Pods-Nerd NiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73BCD46E19F033CDF5EF5526 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8310D2D016FFFEFC00713013 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8310D2D216FFFF0500713013 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8321EC2D17049A2E00FD74AC /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNViewController.h; path = "View Controllers/NNViewController.h"; sourceTree = "<group>"; };
@@ -330,7 +335,6 @@
 		96F6F14C16CECB2C0029BA26 /* NNCitiesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = NNCitiesListViewController.h; path = "View Controllers/NNCitiesListViewController.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		96F6F14D16CECB2C0029BA26 /* NNCitiesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = NNCitiesListViewController.m; path = "View Controllers/NNCitiesListViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		96F6F14E16CECB2C0029BA26 /* NNCitiesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NNCitiesListViewController.xib; path = "View Controllers/NNCitiesListViewController.xib"; sourceTree = "<group>"; };
-		9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E36BBCDDD539487EB37526A9 /* libPods-Nerd NiteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nerd NiteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD1AECA49F148F88B970C97 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -373,6 +377,19 @@
 				589F0CB3390B5B55A1A42E77 /* NSDictionary+NNUtilities.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		5DA0C3FD7341F90E743EAA63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73BCD46E19F033CDF5EF5526 /* Pods.debug.xcconfig */,
+				597E83C2EDC738A2E91CBF53 /* Pods.testflight.xcconfig */,
+				5B108324747E400A3AA45D3B /* Pods.appstore.xcconfig */,
+				605B0F0342724EE719481054 /* Pods-Nerd NiteTests.debug.xcconfig */,
+				065B15C03E6DFBA1AA142C14 /* Pods-Nerd NiteTests.testflight.xcconfig */,
+				5BC9AC8A2EDAE8C09064B598 /* Pods-Nerd NiteTests.appstore.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		96B4AAB316D829540071B430 /* Views */ = {
@@ -494,8 +511,7 @@
 				96C1B14C16CEB40100D95991 /* Nerd NiteTests */,
 				96C1B12116CEB40100D95991 /* Frameworks */,
 				96C1B11F16CEB40100D95991 /* Products */,
-				9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */,
-				4469C6BD895344AAB8F8D4D9 /* Pods-Nerd NiteTests.xcconfig */,
+				5DA0C3FD7341F90E743EAA63 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -821,7 +837,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Nerd NiteTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nerd NiteTests/Pods-Nerd NiteTests-resources.sh\"\n";
 		};
 		73922172FDEC4F5798B5997D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -835,7 +851,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 		};
 		96C1B14316CEB40100D95991 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -981,7 +997,7 @@
 		};
 		96C1B15816CEB40100D95991 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
+			baseConfigurationReference = 73BCD46E19F033CDF5EF5526 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -998,14 +1014,13 @@
 		};
 		96C1B15B16CEB40100D95991 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4469C6BD895344AAB8F8D4D9 /* Pods-Nerd NiteTests.xcconfig */;
+			baseConfigurationReference = 605B0F0342724EE719481054 /* Pods-Nerd NiteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nerd Nite.app/Nerd Nite";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(inherited)\"",
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)\"",
+					"<Multiple",
+					"values>",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
@@ -1046,7 +1061,7 @@
 		};
 		96F6F12C16CEB7AC0029BA26 /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
+			baseConfigurationReference = 597E83C2EDC738A2E91CBF53 /* Pods.testflight.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1065,14 +1080,13 @@
 		};
 		96F6F12D16CEB7AC0029BA26 /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4469C6BD895344AAB8F8D4D9 /* Pods-Nerd NiteTests.xcconfig */;
+			baseConfigurationReference = 065B15C03E6DFBA1AA142C14 /* Pods-Nerd NiteTests.testflight.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nerd Nite.app/Nerd Nite";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(inherited)\"",
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)\"",
+					"<Multiple",
+					"values>",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
@@ -1113,7 +1127,7 @@
 		};
 		96F6F12F16CEB7B30029BA26 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A9EB949EC6543EA9D0F200A /* Pods.xcconfig */;
+			baseConfigurationReference = 5B108324747E400A3AA45D3B /* Pods.appstore.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1132,14 +1146,13 @@
 		};
 		96F6F13016CEB7B30029BA26 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4469C6BD895344AAB8F8D4D9 /* Pods-Nerd NiteTests.xcconfig */;
+			baseConfigurationReference = 5BC9AC8A2EDAE8C09064B598 /* Pods-Nerd NiteTests.appstore.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nerd Nite.app/Nerd Nite";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(inherited)\"",
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)\"",
+					"<Multiple",
+					"values>",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerd Nite/Nerd Nite-Prefix.pch";
